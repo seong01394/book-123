@@ -109,7 +109,7 @@ export default function Header() {
         <input
           className="header-search-input"
           type="text"
-          placeholder="검색어를 입력해주세요."
+          placeholder="검색어를 입력해주세요.123"
           value={Word}
           onChange={onSearchWordChangeHandler}
           onKeyDown={onSearchWordKeyDownHandler}
