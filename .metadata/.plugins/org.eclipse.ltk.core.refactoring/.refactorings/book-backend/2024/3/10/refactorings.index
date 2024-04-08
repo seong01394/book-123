@@ -1,0 +1,10 @@
+1709711298618	Delete element
+1709713976048	Rename package 'common'
+1709714004065	Rename package 'config'
+1709714013197	Rename package 'dto'
+1709714023769	Rename package 'entity'
+1709714037821	Rename package 'exception'
+1709714051315	Rename package 'filter'
+1709781577139	Rename resource 'JwtAuthenticationFilter'
+1709781673504	Rename package 'com.example.provider'
+1709803761013	Rename compilation unit 'BookContorller.java'

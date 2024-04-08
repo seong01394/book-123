@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/seong01394/version.git"/>
+		<item value="https://github.com/seong01394/version"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="ahnju &lt;ahnju@as&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="ahnju &lt;ahnju@as&gt;"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\ahnju\eclipse-workspace\vesioncontrol\.git">
+			<item value="false"/>
+			<item value="ahnju &lt;ahnju@as&gt;"/>
+			<item value="프로젝트 생성."/>
+			<item value="ahnju &lt;ahnju@as&gt;"/>
+			<item value="0000000000000000000000000000000000000000"/>
+			<item value="0"/>
+			<item value="false"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="GitImportWizard">
+	</section>
+</section>

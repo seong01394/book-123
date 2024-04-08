@@ -1,0 +1,48 @@
+package com.example.book.config;
+
+import org.antlr.v4.runtime.atn.SemanticContext.AND;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.example.book.filter.JwtAuthenticationFilter;
+
+import lombok.RequiredArgsConstructor;
+
+@Configurable
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class WebSecurityConfig {
+	
+	
+	private final JwtAuthenticationFilter jwtAuthenticationFilter;
+	
+	@Bean
+	protected SecurityFilterChain configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity
+			.cors(Customizer.withDefaults())
+			.csrf(CsrfConfigurer::disable)
+			.httpBasic(HttpBasicConfigurer::disable)
+			.sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+			.authorizeRequests(authorize ->
+					authorize
+							.requestMatchers("/actuator/**", "/swagger-ui/**", "/sign/**",
+                                    "/api-docs/swagger-config", "/sign-in", "/sign-up").permitAll()
+							.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+			
+			.anyRequest().authenticated();
+		
+		httpSecurity.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+		
+		return httpSecurity.build();
+		
+	}
+}

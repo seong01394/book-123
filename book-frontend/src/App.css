@@ -1,0 +1,202 @@
+.divider {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.black-button {
+  border-radius: 46px;
+  width: 95px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 1);
+
+  color: rgba(255, 255, 255, 1);
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+
+  cursor: pointer;
+}
+
+.black-button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.black-large-full-button {
+  border-radius: 46px;
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 1);
+
+  color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+
+  cursor: pointer;
+}
+
+.black-large-full-button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.disable-button {
+  border-radius: 46px;
+  width: 95px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  color: rgba(255, 255, 255, 1);
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+
+  cursor: not-allowed;
+}
+
+.white-button {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 46px;
+  width: 93px;
+  height: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 1);
+
+  color: rgba(0, 0, 0, 0.5);
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+  cursor: pointer;
+}
+
+.white-button:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.icon-box {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  border-radius: 50% 50%;
+  inline-size: 24px;
+  block-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+  inline-size: 100%;
+  block-size: 100%;
+
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.eye-light-off-icon {
+  background-image: url(assets/eye-light-off.png);
+}
+
+.eye-light-on-icon {
+  background-image: url(assets/eye-light-on.png);
+}
+
+.expand-right-light-icon {
+  background-image: url(assets/expand-right-light.png);
+}
+
+.logo-light-icon {
+  background-image: url(assets/free-icon-jp-10040881.png);
+}
+
+.insta-icon {
+  background-image: url(assets/insta.png);
+}
+
+.naver-blog-icon {
+  background-image: url(assets/naver-blog.png);
+}
+
+.logo-dark-icon {
+  background-image: url(assets/free-icon-jp-9346261.png);
+}
+
+.search-light-icon {
+  background-image: url(assets/free-icon-search-5102702.png);
+}
+
+.check-round-fill-icon {
+  background-image: url(assets/check-round-fill.png);
+}
+
+.check-ring-light-icon {
+  background-image: url(assets/check-ring-light.png);
+}
+<<<<<<< HEAD
+
+.image-box-light-icon {
+  background-image: url(assets/image-box-light.png);
+}
+
+.close-icon {
+  background-image: url(assets/close.png);
+}
+
+.board-write-images-box {
+  width: 100%;
+
+  display: flex;
+  flex-direction:  column;
+  gap: 20px;
+}
+
+.board-write-image-box {
+  width: 100%;
+  position: relative;
+}
+
+.board-write-image {
+  width: 100%;
+
+}
+
+.image-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+=======
+>>>>>>> 603081b79598d6e2b6a9fb77db4d2133c28612aa
