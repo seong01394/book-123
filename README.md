@@ -10,13 +10,9 @@
 
 ### React
 
--npm i yarn
--yarn add react-router-dom
--yarn add redux react-redux
--yarn add react-bootstrap bootstrap
--yarn add fullpage.js@2.9.6 jquery
--yarn add -D @types/jquery
-
+npm i lodash,
+npm i json-server,
+npm i,
 ""txt
 import 'bootstrap/dist/css/bootstrap.min.css';
 ''txt
