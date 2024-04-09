@@ -14,6 +14,10 @@ export default function End() {
 
   return (
     <div className="container">
+      <div className='icon-style'>
+        <div className='icon'> </div>
+
+      </div>
       <div className="search-bar">
         <input
           type="text"
