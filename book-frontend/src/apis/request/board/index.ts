@@ -1,4 +1,4 @@
+import EndRequestDto from "./end.request.dto";
 import PostBoardRequestDto from "./post-board.request.dto";
-export type {
-    PostBoardRequestDto
-};
+export type { EndRequestDto, PostBoardRequestDto };
+
