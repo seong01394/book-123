@@ -1,0 +1,166 @@
+{
+  "data": [
+    {
+      "nickname": "차차",
+      "oname": "hyerincha",
+      "building_count": 15
+    },
+    {
+      "nickname": "공인즙개사",
+      "oname": "jeup",
+      "building_count": 9
+    },
+    {
+      "nickname": "AI",
+      "oname": "AI",
+      "building_count": 8
+    },
+    {
+      "nickname": "소잃고뇌약간고침",
+      "oname": "외양간주인",
+      "building_count": 7
+    },
+    {
+      "nickname": "성희",
+      "oname": "성희",
+      "building_count": 6
+    },
+    {
+      "nickname": "목하",
+      "oname": "목하",
+      "building_count": 5
+    },
+    {
+      "nickname": "차차 목장",
+      "oname": "목장",
+      "building_count": 5
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 4
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 3
+    },
+    {
+      "nickname": "열번째",
+      "oname": "10",
+      "building_count": 2
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 1
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 0
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 10
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 11
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 12
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 13
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 14
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 15
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 16
+    },
+    {
+      "nickname": "이름",
+      "oname": "이름",
+      "building_count": 1
+    }
+  ],
+  "search": [
+    {
+      "word": "차차",
+      "count": 780,
+      "id": 1
+    },
+    {
+      "word": "차차 목장",
+      "count": 457,
+      "id": 2
+    },
+    {
+      "word": "제조도",
+      "count": 999,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "word": "열번째",
+      "count": 222
+    },
+    {
+      "word": "이름",
+      "count": 456,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "word": "상하",
+      "count": 222
+    },
+    {
+      "word": "제조도 섬",
+      "count": 456,
+      "id": 7
+    },
+    {
+      "word": "제조도 메타버스",
+      "count": 10,
+      "id": 8
+    },
+    {
+      "word": "화목",
+      "count": 1,
+      "id": 9
+    },
+    {
+      "word": "화섬",
+      "count": 777,
+      "id": 10
+    },
+    {
+      "word": "아파트",
+      "count": 1,
+      "id": 11
+    },
+    {
+      "word": "공인즙개사",
+      "count": 4,
+      "id": 12
+    }
+  ]
+}

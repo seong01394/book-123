@@ -7,5 +7,6 @@ export const BOARD_DETAILPATH = (boardNumber: string | number) =>
   `detail/${boardNumber}`;
 export const BOARD_WRITE_PATH = () => 'write';
 export const BOARD_GPT_PATH = () => 'gpt';
+export const BOARD_END_PATH = () => 'end';
 export const BOARD_UPDATE_PATH = (boardNumber: string | number) =>
   `update/${boardNumber}`;

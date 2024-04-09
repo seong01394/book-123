@@ -4,13 +4,14 @@ import { GetSignInUserResponseDto } from 'apis/response/user';
 import {
   AUTH_PATH,
   BOARD_DETAILPATH,
+  BOARD_END_PATH,
   BOARD_GPT_PATH,
   BOARD_PATH,
   BOARD_UPDATE_PATH,
   BOARD_WRITE_PATH,
   MAIN_PATH,
   SEARCH_PATH,
-  USER_PATH,
+  USER_PATH
 } from 'constant';
 import Container from 'layouts/Container';
 import { useEffect } from 'react';
@@ -20,6 +21,7 @@ import { useLoginUserStore } from 'stores';
 import { User } from 'types/interface';
 import Authentication from 'views/Authentication';
 import Detail from 'views/Board/Detail';
+import End from 'views/Board/End';
 import Gpt from 'views/Board/Gpt';
 import Update from 'views/Board/Update';
 import Write from 'views/Board/Write';
@@ -27,6 +29,7 @@ import Main from 'views/Main';
 import Search from 'views/Search';
 import UserP from 'views/User';
 import './App.css';
+
 
 //                component(app)                    //
 function App() {
@@ -69,10 +72,12 @@ function App() {
       <Route element={<Container />}>
         <Route path={MAIN_PATH()} element={<Main />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
-        <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />
+        <Route path={SEARCH_PATH(':searchWord')} element={<Search />}/>
+      
         <Route path={USER_PATH(':userEmail')} element={<UserP />} />
         <Route path={BOARD_PATH()}>
           <Route path={BOARD_DETAILPATH(':boardNumber')} element={<Detail />} />
+          <Route path={BOARD_END_PATH()} element={<End />} />
           <Route path={BOARD_GPT_PATH()} element={<Gpt />} />
           <Route path={BOARD_WRITE_PATH()} element={<Write />} />
           <Route
