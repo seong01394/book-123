@@ -5,7 +5,7 @@ export default function Gpt() {
   const [chatMessages, setChatMessages] = useState<string[]>([]);
   const [userInput, setUserInput] = useState<string>('');
 
-  const apiKey: string = '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';
+  const apiKey: string = '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';
   const apiEndpoint: string = 'https://api.openai.com/v1/chat/completions';
 
   const handleClick = async () => {
