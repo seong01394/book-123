@@ -29,7 +29,7 @@ const onMoreButtonClickHandler = () => {
           <div className='board-detail-write-info-box'>
             <div className='board-detail-writer-profile-image' style={{backgroundImage: `url(${defaultProfileImage})`}}></div>
             <div className='board-detail-write-nickname'>{'nick'}</div>
-            <div className='board-deatil-divider'>{'\|'}</div>
+            <div className='board-detail-divider'>{'\|'}</div>
             <div className='board-detail-write-date'>{'2024.04.18'}</div>
           </div>
           <div className='icon-button' onClick={onMoreButtonClickHandler}>
@@ -71,20 +71,20 @@ const BoardDetailBottom = () => {
     <div id='board-detail-bottom'>
       <div className='board-detail-bottom-button-box'>
         <div className='board-detail-bottom-button-group'>
-          <div className='icon button'>
+          <div className='icon-button'>
             <div className='icon favorite-fill-icon'></div>
           </div>
           <div className='board-detail-bottom-button-text'>{`좋아요 ${12}`}</div>
-          <div className='icon button'>
+          <div className='icon-button'>
             <div className='icon up-light-icon'></div>
           </div>
         </div>
         <div className='board-detail-bottom-button-group'>
-          <div className='icon button'>
+          <div className='icon-button'>
             <div className='icon comment-icon'></div>
           </div>
           <div className='board-detail-bottom-button-text'>{`댓글 ${12}`}</div>
-          <div className='icon button'>
+          <div className='icon-button'>
             <div className='icon up-light-icon'></div>
           </div>
         </div>
@@ -108,7 +108,7 @@ const BoardDetailBottom = () => {
         <div className='board-detail-bottom-comment-pagination-box'>
           <Pagination />
         </div>
-        <div className='board-detail-bottom-comment-input-container'>
+        <div className='board-detail-bottom-comment-input-box'>
           <div className='board-detail-bottom-comment-input-container'>
               <textarea className='board-detail-bottom-comment-textarea' placeholder='댓글을 작성해주세요.' />
               <div className='board-detail-bottom-comment-button-box'>
