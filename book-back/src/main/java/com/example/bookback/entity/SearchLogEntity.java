@@ -20,4 +20,9 @@ public class SearchLogEntity {
     private String searchWord;
     private String relationWord;
     private boolean relation;
+
+    public SearchLogEntity(String searchWord) {
+        this.searchWord = searchWord;
+        
+    }
 }

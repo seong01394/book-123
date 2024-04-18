@@ -7,10 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.example.bookback.entity.EndSearchEntity;
 
-@Repository
-public interface EndSearchRepository extends JpaRepository<EndSearchEntity, Integer>{
 
-    List<EndSearchEntity> findByNameContaining(String name);
+@Repository
+public interface EndSearchRepository extends JpaRepository<EndSearchEntity, String>{
+
+    List<EndSearchEntity> findByNameContains(String name);
 
     
 } 
