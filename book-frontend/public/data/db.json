@@ -1,166 +1,5861 @@
 {
   "data": [
     {
-      "nickname": "차차",
-      "oname": "hyerincha",
-      "building_count": 15
-    },
-    {
-      "nickname": "공인즙개사",
-      "oname": "jeup",
-      "building_count": 9
-    },
-    {
-      "nickname": "AI",
-      "oname": "AI",
-      "building_count": 8
-    },
-    {
-      "nickname": "소잃고뇌약간고침",
-      "oname": "외양간주인",
-      "building_count": 7
-    },
-    {
-      "nickname": "성희",
-      "oname": "성희",
-      "building_count": 6
-    },
-    {
-      "nickname": "목하",
-      "oname": "목하",
-      "building_count": 5
-    },
-    {
-      "nickname": "차차 목장",
-      "oname": "목장",
-      "building_count": 5
-    },
-    {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 4
-    },
-    {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 3
-    },
-    {
-      "nickname": "열번째",
-      "oname": "10",
-      "building_count": 2
-    },
-    {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 1
-    },
-    {
-      "nickname": "이름",
-      "oname": "이름",
+      "nickname": "김가네김밥 봉담2지구점",
+      "oname": "김가네김밥 봉담2지구점",
       "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 10
+      "nickname": "하남돼지집 화성봉담점",
+      "oname": "하남돼지집 화성봉담점",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 11
+      "nickname": "딜리버리하우스",
+      "oname": "딜리버리하우스",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 12
+      "nickname": "삼산회관 화성봉담2지구점",
+      "oname": "삼산회관 화성봉담2지구점",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 13
+      "nickname": "보드람치킨봉담2지구",
+      "oname": "보드람치킨봉담2지구",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 14
+      "nickname": "찐하오마라탕",
+      "oname": "찐하오마라탕",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 15
+      "nickname": "햇살머믄 꼬마김밥 봉담점",
+      "oname": "햇살머믄 꼬마김밥 봉담점",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 16
+      "nickname": "한마음 정육식당 봉담점",
+      "oname": "한마음 정육식당 봉담점",
+      "building_count": 0
     },
     {
-      "nickname": "이름",
-      "oname": "이름",
-      "building_count": 1
+      "nickname": "황금푸드",
+      "oname": "황금푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "편편집(화성봉담점)",
+      "oname": "편편집(화성봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "신의주찹쌀순대 수원대점",
+      "oname": "신의주찹쌀순대 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "또또똣",
+      "oname": "또또똣",
+      "building_count": 0
+    },
+    {
+      "nickname": "달콤디저트방앗간",
+      "oname": "달콤디저트방앗간",
+      "building_count": 0
+    },
+    {
+      "nickname": "유로코피자",
+      "oname": "유로코피자",
+      "building_count": 0
+    },
+    {
+      "nickname": "돈필살",
+      "oname": "돈필살",
+      "building_count": 0
+    },
+    {
+      "nickname": "영 비어하우스",
+      "oname": "영 비어하우스",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담푸드",
+      "oname": "봉담푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "BBQ치킨 봉담중흥점",
+      "oname": "BBQ치킨 봉담중흥점",
+      "building_count": 0
+    },
+    {
+      "nickname": "대발이네",
+      "oname": "대발이네",
+      "building_count": 0
+    },
+    {
+      "nickname": "박사장네 연탄구이",
+      "oname": "박사장네 연탄구이",
+      "building_count": 0
+    },
+    {
+      "nickname": "1키로탕수육 봉담점",
+      "oname": "1키로탕수육 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "간식카페 봉황",
+      "oname": "간식카페 봉황",
+      "building_count": 0
+    },
+    {
+      "nickname": "시원통닭강정",
+      "oname": "시원통닭강정",
+      "building_count": 0
+    },
+    {
+      "nickname": "서호정 장어랑메기랑",
+      "oname": "서호정 장어랑메기랑",
+      "building_count": 0
+    },
+    {
+      "nickname": "CUIE(쿠이)",
+      "oname": "CUIE(쿠이)",
+      "building_count": 0
+    },
+    {
+      "nickname": "청미(주)",
+      "oname": "청미(주)",
+      "building_count": 0
+    },
+    {
+      "nickname": "광부맥주",
+      "oname": "광부맥주",
+      "building_count": 0
+    },
+    {
+      "nickname": "옙보틀",
+      "oname": "옙보틀",
+      "building_count": 0
+    },
+    {
+      "nickname": "얼맥당",
+      "oname": "얼맥당",
+      "building_count": 0
+    },
+    {
+      "nickname": "광수육회 봉담점",
+      "oname": "광수육회 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "역전할머니맥주 화성봉담2지구",
+      "oname": "역전할머니맥주 화성봉담2지구",
+      "building_count": 0
+    },
+    {
+      "nickname": "백담김치찜",
+      "oname": "백담김치찜",
+      "building_count": 0
+    },
+    {
+      "nickname": "맘스터치 화성봉담2지구점",
+      "oname": "맘스터치 화성봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "연파스타",
+      "oname": "연파스타",
+      "building_count": 0
+    },
+    {
+      "nickname": "처갓집양념치킨 봉담2점",
+      "oname": "처갓집양념치킨 봉담2점",
+      "building_count": 0
+    },
+    {
+      "nickname": "이나타코야끼 봉담점",
+      "oname": "이나타코야끼 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "신선해",
+      "oname": "신선해",
+      "building_count": 0
+    },
+    {
+      "nickname": "후라이드참잘하는집",
+      "oname": "후라이드참잘하는집",
+      "building_count": 0
+    },
+    {
+      "nickname": "완스데이",
+      "oname": "완스데이",
+      "building_count": 0
+    },
+    {
+      "nickname": "NAERI 743(내리 743)",
+      "oname": "NAERI 743(내리 743)",
+      "building_count": 0
+    },
+    {
+      "nickname": "구이대장쪽갈비",
+      "oname": "구이대장쪽갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "딜리버리킹",
+      "oname": "딜리버리킹",
+      "building_count": 0
+    },
+    {
+      "nickname": "수미바지락손칼국수",
+      "oname": "수미바지락손칼국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "자담치킨화성봉담점",
+      "oname": "자담치킨화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "요리소년",
+      "oname": "요리소년",
+      "building_count": 0
+    },
+    {
+      "nickname": "아쿠아리스모",
+      "oname": "아쿠아리스모",
+      "building_count": 0
+    },
+    {
+      "nickname": "영돈",
+      "oname": "영돈",
+      "building_count": 0
+    },
+    {
+      "nickname": "치킨플러스화성봉담점",
+      "oname": "치킨플러스화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "완생포차",
+      "oname": "완생포차",
+      "building_count": 0
+    },
+    {
+      "nickname": "소나무집",
+      "oname": "소나무집",
+      "building_count": 0
+    },
+    {
+      "nickname": "하나웰빙한식뷔페",
+      "oname": "하나웰빙한식뷔페",
+      "building_count": 0
+    },
+    {
+      "nickname": "강식당",
+      "oname": "강식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "79대포수원대점",
+      "oname": "79대포수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "본도시락",
+      "oname": "본도시락",
+      "building_count": 0
+    },
+    {
+      "nickname": "올라쿠치나 in 봉담",
+      "oname": "올라쿠치나 in 봉담",
+      "building_count": 0
+    },
+    {
+      "nickname": "룸파",
+      "oname": "룸파",
+      "building_count": 0
+    },
+    {
+      "nickname": "인사동곱돌쌍화차",
+      "oname": "인사동곱돌쌍화차",
+      "building_count": 0
+    },
+    {
+      "nickname": "죽의신 봉담점",
+      "oname": "죽의신 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "김영화스시 봉담점",
+      "oname": "김영화스시 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "씨스타(SEA STAR)참치",
+      "oname": "씨스타(SEA STAR)참치",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담먹거리맛집",
+      "oname": "봉담먹거리맛집",
+      "building_count": 0
+    },
+    {
+      "nickname": "이층술집",
+      "oname": "이층술집",
+      "building_count": 0
+    },
+    {
+      "nickname": "와플칸봉담점",
+      "oname": "와플칸봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "챠이챠이",
+      "oname": "챠이챠이",
+      "building_count": 0
+    },
+    {
+      "nickname": "심석진의황소야",
+      "oname": "심석진의황소야",
+      "building_count": 0
+    },
+    {
+      "nickname": "포메인화성봉담점",
+      "oname": "포메인화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "덕산수라간",
+      "oname": "덕산수라간",
+      "building_count": 0
+    },
+    {
+      "nickname": "행복한밥상",
+      "oname": "행복한밥상",
+      "building_count": 0
+    },
+    {
+      "nickname": "중앙식당",
+      "oname": "중앙식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "여시밥상",
+      "oname": "여시밥상",
+      "building_count": 0
+    },
+    {
+      "nickname": "노랑통닭",
+      "oname": "노랑통닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "청춘냉면1996",
+      "oname": "청춘냉면1996",
+      "building_count": 0
+    },
+    {
+      "nickname": "갈비명인",
+      "oname": "갈비명인",
+      "building_count": 0
+    },
+    {
+      "nickname": "곤지암한우소머리국밥",
+      "oname": "곤지암한우소머리국밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "찌개덕후",
+      "oname": "찌개덕후",
+      "building_count": 0
+    },
+    {
+      "nickname": "대파곱창",
+      "oname": "대파곱창",
+      "building_count": 0
+    },
+    {
+      "nickname": "새말촌한식부페",
+      "oname": "새말촌한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "맘스터치 수원대점",
+      "oname": "맘스터치 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "은혜한식뷔페",
+      "oname": "은혜한식뷔페",
+      "building_count": 0
+    },
+    {
+      "nickname": "밥한끼",
+      "oname": "밥한끼",
+      "building_count": 0
+    },
+    {
+      "nickname": "기쁨양꼬치",
+      "oname": "기쁨양꼬치",
+      "building_count": 0
+    },
+    {
+      "nickname": "크로앙쥬",
+      "oname": "크로앙쥬",
+      "building_count": 0
+    },
+    {
+      "nickname": "아마스빈 봉담동화마을점",
+      "oname": "아마스빈 봉담동화마을점",
+      "building_count": 0
+    },
+    {
+      "nickname": "피자헛봉담점",
+      "oname": "피자헛봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉's족발",
+      "oname": "봉's족발",
+      "building_count": 0
+    },
+    {
+      "nickname": "하얀집",
+      "oname": "하얀집",
+      "building_count": 0
+    },
+    {
+      "nickname": "소랑버섯",
+      "oname": "소랑버섯",
+      "building_count": 0
+    },
+    {
+      "nickname": "항아리보쌈",
+      "oname": "항아리보쌈",
+      "building_count": 0
+    },
+    {
+      "nickname": "밥집",
+      "oname": "밥집",
+      "building_count": 0
+    },
+    {
+      "nickname": "MR짱닭치킨",
+      "oname": "MR짱닭치킨",
+      "building_count": 0
+    },
+    {
+      "nickname": "육수당 화성봉담점",
+      "oname": "육수당 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "고마아구찜,뽈찜",
+      "oname": "고마아구찜,뽈찜",
+      "building_count": 0
+    },
+    {
+      "nickname": "커피빌",
+      "oname": "커피빌",
+      "building_count": 0
+    },
+    {
+      "nickname": "하오츠",
+      "oname": "하오츠",
+      "building_count": 0
+    },
+    {
+      "nickname": "샬레향 수제 돈가스 &",
+      "oname": "샬레향 수제 돈가스 &",
+      "building_count": 0
+    },
+    {
+      "nickname": "부킹",
+      "oname": "부킹",
+      "building_count": 0
+    },
+    {
+      "nickname": "구공탄막창",
+      "oname": "구공탄막창",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍초닭발",
+      "oname": "홍초닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "선채향",
+      "oname": "선채향",
+      "building_count": 0
+    },
+    {
+      "nickname": "보영만두 봉담점",
+      "oname": "보영만두 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "바른흑염소가든",
+      "oname": "바른흑염소가든",
+      "building_count": 0
+    },
+    {
+      "nickname": "북촌손만두(화성봉담점)",
+      "oname": "북촌손만두(화성봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "황제갈비",
+      "oname": "황제갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "황궁짬뽕전문점",
+      "oname": "황궁짬뽕전문점",
+      "building_count": 0
+    },
+    {
+      "nickname": "여너여너",
+      "oname": "여너여너",
+      "building_count": 0
+    },
+    {
+      "nickname": "냠냠족발",
+      "oname": "냠냠족발",
+      "building_count": 0
+    },
+    {
+      "nickname": "두끼화성봉담점",
+      "oname": "두끼화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "푸라닭 화성봉담1호점",
+      "oname": "푸라닭 화성봉담1호점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담황소곱창",
+      "oname": "봉담황소곱창",
+      "building_count": 0
+    },
+    {
+      "nickname": "큰맘할매순대국",
+      "oname": "큰맘할매순대국",
+      "building_count": 0
+    },
+    {
+      "nickname": "와우정",
+      "oname": "와우정",
+      "building_count": 0
+    },
+    {
+      "nickname": "제줏간화성봉담점",
+      "oname": "제줏간화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "태능갈비촌",
+      "oname": "태능갈비촌",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담장례문화원",
+      "oname": "봉담장례문화원",
+      "building_count": 0
+    },
+    {
+      "nickname": "정한식당",
+      "oname": "정한식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담축산식당",
+      "oname": "봉담축산식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "병막골화성오리",
+      "oname": "병막골화성오리",
+      "building_count": 0
+    },
+    {
+      "nickname": "융건릉 비빔국수",
+      "oname": "융건릉 비빔국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "왕가의쌈밥",
+      "oname": "왕가의쌈밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "소담비빔국수",
+      "oname": "소담비빔국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "남매통닭",
+      "oname": "남매통닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "한우골",
+      "oname": "한우골",
+      "building_count": 0
+    },
+    {
+      "nickname": "부페식한울식당",
+      "oname": "부페식한울식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "드림",
+      "oname": "드림",
+      "building_count": 0
+    },
+    {
+      "nickname": "동산참숯갈비 봉담점",
+      "oname": "동산참숯갈비 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "비비큐 화성봉담점",
+      "oname": "비비큐 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "치즈를사랑한찜닭",
+      "oname": "치즈를사랑한찜닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "교촌치킨봉담1호점",
+      "oname": "교촌치킨봉담1호점",
+      "building_count": 0
+    },
+    {
+      "nickname": "몬스터포 화성봉담점",
+      "oname": "몬스터포 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "네네치킨",
+      "oname": "네네치킨",
+      "building_count": 0
+    },
+    {
+      "nickname": "찌개마을",
+      "oname": "찌개마을",
+      "building_count": 0
+    },
+    {
+      "nickname": "다주리",
+      "oname": "다주리",
+      "building_count": 0
+    },
+    {
+      "nickname": "이모네식당",
+      "oname": "이모네식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "고반식당",
+      "oname": "고반식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "수촌마을 봉담점",
+      "oname": "수촌마을 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "디디치킨",
+      "oname": "디디치킨",
+      "building_count": 0
+    },
+    {
+      "nickname": "뚱스닭갈비",
+      "oname": "뚱스닭갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "수원대점 비비큐",
+      "oname": "수원대점 비비큐",
+      "building_count": 0
+    },
+    {
+      "nickname": "666버거 봉담점",
+      "oname": "666버거 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "티바두마리치킨 봉담와우점",
+      "oname": "티바두마리치킨 봉담와우점",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍빈루",
+      "oname": "홍빈루",
+      "building_count": 0
+    },
+    {
+      "nickname": "미스터스시 봉담점",
+      "oname": "미스터스시 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "황골",
+      "oname": "황골",
+      "building_count": 0
+    },
+    {
+      "nickname": "하오츠양꼬치",
+      "oname": "하오츠양꼬치",
+      "building_count": 0
+    },
+    {
+      "nickname": "허니닭강정봉담점",
+      "oname": "허니닭강정봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "혼밥대왕",
+      "oname": "혼밥대왕",
+      "building_count": 0
+    },
+    {
+      "nickname": "낭만양꼬치",
+      "oname": "낭만양꼬치",
+      "building_count": 0
+    },
+    {
+      "nickname": "행복김밥",
+      "oname": "행복김밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "은바",
+      "oname": "은바",
+      "building_count": 0
+    },
+    {
+      "nickname": "서울감자탕",
+      "oname": "서울감자탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "찌개1번지",
+      "oname": "찌개1번지",
+      "building_count": 0
+    },
+    {
+      "nickname": "인더비엣봉담",
+      "oname": "인더비엣봉담",
+      "building_count": 0
+    },
+    {
+      "nickname": "조은식당",
+      "oname": "조은식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "우리한식부페",
+      "oname": "우리한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "CGV화성봉담",
+      "oname": "CGV화성봉담",
+      "building_count": 0
+    },
+    {
+      "nickname": "호천당 화성봉담점",
+      "oname": "호천당 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "배부장찌개 봉담점",
+      "oname": "배부장찌개 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "혼마초밥",
+      "oname": "혼마초밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "수제분식",
+      "oname": "수제분식",
+      "building_count": 0
+    },
+    {
+      "nickname": "크라운호프 봉담와우리점",
+      "oname": "크라운호프 봉담와우리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "스시온조",
+      "oname": "스시온조",
+      "building_count": 0
+    },
+    {
+      "nickname": "보용만두",
+      "oname": "보용만두",
+      "building_count": 0
+    },
+    {
+      "nickname": "역전할머니맥주(화성봉담점)",
+      "oname": "역전할머니맥주(화성봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "친구회",
+      "oname": "친구회",
+      "building_count": 0
+    },
+    {
+      "nickname": "틈새라면화성점",
+      "oname": "틈새라면화성점",
+      "building_count": 0
+    },
+    {
+      "nickname": "미국식경양",
+      "oname": "미국식경양",
+      "building_count": 0
+    },
+    {
+      "nickname": "강원도메밀막국수",
+      "oname": "강원도메밀막국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "라메종 비올레뜨 (Lamaison Violette)",
+      "oname": "라메종 비올레뜨 (Lamaison Violette)",
+      "building_count": 0
+    },
+    {
+      "nickname": "이가맛 혼밥",
+      "oname": "이가맛 혼밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "화룡각",
+      "oname": "화룡각",
+      "building_count": 0
+    },
+    {
+      "nickname": "테트리스찜닭봉담점",
+      "oname": "테트리스찜닭봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "여장군 수원대점",
+      "oname": "여장군 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "명륜진사갈비 화성동화CGV점",
+      "oname": "명륜진사갈비 화성동화CGV점",
+      "building_count": 0
+    },
+    {
+      "nickname": "카페오라",
+      "oname": "카페오라",
+      "building_count": 0
+    },
+    {
+      "nickname": "제주도그릴 화성점",
+      "oname": "제주도그릴 화성점",
+      "building_count": 0
+    },
+    {
+      "nickname": "아랑페즈",
+      "oname": "아랑페즈",
+      "building_count": 0
+    },
+    {
+      "nickname": "웅이네오돌뼈 봉담점",
+      "oname": "웅이네오돌뼈 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "카페 랏떼, 커피",
+      "oname": "카페 랏떼, 커피",
+      "building_count": 0
+    },
+    {
+      "nickname": "사이사",
+      "oname": "사이사",
+      "building_count": 0
+    },
+    {
+      "nickname": "육회한비빔밥&덮밥 화성봉담점",
+      "oname": "육회한비빔밥&덮밥 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "본가푸드",
+      "oname": "본가푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "비어첸 화성봉담CGV점",
+      "oname": "비어첸 화성봉담CGV점",
+      "building_count": 0
+    },
+    {
+      "nickname": "탕화쿵푸마라탕",
+      "oname": "탕화쿵푸마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담식당",
+      "oname": "봉담식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "청년피자봉담점",
+      "oname": "청년피자봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "호세야오리바베큐 화성봉담점",
+      "oname": "호세야오리바베큐 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "김밥사랑",
+      "oname": "김밥사랑",
+      "building_count": 0
+    },
+    {
+      "nickname": "아빠곰탕봉담점",
+      "oname": "아빠곰탕봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "쏘자&피자마루",
+      "oname": "쏘자&피자마루",
+      "building_count": 0
+    },
+    {
+      "nickname": "진쿵푸마라탕 수원대점",
+      "oname": "진쿵푸마라탕 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "강다짐화성와우점",
+      "oname": "강다짐화성와우점",
+      "building_count": 0
+    },
+    {
+      "nickname": "아재불닭발",
+      "oname": "아재불닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "청년화로1988",
+      "oname": "청년화로1988",
+      "building_count": 0
+    },
+    {
+      "nickname": "충무공 스시",
+      "oname": "충무공 스시",
+      "building_count": 0
+    },
+    {
+      "nickname": "못말리는파닭 봉담점&욕쟁이할매닭발",
+      "oname": "못말리는파닭 봉담점&욕쟁이할매닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "대박고깃집",
+      "oname": "대박고깃집",
+      "building_count": 0
+    },
+    {
+      "nickname": "밥심",
+      "oname": "밥심",
+      "building_count": 0
+    },
+    {
+      "nickname": "영푸드",
+      "oname": "영푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "77램",
+      "oname": "77램",
+      "building_count": 0
+    },
+    {
+      "nickname": "일진회수산",
+      "oname": "일진회수산",
+      "building_count": 0
+    },
+    {
+      "nickname": "정원쭈꾸미",
+      "oname": "정원쭈꾸미",
+      "building_count": 0
+    },
+    {
+      "nickname": "소문난 대구 왕뽈찜",
+      "oname": "소문난 대구 왕뽈찜",
+      "building_count": 0
+    },
+    {
+      "nickname": "더 차이니즈",
+      "oname": "더 차이니즈",
+      "building_count": 0
+    },
+    {
+      "nickname": "흑돈골",
+      "oname": "흑돈골",
+      "building_count": 0
+    },
+    {
+      "nickname": "선복정갈비",
+      "oname": "선복정갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "오빠네삼겹살",
+      "oname": "오빠네삼겹살",
+      "building_count": 0
+    },
+    {
+      "nickname": "카페온나",
+      "oname": "카페온나",
+      "building_count": 0
+    },
+    {
+      "nickname": "치킨과바람피자화성봉담점",
+      "oname": "치킨과바람피자화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "장이당제면소",
+      "oname": "장이당제면소",
+      "building_count": 0
+    },
+    {
+      "nickname": "암소해연생(봉담점)",
+      "oname": "암소해연생(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "맛초화닭 봉담와우리점",
+      "oname": "맛초화닭 봉담와우리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담호프",
+      "oname": "봉담호프",
+      "building_count": 0
+    },
+    {
+      "nickname": "아빠곰탕봉담점",
+      "oname": "아빠곰탕봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "쏘자&피자마루",
+      "oname": "쏘자&피자마루",
+      "building_count": 0
+    },
+    {
+      "nickname": "진쿵푸마라탕 수원대점",
+      "oname": "진쿵푸마라탕 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "강다짐화성와우점",
+      "oname": "강다짐화성와우점",
+      "building_count": 0
+    },
+    {
+      "nickname": "아재불닭발",
+      "oname": "아재불닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "청년화로1988",
+      "oname": "청년화로1988",
+      "building_count": 0
+    },
+    {
+      "nickname": "충무공 스시",
+      "oname": "충무공 스시",
+      "building_count": 0
+    },
+    {
+      "nickname": "못말리는파닭 봉담점&욕쟁이할매닭발",
+      "oname": "못말리는파닭 봉담점&욕쟁이할매닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "대박고깃집",
+      "oname": "대박고깃집",
+      "building_count": 0
+    },
+    {
+      "nickname": "밥심",
+      "oname": "밥심",
+      "building_count": 0
+    },
+    {
+      "nickname": "영푸드",
+      "oname": "영푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "77램",
+      "oname": "77램",
+      "building_count": 0
+    },
+    {
+      "nickname": "일진회수산",
+      "oname": "일진회수산",
+      "building_count": 0
+    },
+    {
+      "nickname": "정원쭈꾸미",
+      "oname": "정원쭈꾸미",
+      "building_count": 0
+    },
+    {
+      "nickname": "소문난 대구 왕뽈찜",
+      "oname": "소문난 대구 왕뽈찜",
+      "building_count": 0
+    },
+    {
+      "nickname": "더 차이니즈",
+      "oname": "더 차이니즈",
+      "building_count": 0
+    },
+    {
+      "nickname": "흑돈골",
+      "oname": "흑돈골",
+      "building_count": 0
+    },
+    {
+      "nickname": "선복정갈비",
+      "oname": "선복정갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "오빠네삼겹살",
+      "oname": "오빠네삼겹살",
+      "building_count": 0
+    },
+    {
+      "nickname": "카페온나",
+      "oname": "카페온나",
+      "building_count": 0
+    },
+    {
+      "nickname": "치킨과바람피자화성봉담점",
+      "oname": "치킨과바람피자화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "장이당제면소",
+      "oname": "장이당제면소",
+      "building_count": 0
+    },
+    {
+      "nickname": "암소해연생(봉담점)",
+      "oname": "암소해연생(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "맛초화닭 봉담와우리점",
+      "oname": "맛초화닭 봉담와우리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담호프",
+      "oname": "봉담호프",
+      "building_count": 0
+    },
+    {
+      "nickname": "오,늘초밥",
+      "oname": "오,늘초밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "탕화쿵푸 마라탕 수원대점",
+      "oname": "탕화쿵푸 마라탕 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "잇다",
+      "oname": "잇다",
+      "building_count": 0
+    },
+    {
+      "nickname": "마포화곱창(봉담지점)",
+      "oname": "마포화곱창(봉담지점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "굽네치킨 봉담2지구점",
+      "oname": "굽네치킨 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "더홀릭화성점",
+      "oname": "더홀릭화성점",
+      "building_count": 0
+    },
+    {
+      "nickname": "양프로",
+      "oname": "양프로",
+      "building_count": 0
+    },
+    {
+      "nickname": "금별맥주 화성봉담점",
+      "oname": "금별맥주 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "갓성비",
+      "oname": "갓성비",
+      "building_count": 0
+    },
+    {
+      "nickname": "슬로우캘리 화성봉담점",
+      "oname": "슬로우캘리 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담착한정육식당",
+      "oname": "봉담착한정육식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "장호덕 손만두 상리점",
+      "oname": "장호덕 손만두 상리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "오봉집",
+      "oname": "오봉집",
+      "building_count": 0
+    },
+    {
+      "nickname": "한촌설렁탕 화성봉담점",
+      "oname": "한촌설렁탕 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "마을회관",
+      "oname": "마을회관",
+      "building_count": 0
+    },
+    {
+      "nickname": "착한숯불통바베큐",
+      "oname": "착한숯불통바베큐",
+      "building_count": 0
+    },
+    {
+      "nickname": "전주24시감자탕",
+      "oname": "전주24시감자탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "대박분식",
+      "oname": "대박분식",
+      "building_count": 0
+    },
+    {
+      "nickname": "명불허전 원조골뱅이",
+      "oname": "명불허전 원조골뱅이",
+      "building_count": 0
+    },
+    {
+      "nickname": "따숨식당",
+      "oname": "따숨식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "돈카츠마켙 화성봉담점",
+      "oname": "돈카츠마켙 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "이차돌봉담2지구점",
+      "oname": "이차돌봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "허가네냉면사랑",
+      "oname": "허가네냉면사랑",
+      "building_count": 0
+    },
+    {
+      "nickname": "갈비꽃봉담점",
+      "oname": "갈비꽃봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "본죽비빔밥봉담신도시점",
+      "oname": "본죽비빔밥봉담신도시점",
+      "building_count": 0
+    },
+    {
+      "nickname": "불불이족발",
+      "oname": "불불이족발",
+      "building_count": 0
+    },
+    {
+      "nickname": "신동랩",
+      "oname": "신동랩",
+      "building_count": 0
+    },
+    {
+      "nickname": "청기와감자탕",
+      "oname": "청기와감자탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "별콩다방수원대점",
+      "oname": "별콩다방수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "김충기꽃삼겹",
+      "oname": "김충기꽃삼겹",
+      "building_count": 0
+    },
+    {
+      "nickname": "WITH BLANK(위드블랭크)",
+      "oname": "WITH BLANK(위드블랭크)",
+      "building_count": 0
+    },
+    {
+      "nickname": "타이거 초밥& 이자카야",
+      "oname": "타이거 초밥& 이자카야",
+      "building_count": 0
+    },
+    {
+      "nickname": "최고당돈까스봉담점",
+      "oname": "최고당돈까스봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "비비큐(BBQ)화성봉담2지구점",
+      "oname": "비비큐(BBQ)화성봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "프리미엄 옛날통닭",
+      "oname": "프리미엄 옛날통닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "도로시파스타연정 봉담점",
+      "oname": "도로시파스타연정 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "커피집",
+      "oname": "커피집",
+      "building_count": 0
+    },
+    {
+      "nickname": "고봉민김밥인 화성봉담2지구점",
+      "oname": "고봉민김밥인 화성봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "할머니가래떡볶이 봉담와우리점",
+      "oname": "할머니가래떡볶이 봉담와우리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "카츠히제",
+      "oname": "카츠히제",
+      "building_count": 0
+    },
+    {
+      "nickname": "실비식당",
+      "oname": "실비식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "정주영 한식부페",
+      "oname": "정주영 한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "먹방양꼬치칭따우",
+      "oname": "먹방양꼬치칭따우",
+      "building_count": 0
+    },
+    {
+      "nickname": "킬맨참치",
+      "oname": "킬맨참치",
+      "building_count": 0
+    },
+    {
+      "nickname": "핫쿵푸마라탕",
+      "oname": "핫쿵푸마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "유진참치",
+      "oname": "유진참치",
+      "building_count": 0
+    },
+    {
+      "nickname": "쉐프엠 봉담점",
+      "oname": "쉐프엠 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "피자먹다 수원대점",
+      "oname": "피자먹다 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "버건디 봉담",
+      "oname": "버건디 봉담",
+      "building_count": 0
+    },
+    {
+      "nickname": "함지박",
+      "oname": "함지박",
+      "building_count": 0
+    },
+    {
+      "nickname": "푸드몬드 봉담점",
+      "oname": "푸드몬드 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "프랭크버거 봉담2지구점",
+      "oname": "프랭크버거 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "브라보마라탕",
+      "oname": "브라보마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "한판삼겹",
+      "oname": "한판삼겹",
+      "building_count": 0
+    },
+    {
+      "nickname": "고기극찬 화성봉담점",
+      "oname": "고기극찬 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "만만코코로(화성점)",
+      "oname": "만만코코로(화성점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "연돈볼카츠 화성봉담",
+      "oname": "연돈볼카츠 화성봉담",
+      "building_count": 0
+    },
+    {
+      "nickname": "삼첩분식 봉담점",
+      "oname": "삼첩분식 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "장쟁이국수이야기",
+      "oname": "장쟁이국수이야기",
+      "building_count": 0
+    },
+    {
+      "nickname": "카츠백 화성봉담점",
+      "oname": "카츠백 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "결승전",
+      "oname": "결승전",
+      "building_count": 0
+    },
+    {
+      "nickname": "찬쭈마라탕",
+      "oname": "찬쭈마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "김치찌개 미화식당",
+      "oname": "김치찌개 미화식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "김밥천국",
+      "oname": "김밥천국",
+      "building_count": 0
+    },
+    {
+      "nickname": "노랑통닭 수원대점",
+      "oname": "노랑통닭 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "포히엔",
+      "oname": "포히엔",
+      "building_count": 0
+    },
+    {
+      "nickname": "또봉이통닭 봉담2지구점",
+      "oname": "또봉이통닭 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "수기리양평해장국",
+      "oname": "수기리양평해장국",
+      "building_count": 0
+    },
+    {
+      "nickname": "유가네닭갈비 봉담CGV점",
+      "oname": "유가네닭갈비 봉담CGV점",
+      "building_count": 0
+    },
+    {
+      "nickname": "쭈대가 제육대가 봉담점",
+      "oname": "쭈대가 제육대가 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "신화로닭발",
+      "oname": "신화로닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉수육(화성봉담점)",
+      "oname": "봉수육(화성봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "초당골",
+      "oname": "초당골",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담닭갈비",
+      "oname": "봉담닭갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "마왕족발 화성봉담점",
+      "oname": "마왕족발 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "등뼈가",
+      "oname": "등뼈가",
+      "building_count": 0
+    },
+    {
+      "nickname": "해별이김밥",
+      "oname": "해별이김밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "불판생돼지전문점",
+      "oname": "불판생돼지전문점",
+      "building_count": 0
+    },
+    {
+      "nickname": "대박포차",
+      "oname": "대박포차",
+      "building_count": 0
+    },
+    {
+      "nickname": "오스테리아 노이",
+      "oname": "오스테리아 노이",
+      "building_count": 0
+    },
+    {
+      "nickname": "선희네집",
+      "oname": "선희네집",
+      "building_count": 0
+    },
+    {
+      "nickname": "문",
+      "oname": "문",
+      "building_count": 0
+    },
+    {
+      "nickname": "우도갈비&막국수",
+      "oname": "우도갈비&막국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "냠냠국물닭발",
+      "oname": "냠냠국물닭발",
+      "building_count": 0
+    },
+    {
+      "nickname": "덮밥90도씨(봉담점)",
+      "oname": "덮밥90도씨(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "본가왕뼈감자탕봉담점",
+      "oname": "본가왕뼈감자탕봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "그놈포차 화성봉담점",
+      "oname": "그놈포차 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "남대문닭곰탕",
+      "oname": "남대문닭곰탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "참숯꼼장어",
+      "oname": "참숯꼼장어",
+      "building_count": 0
+    },
+    {
+      "nickname": "달구 한우육회 본점",
+      "oname": "달구 한우육회 본점",
+      "building_count": 0
+    },
+    {
+      "nickname": "응급실국물떡볶이와우리점",
+      "oname": "응급실국물떡볶이와우리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "꼴통포차",
+      "oname": "꼴통포차",
+      "building_count": 0
+    },
+    {
+      "nickname": "다올생고기",
+      "oname": "다올생고기",
+      "building_count": 0
+    },
+    {
+      "nickname": "티바두마리치킨",
+      "oname": "티바두마리치킨",
+      "building_count": 0
+    },
+    {
+      "nickname": "화영식당",
+      "oname": "화영식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "미스터피자 화성봉담점",
+      "oname": "미스터피자 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "새벽나주곰탕",
+      "oname": "새벽나주곰탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "60계경기화성봉담점",
+      "oname": "60계경기화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "연남물갈비봉담점",
+      "oname": "연남물갈비봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "소스타",
+      "oname": "소스타",
+      "building_count": 0
+    },
+    {
+      "nickname": "Hey Bro(헤이브로)",
+      "oname": "Hey Bro(헤이브로)",
+      "building_count": 0
+    },
+    {
+      "nickname": "장수남원추어탕",
+      "oname": "장수남원추어탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "백반나라한식부페",
+      "oname": "백반나라한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "안나의정원",
+      "oname": "안나의정원",
+      "building_count": 0
+    },
+    {
+      "nickname": "상기리식당",
+      "oname": "상기리식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "풍천장어",
+      "oname": "풍천장어",
+      "building_count": 0
+    },
+    {
+      "nickname": "주식회사일인자감자탕",
+      "oname": "주식회사일인자감자탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "참능이백숙",
+      "oname": "참능이백숙",
+      "building_count": 0
+    },
+    {
+      "nickname": "한가족 매운탕",
+      "oname": "한가족 매운탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "후문식당",
+      "oname": "후문식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "구가네통영굴밥",
+      "oname": "구가네통영굴밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담칼국수",
+      "oname": "봉담칼국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "신당하루",
+      "oname": "신당하루",
+      "building_count": 0
+    },
+    {
+      "nickname": "천궁",
+      "oname": "천궁",
+      "building_count": 0
+    },
+    {
+      "nickname": "예빈",
+      "oname": "예빈",
+      "building_count": 0
+    },
+    {
+      "nickname": "오디오씨(ODOC)",
+      "oname": "오디오씨(ODOC)",
+      "building_count": 0
+    },
+    {
+      "nickname": "흰돌산",
+      "oname": "흰돌산",
+      "building_count": 0
+    },
+    {
+      "nickname": "준푸드",
+      "oname": "준푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "맹호수제돈까스",
+      "oname": "맹호수제돈까스",
+      "building_count": 0
+    },
+    {
+      "nickname": "개성 소한마리 곰탕",
+      "oname": "개성 소한마리 곰탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "보배반점봉담점",
+      "oname": "보배반점봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "다담회",
+      "oname": "다담회",
+      "building_count": 0
+    },
+    {
+      "nickname": "가장맛있는족발",
+      "oname": "가장맛있는족발",
+      "building_count": 0
+    },
+    {
+      "nickname": "삼목교",
+      "oname": "삼목교",
+      "building_count": 0
+    },
+    {
+      "nickname": "굽네치킨봉담1호점",
+      "oname": "굽네치킨봉담1호점",
+      "building_count": 0
+    },
+    {
+      "nickname": "해성식당",
+      "oname": "해성식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "평상집",
+      "oname": "평상집",
+      "building_count": 0
+    },
+    {
+      "nickname": "밥상&술상",
+      "oname": "밥상&술상",
+      "building_count": 0
+    },
+    {
+      "nickname": "누구나홀딱반한닭봉담2지구점",
+      "oname": "누구나홀딱반한닭봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "양푼이 막창 봉담점",
+      "oname": "양푼이 막창 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "오방밥집",
+      "oname": "오방밥집",
+      "building_count": 0
+    },
+    {
+      "nickname": "준우네 마라탕",
+      "oname": "준우네 마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "유짱식당",
+      "oname": "유짱식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "맘스쿡",
+      "oname": "맘스쿡",
+      "building_count": 0
+    },
+    {
+      "nickname": "제비파스타앤리조또(화성봉담점)",
+      "oname": "제비파스타앤리조또(화성봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "열정국밥",
+      "oname": "열정국밥",
+      "building_count": 0
+    },
+    {
+      "nickname": "쉼,어묵그리고한잔술 봉담점",
+      "oname": "쉼,어묵그리고한잔술 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "한상",
+      "oname": "한상",
+      "building_count": 0
+    },
+    {
+      "nickname": "빽보이피자 화성봉담점",
+      "oname": "빽보이피자 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "생각나는아구찜",
+      "oname": "생각나는아구찜",
+      "building_count": 0
+    },
+    {
+      "nickname": "글로어 수원대점",
+      "oname": "글로어 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "한솥도시락 화성봉담2지구점",
+      "oname": "한솥도시락 화성봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "닌하오마라탕",
+      "oname": "닌하오마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "고향집",
+      "oname": "고향집",
+      "building_count": 0
+    },
+    {
+      "nickname": "여우전",
+      "oname": "여우전",
+      "building_count": 0
+    },
+    {
+      "nickname": "삼호푸드 주식회사",
+      "oname": "삼호푸드 주식회사",
+      "building_count": 0
+    },
+    {
+      "nickname": "얌샘김밥 봉담2지구점",
+      "oname": "얌샘김밥 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "피자엠소마",
+      "oname": "피자엠소마",
+      "building_count": 0
+    },
+    {
+      "nickname": "화성락 실내바다낚시터",
+      "oname": "화성락 실내바다낚시터",
+      "building_count": 0
+    },
+    {
+      "nickname": "베스트 생갈비찜&찜닭",
+      "oname": "베스트 생갈비찜&찜닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "33떡볶이 봉담2지구점",
+      "oname": "33떡볶이 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "흥수산봉담점",
+      "oname": "흥수산봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "교동짬뽕봉담점",
+      "oname": "교동짬뽕봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "푸라닭화성봉담2지구점",
+      "oname": "푸라닭화성봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "진향원마라탕",
+      "oname": "진향원마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "피자나라치킨공주화성봉담점",
+      "oname": "피자나라치킨공주화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "무모한초밥화성봉담점",
+      "oname": "무모한초밥화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "달콤공장",
+      "oname": "달콤공장",
+      "building_count": 0
+    },
+    {
+      "nickname": "크레이지타코박스",
+      "oname": "크레이지타코박스",
+      "building_count": 0
+    },
+    {
+      "nickname": "한가네순대국",
+      "oname": "한가네순대국",
+      "building_count": 0
+    },
+    {
+      "nickname": "춘장",
+      "oname": "춘장",
+      "building_count": 0
+    },
+    {
+      "nickname": "인생닭강정수원대점",
+      "oname": "인생닭강정수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "당신은지금치킨이땡긴다 봉담점",
+      "oname": "당신은지금치킨이땡긴다 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "무쇠랑닭갈비 수원대점",
+      "oname": "무쇠랑닭갈비 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "친구랑 떡볶이",
+      "oname": "친구랑 떡볶이",
+      "building_count": 0
+    },
+    {
+      "nickname": "죽이요와우점",
+      "oname": "죽이요와우점",
+      "building_count": 0
+    },
+    {
+      "nickname": "오군곱창(봉담점)",
+      "oname": "오군곱창(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "엄지척마라샹궈,마라탕",
+      "oname": "엄지척마라샹궈,마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "미소야(봉담와우점)",
+      "oname": "미소야(봉담와우점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "태봉식당",
+      "oname": "태봉식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "감성낙곱새 화성봉담점",
+      "oname": "감성낙곱새 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "피자플래넷 봉담점",
+      "oname": "피자플래넷 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "88포장마차 수원대점",
+      "oname": "88포장마차 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "멕시카나 화성봉담점",
+      "oname": "멕시카나 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "마라양갈비",
+      "oname": "마라양갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "최상무",
+      "oname": "최상무",
+      "building_count": 0
+    },
+    {
+      "nickname": "뼈대장감자탕",
+      "oname": "뼈대장감자탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "육회꽃 필무렵 봉담점",
+      "oname": "육회꽃 필무렵 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "쇼쿠지봉담점",
+      "oname": "쇼쿠지봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "위자네",
+      "oname": "위자네",
+      "building_count": 0
+    },
+    {
+      "nickname": "CAFE GGOM(카페꼼)",
+      "oname": "CAFE GGOM(카페꼼)",
+      "building_count": 0
+    },
+    {
+      "nickname": "라라카츠 화성봉담점",
+      "oname": "라라카츠 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉대곱창",
+      "oname": "봉대곱창",
+      "building_count": 0
+    },
+    {
+      "nickname": "스뎅식당봉담점",
+      "oname": "스뎅식당봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "기영이숯불두마리치킨화성봉담점",
+      "oname": "기영이숯불두마리치킨화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "후니네",
+      "oname": "후니네",
+      "building_count": 0
+    },
+    {
+      "nickname": "한입과일 봉담점",
+      "oname": "한입과일 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "짝태&노가리",
+      "oname": "짝태&노가리",
+      "building_count": 0
+    },
+    {
+      "nickname": "피자나라 치킨공주 봉담2지구점",
+      "oname": "피자나라 치킨공주 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "팔덕식당 화성봉담점",
+      "oname": "팔덕식당 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "필라프에빠지다 봉담점",
+      "oname": "필라프에빠지다 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "초동집",
+      "oname": "초동집",
+      "building_count": 0
+    },
+    {
+      "nickname": "다드림2호점한식뷔페",
+      "oname": "다드림2호점한식뷔페",
+      "building_count": 0
+    },
+    {
+      "nickname": "큰집멸치국수",
+      "oname": "큰집멸치국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "장등길 토종순대국",
+      "oname": "장등길 토종순대국",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉정옥",
+      "oname": "봉정옥",
+      "building_count": 0
+    },
+    {
+      "nickname": "전기통닭집",
+      "oname": "전기통닭집",
+      "building_count": 0
+    },
+    {
+      "nickname": "우리할매떡볶이 화성봉담점",
+      "oname": "우리할매떡볶이 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "김호권의 청년어부 화성봉담점",
+      "oname": "김호권의 청년어부 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "인쌩맥주화성봉담점",
+      "oname": "인쌩맥주화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "미소 정육식당",
+      "oname": "미소 정육식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "믿음찬",
+      "oname": "믿음찬",
+      "building_count": 0
+    },
+    {
+      "nickname": "pit a pat(핏어팻)",
+      "oname": "pit a pat(핏어팻)",
+      "building_count": 0
+    },
+    {
+      "nickname": "아리송",
+      "oname": "아리송",
+      "building_count": 0
+    },
+    {
+      "nickname": "청년다방 봉담CGV",
+      "oname": "청년다방 봉담CGV",
+      "building_count": 0
+    },
+    {
+      "nickname": "커피랑호떡이랑",
+      "oname": "커피랑호떡이랑",
+      "building_count": 0
+    },
+    {
+      "nickname": "최고당수원대",
+      "oname": "최고당수원대",
+      "building_count": 0
+    },
+    {
+      "nickname": "웨이닝 봉담점",
+      "oname": "웨이닝 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "가야밀면&수제돈까스",
+      "oname": "가야밀면&수제돈까스",
+      "building_count": 0
+    },
+    {
+      "nickname": "백세장어",
+      "oname": "백세장어",
+      "building_count": 0
+    },
+    {
+      "nickname": "먹보푸드",
+      "oname": "먹보푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍게#포차",
+      "oname": "홍게#포차",
+      "building_count": 0
+    },
+    {
+      "nickname": "통큰멸치국수",
+      "oname": "통큰멸치국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "오대짬뽕",
+      "oname": "오대짬뽕",
+      "building_count": 0
+    },
+    {
+      "nickname": "동해막국수",
+      "oname": "동해막국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "생고기전문점 진선미식당",
+      "oname": "생고기전문점 진선미식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "오뎅빠",
+      "oname": "오뎅빠",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍희통닭",
+      "oname": "홍희통닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "베리나이스",
+      "oname": "베리나이스",
+      "building_count": 0
+    },
+    {
+      "nickname": "로충칭마라탕",
+      "oname": "로충칭마라탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "꾸브라꼬숯불두마리치킨",
+      "oname": "꾸브라꼬숯불두마리치킨",
+      "building_count": 0
+    },
+    {
+      "nickname": "카페 베이지",
+      "oname": "카페 베이지",
+      "building_count": 0
+    },
+    {
+      "nickname": "맥시칸치킨",
+      "oname": "맥시칸치킨",
+      "building_count": 0
+    },
+    {
+      "nickname": "곳간스토리",
+      "oname": "곳간스토리",
+      "building_count": 0
+    },
+    {
+      "nickname": "제주부향순죽전문점",
+      "oname": "제주부향순죽전문점",
+      "building_count": 0
+    },
+    {
+      "nickname": "까르페디엠",
+      "oname": "까르페디엠",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍테이블",
+      "oname": "홍테이블",
+      "building_count": 0
+    },
+    {
+      "nickname": "다온한식부페",
+      "oname": "다온한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "농수산물직판장",
+      "oname": "농수산물직판장",
+      "building_count": 0
+    },
+    {
+      "nickname": "지코바봉담점",
+      "oname": "지코바봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍익돈까스",
+      "oname": "홍익돈까스",
+      "building_count": 0
+    },
+    {
+      "nickname": "초원숯불갈비",
+      "oname": "초원숯불갈비",
+      "building_count": 0
+    },
+    {
+      "nickname": "장안순대국 봉담 맛집",
+      "oname": "장안순대국 봉담 맛집",
+      "building_count": 0
+    },
+    {
+      "nickname": "구구족화성봉담",
+      "oname": "구구족화성봉담",
+      "building_count": 0
+    },
+    {
+      "nickname": "수기돌담집",
+      "oname": "수기돌담집",
+      "building_count": 0
+    },
+    {
+      "nickname": "멕시카나수원대점",
+      "oname": "멕시카나수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "민영식당",
+      "oname": "민영식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "등마루",
+      "oname": "등마루",
+      "building_count": 0
+    },
+    {
+      "nickname": "떡의작품 봉담2지구점",
+      "oname": "떡의작품 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "냉삼회관화성봉담CGV점",
+      "oname": "냉삼회관화성봉담CGV점",
+      "building_count": 0
+    },
+    {
+      "nickname": "빡포차",
+      "oname": "빡포차",
+      "building_count": 0
+    },
+    {
+      "nickname": "닭발굽는청년 봉담점",
+      "oname": "닭발굽는청년 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "빌리언박스 화성봉담점",
+      "oname": "빌리언박스 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "시느메이",
+      "oname": "시느메이",
+      "building_count": 0
+    },
+    {
+      "nickname": "돼지새마을본부",
+      "oname": "돼지새마을본부",
+      "building_count": 0
+    },
+    {
+      "nickname": "크라운호프 봉담2지구점",
+      "oname": "크라운호프 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "염정본가옛장터",
+      "oname": "염정본가옛장터",
+      "building_count": 0
+    },
+    {
+      "nickname": "대박식당",
+      "oname": "대박식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "천상계(봉담점)",
+      "oname": "천상계(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "무지개",
+      "oname": "무지개",
+      "building_count": 0
+    },
+    {
+      "nickname": "삼매집",
+      "oname": "삼매집",
+      "building_count": 0
+    },
+    {
+      "nickname": "통큰대포삼겹",
+      "oname": "통큰대포삼겹",
+      "building_count": 0
+    },
+    {
+      "nickname": "모정식당",
+      "oname": "모정식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "맛닭꼬 수원대점",
+      "oname": "맛닭꼬 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "에머이 수원대점",
+      "oname": "에머이 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "프랑킨숯불양념구이치킨봉담점",
+      "oname": "프랑킨숯불양념구이치킨봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "골목집",
+      "oname": "골목집",
+      "building_count": 0
+    },
+    {
+      "nickname": "리틀꼬마김밥상리점",
+      "oname": "리틀꼬마김밥상리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "왕갑부 옛날통닭",
+      "oname": "왕갑부 옛날통닭",
+      "building_count": 0
+    },
+    {
+      "nickname": "제주알찜 봉담점",
+      "oname": "제주알찜 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "블렌딩마망 봉담점",
+      "oname": "블렌딩마망 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "덩어리순대국",
+      "oname": "덩어리순대국",
+      "building_count": 0
+    },
+    {
+      "nickname": "스테이크존 화성봉담점",
+      "oname": "스테이크존 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "순살만공격 봉담점",
+      "oname": "순살만공격 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "프랭크버거 화성봉담점",
+      "oname": "프랭크버거 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "Bei Bei(베이베이)",
+      "oname": "Bei Bei(베이베이)",
+      "building_count": 0
+    },
+    {
+      "nickname": "라홍방마라탕 봉담2지구점",
+      "oname": "라홍방마라탕 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "소담푸드",
+      "oname": "소담푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "비스트로피자 화성봉담점",
+      "oname": "비스트로피자 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "BHC(비에이치씨) 화성봉담중앙점",
+      "oname": "BHC(비에이치씨) 화성봉담중앙점",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍 주꾸미",
+      "oname": "홍 주꾸미",
+      "building_count": 0
+    },
+    {
+      "nickname": "서봉산산장",
+      "oname": "서봉산산장",
+      "building_count": 0
+    },
+    {
+      "nickname": "포케올데이 봉담점",
+      "oname": "포케올데이 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "믹스토랑",
+      "oname": "믹스토랑",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담쭈꾸미",
+      "oname": "봉담쭈꾸미",
+      "building_count": 0
+    },
+    {
+      "nickname": "우가돈가",
+      "oname": "우가돈가",
+      "building_count": 0
+    },
+    {
+      "nickname": "엄마손한식부페",
+      "oname": "엄마손한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "사랑채",
+      "oname": "사랑채",
+      "building_count": 0
+    },
+    {
+      "nickname": "유쓰동",
+      "oname": "유쓰동",
+      "building_count": 0
+    },
+    {
+      "nickname": "LYON (리옹))",
+      "oname": "LYON (리옹))",
+      "building_count": 0
+    },
+    {
+      "nickname": "만두가",
+      "oname": "만두가",
+      "building_count": 0
+    },
+    {
+      "nickname": "화이트스노우",
+      "oname": "화이트스노우",
+      "building_count": 0
+    },
+    {
+      "nickname": "명가푸드",
+      "oname": "명가푸드",
+      "building_count": 0
+    },
+    {
+      "nickname": "술빛상회",
+      "oname": "술빛상회",
+      "building_count": 0
+    },
+    {
+      "nickname": "아리랑한식부페",
+      "oname": "아리랑한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "오르토그릴",
+      "oname": "오르토그릴",
+      "building_count": 0
+    },
+    {
+      "nickname": "나의유부 수원대점",
+      "oname": "나의유부 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "레브",
+      "oname": "레브",
+      "building_count": 0
+    },
+    {
+      "nickname": "밀플랜비",
+      "oname": "밀플랜비",
+      "building_count": 0
+    },
+    {
+      "nickname": "동화생고기",
+      "oname": "동화생고기",
+      "building_count": 0
+    },
+    {
+      "nickname": "매운언니",
+      "oname": "매운언니",
+      "building_count": 0
+    },
+    {
+      "nickname": "곱창홀릭 봉담점",
+      "oname": "곱창홀릭 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "자매맛집",
+      "oname": "자매맛집",
+      "building_count": 0
+    },
+    {
+      "nickname": "7080라이브",
+      "oname": "7080라이브",
+      "building_count": 0
+    },
+    {
+      "nickname": "본죽",
+      "oname": "본죽",
+      "building_count": 0
+    },
+    {
+      "nickname": "치킨마루와우리점",
+      "oname": "치킨마루와우리점",
+      "building_count": 0
+    },
+    {
+      "nickname": "석천생선구이",
+      "oname": "석천생선구이",
+      "building_count": 0
+    },
+    {
+      "nickname": "전곱(봉담점)",
+      "oname": "전곱(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "싱싱오동도",
+      "oname": "싱싱오동도",
+      "building_count": 0
+    },
+    {
+      "nickname": "백청우 칼국수 봉담점",
+      "oname": "백청우 칼국수 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "아그집봉담점",
+      "oname": "아그집봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "쌈촌",
+      "oname": "쌈촌",
+      "building_count": 0
+    },
+    {
+      "nickname": "전주집",
+      "oname": "전주집",
+      "building_count": 0
+    },
+    {
+      "nickname": "네네치킨 봉담점",
+      "oname": "네네치킨 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "품육 봉담점",
+      "oname": "품육 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "동복리제주갈치조림 봉담점",
+      "oname": "동복리제주갈치조림 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "조선부뚜막 봉담2지구점",
+      "oname": "조선부뚜막 봉담2지구점",
+      "building_count": 0
+    },
+    {
+      "nickname": "국민낙곱새(봉담점)",
+      "oname": "국민낙곱새(봉담점)",
+      "building_count": 0
+    },
+    {
+      "nickname": "역북집화성봉담점",
+      "oname": "역북집화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "인생역전",
+      "oname": "인생역전",
+      "building_count": 0
+    },
+    {
+      "nickname": "꼬치공방 화성봉담점",
+      "oname": "꼬치공방 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "신가게맥주",
+      "oname": "신가게맥주",
+      "building_count": 0
+    },
+    {
+      "nickname": "깡우동",
+      "oname": "깡우동",
+      "building_count": 0
+    },
+    {
+      "nickname": "회가 대표 초밥24 봉담점",
+      "oname": "회가 대표 초밥24 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "양평해장국",
+      "oname": "양평해장국",
+      "building_count": 0
+    },
+    {
+      "nickname": "고향식당",
+      "oname": "고향식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "덕림전통육개장냉면",
+      "oname": "덕림전통육개장냉면",
+      "building_count": 0
+    },
+    {
+      "nickname": "우리식당",
+      "oname": "우리식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "한가네손두부",
+      "oname": "한가네손두부",
+      "building_count": 0
+    },
+    {
+      "nickname": "하루덕",
+      "oname": "하루덕",
+      "building_count": 0
+    },
+    {
+      "nickname": "궁서체",
+      "oname": "궁서체",
+      "building_count": 0
+    },
+    {
+      "nickname": "경복궁",
+      "oname": "경복궁",
+      "building_count": 0
+    },
+    {
+      "nickname": "만금성",
+      "oname": "만금성",
+      "building_count": 0
+    },
+    {
+      "nickname": "몽떼",
+      "oname": "몽떼",
+      "building_count": 0
+    },
+    {
+      "nickname": "마패불고기",
+      "oname": "마패불고기",
+      "building_count": 0
+    },
+    {
+      "nickname": "수성연가",
+      "oname": "수성연가",
+      "building_count": 0
+    },
+    {
+      "nickname": "브라더양꼬치",
+      "oname": "브라더양꼬치",
+      "building_count": 0
+    },
+    {
+      "nickname": "유명환 명품족발",
+      "oname": "유명환 명품족발",
+      "building_count": 0
+    },
+    {
+      "nickname": "서울촌뚝배기",
+      "oname": "서울촌뚝배기",
+      "building_count": 0
+    },
+    {
+      "nickname": "진국본가 화성직영점",
+      "oname": "진국본가 화성직영점",
+      "building_count": 0
+    },
+    {
+      "nickname": "꼴두바우",
+      "oname": "꼴두바우",
+      "building_count": 0
+    },
+    {
+      "nickname": "대학식당",
+      "oname": "대학식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "짱이와떡볶기",
+      "oname": "짱이와떡볶기",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉담 갈릴리",
+      "oname": "봉담 갈릴리",
+      "building_count": 0
+    },
+    {
+      "nickname": "달이담",
+      "oname": "달이담",
+      "building_count": 0
+    },
+    {
+      "nickname": "즘골마을",
+      "oname": "즘골마을",
+      "building_count": 0
+    },
+    {
+      "nickname": "정자식당",
+      "oname": "정자식당",
+      "building_count": 0
+    },
+    {
+      "nickname": "썬플라워",
+      "oname": "썬플라워",
+      "building_count": 0
+    },
+    {
+      "nickname": "처갓집양념치킨 왕림점",
+      "oname": "처갓집양념치킨 왕림점",
+      "building_count": 0
+    },
+    {
+      "nickname": "와우리본가순대국",
+      "oname": "와우리본가순대국",
+      "building_count": 0
+    },
+    {
+      "nickname": "돈치킨 수원대점",
+      "oname": "돈치킨 수원대점",
+      "building_count": 0
+    },
+    {
+      "nickname": "하나F&C",
+      "oname": "하나F&C",
+      "building_count": 0
+    },
+    {
+      "nickname": "별법동태탕속초코다리냉면",
+      "oname": "별법동태탕속초코다리냉면",
+      "building_count": 0
+    },
+    {
+      "nickname": "버터아이",
+      "oname": "버터아이",
+      "building_count": 0
+    },
+    {
+      "nickname": "한신포차 화성봉담점",
+      "oname": "한신포차 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "생고기마을",
+      "oname": "생고기마을",
+      "building_count": 0
+    },
+    {
+      "nickname": "외갓집한식부페",
+      "oname": "외갓집한식부페",
+      "building_count": 0
+    },
+    {
+      "nickname": "서울집설농탕",
+      "oname": "서울집설농탕",
+      "building_count": 0
+    },
+    {
+      "nickname": "빈센트반커피",
+      "oname": "빈센트반커피",
+      "building_count": 0
+    },
+    {
+      "nickname": "해피 홈",
+      "oname": "해피 홈",
+      "building_count": 0
+    },
+    {
+      "nickname": "홍주네샤브칼국수",
+      "oname": "홍주네샤브칼국수",
+      "building_count": 0
+    },
+    {
+      "nickname": "플러스82 화성봉담점",
+      "oname": "플러스82 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "소코아 봉담점",
+      "oname": "소코아 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "라홍방마라탕 봉담동화점",
+      "oname": "라홍방마라탕 봉담동화점",
+      "building_count": 0
+    },
+    {
+      "nickname": "봉명동내커피 화성봉담점",
+      "oname": "봉명동내커피 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "샐포시",
+      "oname": "샐포시",
+      "building_count": 0
+    },
+    {
+      "nickname": "요달의찜닭봉담점",
+      "oname": "요달의찜닭봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "까몬 봉담점",
+      "oname": "까몬 봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "길동우동 화성봉담점",
+      "oname": "길동우동 화성봉담점",
+      "building_count": 0
+    },
+    {
+      "nickname": "열정",
+      "oname": "열정",
+      "building_count": 0
+    },
+    {
+      "nickname": "샐러리아 봉담점",
+      "oname": "샐러리아 봉담점",
+      "building_count": 0
     }
   ],
   "search": [
     {
-      "word": "차차",
-      "count": 780,
+      "word": "김가네김밥 봉담2지구점",
+      "count": "김가네김밥 봉담2지구점",
       "id": 1
     },
     {
-      "word": "차차 목장",
-      "count": 457,
+      "word": "하남돼지집 화성봉담점",
+      "count": "하남돼지집 화성봉담점",
       "id": 2
     },
     {
-      "word": "제조도",
-      "count": 999,
+      "word": "딜리버리하우스",
+      "count": "딜리버리하우스",
       "id": 3
     },
     {
-      "id": 4,
-      "word": "열번째",
-      "count": 222
+      "word": "삼산회관 화성봉담2지구점",
+      "count": "삼산회관 화성봉담2지구점",
+      "id": 4
     },
     {
-      "word": "이름",
-      "count": 456,
+      "word": "보드람치킨봉담2지구",
+      "count": "보드람치킨봉담2지구",
       "id": 5
     },
     {
-      "id": 6,
-      "word": "상하",
-      "count": 222
+      "word": "찐하오마라탕",
+      "count": "찐하오마라탕",
+      "id": 6
     },
     {
-      "word": "제조도 섬",
-      "count": 456,
+      "word": "햇살머믄 꼬마김밥 봉담점",
+      "count": "햇살머믄 꼬마김밥 봉담점",
       "id": 7
     },
     {
-      "word": "제조도 메타버스",
-      "count": 10,
+      "word": "한마음 정육식당 봉담점",
+      "count": "한마음 정육식당 봉담점",
       "id": 8
     },
     {
-      "word": "화목",
-      "count": 1,
+      "word": "황금푸드",
+      "count": "황금푸드",
       "id": 9
     },
     {
-      "word": "화섬",
-      "count": 777,
+      "word": "편편집(화성봉담점)",
+      "count": "편편집(화성봉담점)",
       "id": 10
     },
     {
-      "word": "아파트",
-      "count": 1,
+      "word": "신의주찹쌀순대 수원대점",
+      "count": "신의주찹쌀순대 수원대점",
       "id": 11
     },
     {
-      "word": "공인즙개사",
-      "count": 4,
+      "word": "또또똣",
+      "count": "또또똣",
       "id": 12
+    },
+    {
+      "word": "달콤디저트방앗간",
+      "count": "달콤디저트방앗간",
+      "id": 13
+    },
+    {
+      "word": "유로코피자",
+      "count": "유로코피자",
+      "id": 14
+    },
+    {
+      "word": "돈필살",
+      "count": "돈필살",
+      "id": 15
+    },
+    {
+      "word": "영 비어하우스",
+      "count": "영 비어하우스",
+      "id": 16
+    },
+    {
+      "word": "봉담푸드",
+      "count": "봉담푸드",
+      "id": 17
+    },
+    {
+      "word": "BBQ치킨 봉담중흥점",
+      "count": "BBQ치킨 봉담중흥점",
+      "id": 18
+    },
+    {
+      "word": "대발이네",
+      "count": "대발이네",
+      "id": 19
+    },
+    {
+      "word": "박사장네 연탄구이",
+      "count": "박사장네 연탄구이",
+      "id": 20
+    },
+    {
+      "word": "1키로탕수육 봉담점",
+      "count": "1키로탕수육 봉담점",
+      "id": 21
+    },
+    {
+      "word": "간식카페 봉황",
+      "count": "간식카페 봉황",
+      "id": 22
+    },
+    {
+      "word": "시원통닭강정",
+      "count": "시원통닭강정",
+      "id": 23
+    },
+    {
+      "word": "서호정 장어랑메기랑",
+      "count": "서호정 장어랑메기랑",
+      "id": 24
+    },
+    {
+      "word": "CUIE(쿠이)",
+      "count": "CUIE(쿠이)",
+      "id": 25
+    },
+    {
+      "word": "청미(주)",
+      "count": "청미(주)",
+      "id": 26
+    },
+    {
+      "word": "광부맥주",
+      "count": "광부맥주",
+      "id": 27
+    },
+    {
+      "word": "옙보틀",
+      "count": "옙보틀",
+      "id": 28
+    },
+    {
+      "word": "얼맥당",
+      "count": "얼맥당",
+      "id": 29
+    },
+    {
+      "word": "광수육회 봉담점",
+      "count": "광수육회 봉담점",
+      "id": 30
+    },
+    {
+      "word": "역전할머니맥주 화성봉담2지구",
+      "count": "역전할머니맥주 화성봉담2지구",
+      "id": 31
+    },
+    {
+      "word": "백담김치찜",
+      "count": "백담김치찜",
+      "id": 32
+    },
+    {
+      "word": "맘스터치 화성봉담2지구점",
+      "count": "맘스터치 화성봉담2지구점",
+      "id": 33
+    },
+    {
+      "word": "연파스타",
+      "count": "연파스타",
+      "id": 34
+    },
+    {
+      "word": "처갓집양념치킨 봉담2점",
+      "count": "처갓집양념치킨 봉담2점",
+      "id": 35
+    },
+    {
+      "word": "이나타코야끼 봉담점",
+      "count": "이나타코야끼 봉담점",
+      "id": 36
+    },
+    {
+      "word": "신선해",
+      "count": "신선해",
+      "id": 37
+    },
+    {
+      "word": "후라이드참잘하는집",
+      "count": "후라이드참잘하는집",
+      "id": 38
+    },
+    {
+      "word": "완스데이",
+      "count": "완스데이",
+      "id": 39
+    },
+    {
+      "word": "NAERI 743(내리 743)",
+      "count": "NAERI 743(내리 743)",
+      "id": 40
+    },
+    {
+      "word": "구이대장쪽갈비",
+      "count": "구이대장쪽갈비",
+      "id": 41
+    },
+    {
+      "word": "딜리버리킹",
+      "count": "딜리버리킹",
+      "id": 42
+    },
+    {
+      "word": "수미바지락손칼국수",
+      "count": "수미바지락손칼국수",
+      "id": 43
+    },
+    {
+      "word": "자담치킨화성봉담점",
+      "count": "자담치킨화성봉담점",
+      "id": 44
+    },
+    {
+      "word": "요리소년",
+      "count": "요리소년",
+      "id": 45
+    },
+    {
+      "word": "아쿠아리스모",
+      "count": "아쿠아리스모",
+      "id": 46
+    },
+    {
+      "word": "영돈",
+      "count": "영돈",
+      "id": 47
+    },
+    {
+      "word": "치킨플러스화성봉담점",
+      "count": "치킨플러스화성봉담점",
+      "id": 48
+    },
+    {
+      "word": "완생포차",
+      "count": "완생포차",
+      "id": 49
+    },
+    {
+      "word": "소나무집",
+      "count": "소나무집",
+      "id": 50
+    },
+    {
+      "word": "하나웰빙한식뷔페",
+      "count": "하나웰빙한식뷔페",
+      "id": 51
+    },
+    {
+      "word": "강식당",
+      "count": "강식당",
+      "id": 52
+    },
+    {
+      "word": "79대포수원대점",
+      "count": "79대포수원대점",
+      "id": 53
+    },
+    {
+      "word": "본도시락",
+      "count": "본도시락",
+      "id": 54
+    },
+    {
+      "word": "올라쿠치나 in 봉담",
+      "count": "올라쿠치나 in 봉담",
+      "id": 55
+    },
+    {
+      "word": "룸파",
+      "count": "룸파",
+      "id": 56
+    },
+    {
+      "word": "인사동곱돌쌍화차",
+      "count": "인사동곱돌쌍화차",
+      "id": 57
+    },
+    {
+      "word": "죽의신 봉담점",
+      "count": "죽의신 봉담점",
+      "id": 58
+    },
+    {
+      "word": "김영화스시 봉담점",
+      "count": "김영화스시 봉담점",
+      "id": 59
+    },
+    {
+      "word": "씨스타(SEA STAR)참치",
+      "count": "씨스타(SEA STAR)참치",
+      "id": 60
+    },
+    {
+      "word": "봉담먹거리맛집",
+      "count": "봉담먹거리맛집",
+      "id": 61
+    },
+    {
+      "word": "이층술집",
+      "count": "이층술집",
+      "id": 62
+    },
+    {
+      "word": "와플칸봉담점",
+      "count": "와플칸봉담점",
+      "id": 63
+    },
+    {
+      "word": "챠이챠이",
+      "count": "챠이챠이",
+      "id": 64
+    },
+    {
+      "word": "심석진의황소야",
+      "count": "심석진의황소야",
+      "id": 65
+    },
+    {
+      "word": "포메인화성봉담점",
+      "count": "포메인화성봉담점",
+      "id": 66
+    },
+    {
+      "word": "덕산수라간",
+      "count": "덕산수라간",
+      "id": 67
+    },
+    {
+      "word": "행복한밥상",
+      "count": "행복한밥상",
+      "id": 68
+    },
+    {
+      "word": "중앙식당",
+      "count": "중앙식당",
+      "id": 69
+    },
+    {
+      "word": "여시밥상",
+      "count": "여시밥상",
+      "id": 70
+    },
+    {
+      "word": "노랑통닭",
+      "count": "노랑통닭",
+      "id": 70
+    },
+    {
+      "word": "청춘냉면1996",
+      "count": "청춘냉면1996",
+      "id": 71
+    },
+    {
+      "word": "갈비명인",
+      "count": "갈비명인",
+      "id": 72
+    },
+    {
+      "word": "곤지암한우소머리국밥",
+      "count": "곤지암한우소머리국밥",
+      "id": 73
+    },
+    {
+      "word": "찌개덕후",
+      "count": "찌개덕후",
+      "id": 74
+    },
+    {
+      "word": "대파곱창",
+      "count": "대파곱창",
+      "id": 75
+    },
+    {
+      "word": "새말촌한식부페",
+      "count": "새말촌한식부페",
+      "id": 76
+    },
+    {
+      "word": "맘스터치 수원대점",
+      "count": "맘스터치 수원대점",
+      "id": 77
+    },
+    {
+      "word": "은혜한식뷔페",
+      "count": "은혜한식뷔페",
+      "id": 78
+    },
+    {
+      "word": "밥한끼",
+      "count": "밥한끼",
+      "id": 79
+    },
+    {
+      "word": "기쁨양꼬치",
+      "count": "기쁨양꼬치",
+      "id": 80
+    },
+    {
+      "word": "크로앙쥬",
+      "count": "크로앙쥬",
+      "id": 81
+    },
+    {
+      "word": "아마스빈 봉담동화마을점",
+      "count": "아마스빈 봉담동화마을점",
+      "id": 82
+    },
+    {
+      "word": "피자헛봉담점",
+      "count": "피자헛봉담점",
+      "id": 83
+    },
+    {
+      "word": "봉's족발",
+      "count": "봉's족발",
+      "id": 84
+    },
+    {
+      "word": "하얀집",
+      "count": "하얀집",
+      "id": 85
+    },
+    {
+      "word": "소랑버섯",
+      "count": "소랑버섯",
+      "id": 86
+    },
+    {
+      "word": "항아리보쌈",
+      "count": "항아리보쌈",
+      "id": 87
+    },
+    {
+      "word": "밥집",
+      "count": "밥집",
+      "id": 88
+    },
+    {
+      "word": "MR짱닭치킨",
+      "count": "MR짱닭치킨",
+      "id": 89
+    },
+    {
+      "word": "육수당 화성봉담점",
+      "count": "육수당 화성봉담점",
+      "id": 90
+    },
+    {
+      "word": "고마아구찜,뽈찜",
+      "count": "고마아구찜,뽈찜",
+      "id": 91
+    },
+    {
+      "word": "커피빌",
+      "count": "커피빌",
+      "id": 92
+    },
+    {
+      "word": "하오츠",
+      "count": "하오츠",
+      "id": 93
+    },
+    {
+      "word": "샬레향 수제 돈가스 &",
+      "count": "샬레향 수제 돈가스 &",
+      "id": 94
+    },
+    {
+      "word": "부킹",
+      "count": "부킹",
+      "id": 95
+    },
+    {
+      "word": "구공탄막창",
+      "count": "구공탄막창",
+      "id": 96
+    },
+    {
+      "word": "홍초닭발",
+      "count": "홍초닭발",
+      "id": 97
+    },
+    {
+      "word": "선채향",
+      "count": "선채향",
+      "id": 98
+    },
+    {
+      "word": "보영만두 봉담점",
+      "count": "보영만두 봉담점",
+      "id": 99
+    },
+    {
+      "word": "바른흑염소가든",
+      "count": "바른흑염소가든",
+      "id": 100
+    },
+    {
+      "word": "북촌손만두(화성봉담점)",
+      "count": "북촌손만두(화성봉담점)",
+      "id": 101
+    },
+    {
+      "word": "황제갈비",
+      "count": "황제갈비",
+      "id": 102
+    },
+    {
+      "word": "황궁짬뽕전문점",
+      "count": "황궁짬뽕전문점",
+      "id": 103
+    },
+    {
+      "word": "여너여너",
+      "count": "여너여너",
+      "id": 104
+    },
+    {
+      "word": "냠냠족발",
+      "count": "냠냠족발",
+      "id": 105
+    },
+    {
+      "word": "두끼화성봉담점",
+      "count": "두끼화성봉담점",
+      "id": 106
+    },
+    {
+      "word": "푸라닭 화성봉담1호점",
+      "count": "푸라닭 화성봉담1호점",
+      "id": 107
+    },
+    {
+      "word": "봉담황소곱창",
+      "count": "봉담황소곱창",
+      "id": 108
+    },
+    {
+      "word": "큰맘할매순대국",
+      "count": "큰맘할매순대국",
+      "id": 109
+    },
+    {
+      "word": "와우정",
+      "count": "와우정",
+      "id": 110
+    },
+    {
+      "word": "제줏간화성봉담점",
+      "count": "제줏간화성봉담점",
+      "id": 111
+    },
+    {
+      "word": "태능갈비촌",
+      "count": "태능갈비촌",
+      "id": 112
+    },
+    {
+      "word": "봉담장례문화원",
+      "count": "봉담장례문화원",
+      "id": 113
+    },
+    {
+      "word": "정한식당",
+      "count": "정한식당",
+      "id": 114
+    },
+    {
+      "word": "봉담축산식당",
+      "count": "봉담축산식당",
+      "id": 115
+    },
+    {
+      "word": "병막골화성오리",
+      "count": "병막골화성오리",
+      "id": 116
+    },
+    {
+      "word": "융건릉 비빔국수",
+      "count": "융건릉 비빔국수",
+      "id": 117
+    },
+    {
+      "word": "왕가의쌈밥",
+      "count": "왕가의쌈밥",
+      "id": 118
+    },
+    {
+      "word": "소담비빔국수",
+      "count": "소담비빔국수",
+      "id": 119
+    },
+    {
+      "word": "남매통닭",
+      "count": "남매통닭",
+      "id": 120
+    },
+    {
+      "word": "한우골",
+      "count": "한우골",
+      "id": 121
+    },
+    {
+      "word": "부페식한울식당",
+      "count": "부페식한울식당",
+      "id": 122
+    },
+    {
+      "word": "드림",
+      "count": "드림",
+      "id": 123
+    },
+    {
+      "word": "동산참숯갈비 봉담점",
+      "count": "동산참숯갈비 봉담점",
+      "id": 124
+    },
+    {
+      "word": "비비큐 화성봉담점",
+      "count": "비비큐 화성봉담점",
+      "id": 125
+    },
+    {
+      "word": "치즈를사랑한찜닭",
+      "count": "치즈를사랑한찜닭",
+      "id": 126
+    },
+    {
+      "word": "교촌치킨봉담1호점",
+      "count": "교촌치킨봉담1호점",
+      "id": 127
+    },
+    {
+      "word": "몬스터포 화성봉담점",
+      "count": "몬스터포 화성봉담점",
+      "id": 128
+    },
+    {
+      "word": "네네치킨",
+      "count": "네네치킨",
+      "id": 129
+    },
+    {
+      "word": "찌개마을",
+      "count": "찌개마을",
+      "id": 130
+    },
+    {
+      "word": "다주리",
+      "count": "다주리",
+      "id": 131
+    },
+    {
+      "word": "이모네식당",
+      "count": "이모네식당",
+      "id": 132
+    },
+    {
+      "word": "고반식당",
+      "count": "고반식당",
+      "id": 133
+    },
+    {
+      "word": "수촌마을 봉담점",
+      "count": "수촌마을 봉담점",
+      "id": 134
+    },
+    {
+      "word": "디디치킨",
+      "count": "디디치킨",
+      "id": 135
+    },
+    {
+      "word": "뚱스닭갈비",
+      "count": "뚱스닭갈비",
+      "id": 136
+    },
+    {
+      "word": "수원대점 비비큐",
+      "count": "수원대점 비비큐",
+      "id": 137
+    },
+    {
+      "word": "666버거 봉담점",
+      "count": "666버거 봉담점",
+      "id": 138
+    },
+    {
+      "word": "티바두마리치킨 봉담와우점",
+      "count": "티바두마리치킨 봉담와우점",
+      "id": 139
+    },
+    {
+      "word": "홍빈루",
+      "count": "홍빈루",
+      "id": 140
+    },
+    {
+      "word": "미스터스시 봉담점",
+      "count": "미스터스시 봉담점",
+      "id": 141
+    },
+    {
+      "word": "황골",
+      "count": "황골",
+      "id": 142
+    },
+    {
+      "word": "하오츠양꼬치",
+      "count": "하오츠양꼬치",
+      "id": 143
+    },
+    {
+      "word": "허니닭강정봉담점",
+      "count": "허니닭강정봉담점",
+      "id": 144
+    },
+    {
+      "word": "혼밥대왕",
+      "count": "혼밥대왕",
+      "id": 145
+    },
+    {
+      "word": "낭만양꼬치",
+      "count": "낭만양꼬치",
+      "id": 146
+    },
+    {
+      "word": "행복김밥",
+      "count": "행복김밥",
+      "id": 147
+    },
+    {
+      "word": "은바",
+      "count": "은바",
+      "id": 148
+    },
+    {
+      "word": "서울감자탕",
+      "count": "서울감자탕",
+      "id": 149
+    },
+    {
+      "word": "찌개1번지",
+      "count": "찌개1번지",
+      "id": 150
+    },
+    {
+      "word": "인더비엣봉담",
+      "count": "인더비엣봉담",
+      "id": 151
+    },
+    {
+      "word": "조은식당",
+      "count": "조은식당",
+      "id": 152
+    },
+    {
+      "word": "우리한식부페",
+      "count": "우리한식부페",
+      "id": 153
+    },
+    {
+      "word": "CGV화성봉담",
+      "count": "CGV화성봉담",
+      "id": 154
+    },
+    {
+      "word": "호천당 화성봉담점",
+      "count": "호천당 화성봉담점",
+      "id": 155
+    },
+    {
+      "word": "배부장찌개 봉담점",
+      "count": "배부장찌개 봉담점",
+      "id": 156
+    },
+    {
+      "word": "혼마초밥",
+      "count": "혼마초밥",
+      "id": 157
+    },
+    {
+      "word": "수제분식",
+      "count": "수제분식",
+      "id": 158
+    },
+    {
+      "word": "크라운호프 봉담와우리점",
+      "count": "크라운호프 봉담와우리점",
+      "id": 159
+    },
+    {
+      "word": "스시온조",
+      "count": "스시온조",
+      "id": 160
+    },
+    {
+      "word": "보용만두",
+      "count": "보용만두",
+      "id": 161
+    },
+    {
+      "word": "역전할머니맥주(화성봉담점)",
+      "count": "역전할머니맥주(화성봉담점)",
+      "id": 162
+    },
+    {
+      "word": "친구회",
+      "count": "친구회",
+      "id": 163
+    },
+    {
+      "word": "틈새라면화성점",
+      "count": "틈새라면화성점",
+      "id": 164
+    },
+    {
+      "word": "미국식경양",
+      "count": "미국식경양",
+      "id": 165
+    },
+    {
+      "word": "강원도메밀막국수",
+      "count": "강원도메밀막국수",
+      "id": 166
+    },
+    {
+      "word": "라메종 비올레뜨 (Lamaison Violette)",
+      "count": "라메종 비올레뜨 (Lamaison Violette)",
+      "id": 167
+    },
+    {
+      "word": "이가맛 혼밥",
+      "count": "이가맛 혼밥",
+      "id": 168
+    },
+    {
+      "word": "화룡각",
+      "count": "화룡각",
+      "id": 169
+    },
+    {
+      "word": "테트리스찜닭봉담점",
+      "count": "테트리스찜닭봉담점",
+      "id": 170
+    },
+    {
+      "word": "여장군 수원대점",
+      "count": "여장군 수원대점",
+      "id": 171
+    },
+    {
+      "word": "명륜진사갈비 화성동화CGV점",
+      "count": "명륜진사갈비 화성동화CGV점",
+      "id": 172
+    },
+    {
+      "word": "카페오라",
+      "count": "카페오라",
+      "id": 173
+    },
+    {
+      "word": "제주도그릴 화성점",
+      "count": "제주도그릴 화성점",
+      "id": 174
+    },
+    {
+      "word": "아랑페즈",
+      "count": "아랑페즈",
+      "id": 175
+    },
+    {
+      "word": "웅이네오돌뼈 봉담점",
+      "count": "웅이네오돌뼈 봉담점",
+      "id": 176
+    },
+    {
+      "word": "카페 랏떼, 커피",
+      "count": "카페 랏떼, 커피",
+      "id": 177
+    },
+    {
+      "word": "사이사",
+      "count": "사이사",
+      "id": 178
+    },
+    {
+      "word": "육회한비빔밥&덮밥 화성봉담점",
+      "count": "육회한비빔밥&덮밥 화성봉담점",
+      "id": 179
+    },
+    {
+      "word": "본가푸드",
+      "count": "본가푸드",
+      "id": 180
+    },
+    {
+      "word": "비어첸 화성봉담CGV점",
+      "count": "비어첸 화성봉담CGV점",
+      "id": 181
+    },
+    {
+      "word": "탕화쿵푸마라탕",
+      "count": "탕화쿵푸마라탕",
+      "id": 182
+    },
+    {
+      "word": "봉담식당",
+      "count": "봉담식당",
+      "id": 183
+    },
+    {
+      "word": "청년피자봉담점",
+      "count": "청년피자봉담점",
+      "id": 184
+    },
+    {
+      "word": "호세야오리바베큐 화성봉담점",
+      "count": "호세야오리바베큐 화성봉담점",
+      "id": 185
+    },
+    {
+      "word": "김밥사랑",
+      "count": "김밥사랑",
+      "id": 186
+    },
+    {
+      "word": "아빠곰탕봉담점",
+      "count": "아빠곰탕봉담점",
+      "id": 187
+    },
+    {
+      "word": "쏘자&피자마루",
+      "count": "쏘자&피자마루",
+      "id": 188
+    },
+    {
+      "word": "진쿵푸마라탕 수원대점",
+      "count": "진쿵푸마라탕 수원대점",
+      "id": 189
+    },
+    {
+      "word": "강다짐화성와우점",
+      "count": "강다짐화성와우점",
+      "id": 190
+    },
+    {
+      "word": "아재불닭발",
+      "count": "아재불닭발",
+      "id": 191
+    },
+    {
+      "word": "청년화로1988",
+      "count": "청년화로1988",
+      "id": 192
+    },
+    {
+      "word": "충무공 스시",
+      "count": "충무공 스시",
+      "id": 193
+    },
+    {
+      "word": "못말리는파닭 봉담점&욕쟁이할매닭발",
+      "count": "못말리는파닭 봉담점&욕쟁이할매닭발",
+      "id": 194
+    },
+    {
+      "word": "대박고깃집",
+      "count": "대박고깃집",
+      "id": 195
+    },
+    {
+      "word": "밥심",
+      "count": "밥심",
+      "id": 196
+    },
+    {
+      "word": "영푸드",
+      "count": "영푸드",
+      "id": 197
+    },
+    {
+      "word": "77램",
+      "count": "77램",
+      "id": 198
+    },
+    {
+      "word": "일진회수산",
+      "count": "일진회수산",
+      "id": 199
+    },
+    {
+      "word": "정원쭈꾸미",
+      "count": "정원쭈꾸미",
+      "id": 200
+    },
+    {
+      "word": "소문난 대구 왕뽈찜",
+      "count": "소문난 대구 왕뽈찜",
+      "id": 201
+    },
+    {
+      "word": "더 차이니즈",
+      "count": "더 차이니즈",
+      "id": 202
+    },
+    {
+      "word": "흑돈골",
+      "count": "흑돈골",
+      "id": 203
+    },
+    {
+      "word": "선복정갈비",
+      "count": "선복정갈비",
+      "id": 204
+    },
+    {
+      "word": "오빠네삼겹살",
+      "count": "오빠네삼겹살",
+      "id": 205
+    },
+    {
+      "word": "카페온나",
+      "count": "카페온나",
+      "id": 206
+    },
+    {
+      "word": "치킨과바람피자화성봉담점",
+      "count": "치킨과바람피자화성봉담점",
+      "id": 207
+    },
+    {
+      "word": "장이당제면소",
+      "count": "장이당제면소",
+      "id": 208
+    },
+    {
+      "word": "암소해연생(봉담점)",
+      "count": "암소해연생(봉담점)",
+      "id": 209
+    },
+    {
+      "word": "맛초화닭 봉담와우리점",
+      "count": "맛초화닭 봉담와우리점",
+      "id": 210
+    },
+    {
+      "word": "봉담호프",
+      "count": "봉담호프",
+      "id": 211
+    },
+    {
+      "word": "오,늘초밥",
+      "count": "오,늘초밥",
+      "id": 212
+    },
+    {
+      "word": "탕화쿵푸 마라탕 수원대점",
+      "count": "탕화쿵푸 마라탕 수원대점",
+      "id": 213
+    },
+    {
+      "word": "잇다",
+      "count": "잇다",
+      "id": 214
+    },
+    {
+      "word": "마포화곱창(봉담지점)",
+      "count": "마포화곱창(봉담지점)",
+      "id": 215
+    },
+    {
+      "word": "굽네치킨 봉담2지구점",
+      "count": "굽네치킨 봉담2지구점",
+      "id": 216
+    },
+    {
+      "word": "더홀릭화성점",
+      "count": "더홀릭화성점",
+      "id": 217
+    },
+    {
+      "word": "양프로",
+      "count": "양프로",
+      "id": 218
+    },
+    {
+      "word": "금별맥주 화성봉담점",
+      "count": "금별맥주 화성봉담점",
+      "id": 219
+    },
+    {
+      "word": "갓성비",
+      "count": "갓성비",
+      "id": 220
+    },
+    {
+      "word": "슬로우캘리 화성봉담점",
+      "count": "슬로우캘리 화성봉담점",
+      "id": 221
+    },
+    {
+      "word": "봉담착한정육식당",
+      "count": "봉담착한정육식당",
+      "id": 222
+    },
+    {
+      "word": "장호덕 손만두 상리점",
+      "count": "장호덕 손만두 상리점",
+      "id": 223
+    },
+    {
+      "word": "오봉집",
+      "count": "오봉집",
+      "id": 224
+    },
+    {
+      "word": "한촌설렁탕 화성봉담점",
+      "count": "한촌설렁탕 화성봉담점",
+      "id": 225
+    },
+    {
+      "word": "마을회관",
+      "count": "마을회관",
+      "id": 226
+    },
+    {
+      "word": "착한숯불통바베큐",
+      "count": "착한숯불통바베큐",
+      "id": 227
+    },
+    {
+      "word": "전주24시감자탕",
+      "count": "전주24시감자탕",
+      "id": 228
+    },
+    {
+      "word": "대박분식",
+      "count": "대박분식",
+      "id": 229
+    },
+    {
+      "word": "명불허전 원조골뱅이",
+      "count": "명불허전 원조골뱅이",
+      "id": 230
+    },
+    {
+      "word": "따숨식당",
+      "count": "따숨식당",
+      "id": 231
+    },
+    {
+      "word": "돈카츠마켙 화성봉담점",
+      "count": "돈카츠마켙 화성봉담점",
+      "id": 232
+    },
+    {
+      "word": "이차돌봉담2지구점",
+      "count": "이차돌봉담2지구점",
+      "id": 233
+    },
+    {
+      "word": "허가네냉면사랑",
+      "count": "허가네냉면사랑",
+      "id": 234
+    },
+    {
+      "word": "갈비꽃봉담점",
+      "count": "갈비꽃봉담점",
+      "id": 235
+    },
+    {
+      "word": "본죽비빔밥봉담신도시점",
+      "count": "본죽비빔밥봉담신도시점",
+      "id": 236
+    },
+    {
+      "word": "불불이족발",
+      "count": "불불이족발",
+      "id": 237
+    },
+    {
+      "word": "신동랩",
+      "count": "신동랩",
+      "id": 238
+    },
+    {
+      "word": "청기와감자탕",
+      "count": "청기와감자탕",
+      "id": 239
+    },
+    {
+      "word": "별콩다방수원대점",
+      "count": "별콩다방수원대점",
+      "id": 240
+    },
+    {
+      "word": "김충기꽃삼겹",
+      "count": "김충기꽃삼겹",
+      "id": 241
+    },
+    {
+      "word": "WITH BLANK(위드블랭크)",
+      "count": "WITH BLANK(위드블랭크)",
+      "id": 242
+    },
+    {
+      "word": "타이거 초밥& 이자카야",
+      "count": "타이거 초밥& 이자카야",
+      "id": 243
+    },
+    {
+      "word": "최고당돈까스봉담점",
+      "count": "최고당돈까스봉담점",
+      "id": 244
+    },
+    {
+      "word": "비비큐(BBQ)화성봉담2지구점",
+      "count": "비비큐(BBQ)화성봉담2지구점",
+      "id": 245
+    },
+    {
+      "word": "프리미엄 옛날통닭",
+      "count": "프리미엄 옛날통닭",
+      "id": 246
+    },
+    {
+      "word": "도로시파스타연정 봉담점",
+      "count": "도로시파스타연정 봉담점",
+      "id": 247
+    },
+    {
+      "word": "커피집",
+      "count": "커피집",
+      "id": 248
+    },
+    {
+      "word": "고봉민김밥인 화성봉담2지구점",
+      "count": "고봉민김밥인 화성봉담2지구점1",
+      "id": 249
+    },
+    {
+      "word": "할머니가래떡볶이 봉담와우리점",
+      "count": "할머니가래떡볶이 봉담와우리점",
+      "id": 250
+    },
+    {
+      "word": "카츠히제",
+      "count": "카츠히제",
+      "id": 251
+    },
+    {
+      "word": "실비식당",
+      "count": "실비식당",
+      "id": 252
+    },
+    {
+      "word": "정주영 한식부페",
+      "count": "정주영 한식부페",
+      "id": 253
+    },
+    {
+      "word": "먹방양꼬치칭따우",
+      "count": "먹방양꼬치칭따우",
+      "id": 254
+    },
+    {
+      "word": "킬맨참치",
+      "count": "킬맨참치",
+      "id": 255
+    },
+    {
+      "word": "핫쿵푸마라탕",
+      "count": "핫쿵푸마라탕",
+      "id": 256
+    },
+    {
+      "word": "유진참치",
+      "count": "유진참치",
+      "id": 257
+    },
+    {
+      "word": "쉐프엠 봉담점",
+      "count": "쉐프엠 봉담점",
+      "id": 258
+    },
+    {
+      "word": "피자먹다 수원대점",
+      "count": "피자먹다 수원대점",
+      "id": 259
+    },
+    {
+      "word": "버건디 봉담",
+      "count": "버건디 봉담",
+      "id": 260
+    },
+    {
+      "word": "함지박",
+      "count": "함지박",
+      "id": 261
+    },
+    {
+      "word": "푸드몬드 봉담점",
+      "count": "푸드몬드 봉담점",
+      "id": 262
+    },
+    {
+      "word": "프랭크버거 봉담2지구점",
+      "count": "프랭크버거 봉담2지구점",
+      "id": 263
+    },
+    {
+      "word": "브라보마라탕",
+      "count": "브라보마라탕",
+      "id": 264
+    },
+    {
+      "word": "한판삼겹",
+      "count": "한판삼겹",
+      "id": 265
+    },
+    {
+      "word": "고기극찬 화성봉담점",
+      "count": "고기극찬 화성봉담점",
+      "id": 266
+    },
+    {
+      "word": "만만코코로(화성점)",
+      "count": "만만코코로(화성점)",
+      "id": 267
+    },
+    {
+      "word": "연돈볼카츠 화성봉담",
+      "count": "연돈볼카츠 화성봉담",
+      "id": 268
+    },
+    {
+      "word": "삼첩분식 봉담점",
+      "count": "삼첩분식 봉담점",
+      "id": 269
+    },
+    {
+      "word": "장쟁이국수이야기",
+      "count": "장쟁이국수이야기",
+      "id": 270
+    },
+    {
+      "word": "카츠백 화성봉담점",
+      "count": "카츠백 화성봉담점",
+      "id": 271
+    },
+    {
+      "word": "결승전",
+      "count": "결승전",
+      "id": 272
+    },
+    {
+      "word": "찬쭈마라탕",
+      "count": "찬쭈마라탕",
+      "id": 273
+    },
+    {
+      "word": "김치찌개 미화식당",
+      "count": "김치찌개 미화식당",
+      "id": 274
+    },
+    {
+      "word": "김밥천국",
+      "count": "김밥천국",
+      "id": 275
+    },
+    {
+      "word": "노랑통닭 수원대점",
+      "count": "노랑통닭 수원대점",
+      "id": 276
+    },
+    {
+      "word": "포히엔",
+      "count": "포히엔",
+      "id": 277
+    },
+    {
+      "word": "또봉이통닭 봉담2지구점",
+      "count": "또봉이통닭 봉담2지구점",
+      "id": 278
+    },
+    {
+      "word": "수기리양평해장국",
+      "count": "수기리양평해장국",
+      "id": 279
+    },
+    {
+      "word": "유가네닭갈비 봉담CGV점",
+      "count": "유가네닭갈비 봉담CGV점",
+      "id": 280
+    },
+    {
+      "word": "쭈대가 제육대가 봉담점",
+      "count": "쭈대가 제육대가 봉담점",
+      "id": 281
+    },
+    {
+      "word": "신화로닭발",
+      "count": "신화로닭발",
+      "id": 282
+    },
+    {
+      "word": "봉수육(화성봉담점)",
+      "count": "봉수육(화성봉담점)",
+      "id": 283
+    },
+    {
+      "word": "초당골",
+      "count": "초당골",
+      "id": 284
+    },
+    {
+      "word": "봉담닭갈비",
+      "count": "봉담닭갈비",
+      "id": 285
+    },
+    {
+      "word": "마왕족발 화성봉담점",
+      "count": "마왕족발 화성봉담점",
+      "id": 286
+    },
+    {
+      "word": "등뼈가",
+      "count": "등뼈가",
+      "id": 287
+    },
+    {
+      "word": "해별이김밥",
+      "count": "해별이김밥",
+      "id": 288
+    },
+    {
+      "word": "불판생돼지전문점",
+      "count": "불판생돼지전문점",
+      "id": 289
+    },
+    {
+      "word": "대박포차",
+      "count": "대박포차",
+      "id": 290
+    },
+    {
+      "word": "오스테리아 노이",
+      "count": "오스테리아 노이",
+      "id": 291
+    },
+    {
+      "word": "선희네집",
+      "count": "선희네집",
+      "id": 292
+    },
+    {
+      "word": "문",
+      "count": "문",
+      "id": 293
+    },
+    {
+      "word": "우도갈비&막국수",
+      "count": "우도갈비&막국수",
+      "id": 294
+    },
+    {
+      "word": "냠냠국물닭발",
+      "count": "냠냠국물닭발",
+      "id": 295
+    },
+    {
+      "word": "덮밥90도씨(봉담점)",
+      "count": "덮밥90도씨(봉담점)",
+      "id": 296
+    },
+    {
+      "word": "본가왕뼈감자탕봉담점",
+      "count": "본가왕뼈감자탕봉담점",
+      "id": 297
+    },
+    {
+      "word": "그놈포차 화성봉담점",
+      "count": "그놈포차 화성봉담점",
+      "id": 298
+    },
+    {
+      "word": "남대문닭곰탕",
+      "count": "남대문닭곰탕",
+      "id": 299
+    },
+    {
+      "word": "참숯꼼장어",
+      "count": "참숯꼼장어",
+      "id": 300
+    },
+    {
+      "word": "달구 한우육회 본점",
+      "count": "달구 한우육회 본점",
+      "id": 301
+    },
+    {
+      "word": "응급실국물떡볶이와우리점",
+      "count": "응급실국물떡볶이와우리점",
+      "id": 302
+    },
+    {
+      "word": "꼴통포차",
+      "count": "꼴통포차",
+      "id": 303
+    },
+    {
+      "word": "다올생고기",
+      "count": "다올생고기",
+      "id": 304
+    },
+    {
+      "word": "티바두마리치킨",
+      "count": "티바두마리치킨",
+      "id": 305
+    },
+    {
+      "word": "화영식당",
+      "count": "화영식당",
+      "id": 306
+    },
+    {
+      "word": "미스터피자 화성봉담점",
+      "count": "미스터피자 화성봉담점",
+      "id": 307
+    },
+    {
+      "word": "새벽나주곰탕",
+      "count": "새벽나주곰탕",
+      "id": 308
+    },
+    {
+      "word": "60계경기화성봉담점",
+      "count": "60계경기화성봉담점",
+      "id": 309
+    },
+    {
+      "word": "연남물갈비봉담점",
+      "count": "연남물갈비봉담점",
+      "id": 310
+    },
+    {
+      "word": "소스타",
+      "count": "소스타",
+      "id": 311
+    },
+    {
+      "word": "Hey Bro(헤이브로)",
+      "count": "Hey Bro(헤이브로)",
+      "id": 312
+    },
+    {
+      "word": "장수남원추어탕",
+      "count": "장수남원추어탕",
+      "id": 313
+    },
+    {
+      "word": "백반나라한식부페",
+      "count": "백반나라한식부페",
+      "id": 314
+    },
+    {
+      "word": "안나의정원",
+      "count": "안나의정원",
+      "id": 315
+    },
+    {
+      "word": "상기리식당",
+      "count": "상기리식당",
+      "id": 316
+    },
+    {
+      "word": "풍천장어",
+      "count": "풍천장어",
+      "id": 317
+    },
+    {
+      "word": "주식회사일인자감자탕",
+      "count": "주식회사일인자감자탕",
+      "id": 318
+    },
+    {
+      "word": "참능이백숙",
+      "count": "참능이백숙",
+      "id": 319
+    },
+    {
+      "word": "한가족 매운탕",
+      "count": "한가족 매운탕",
+      "id": 320
+    },
+    {
+      "word": "후문식당",
+      "count": "후문식당",
+      "id": 321
+    },
+    {
+      "word": "구가네통영굴밥",
+      "count": "구가네통영굴밥",
+      "id": 322
+    },
+    {
+      "word": "봉담칼국수",
+      "count": "봉담칼국수",
+      "id": 323
+    },
+    {
+      "word": "신당하루",
+      "count": "신당하루",
+      "id": 324
+    },
+    {
+      "word": "천궁",
+      "count": "천궁",
+      "id": 325
+    },
+    {
+      "word": "예빈",
+      "count": "예빈",
+      "id": 326
+    },
+    {
+      "word": "오디오씨(ODOC)",
+      "count": "오디오씨(ODOC)",
+      "id": 327
+    },
+    {
+      "word": "흰돌산",
+      "count": "흰돌산",
+      "id": 328
+    },
+    {
+      "word": "준푸드",
+      "count": "준푸드",
+      "id": 329
+    },
+    {
+      "word": "맹호수제돈까스",
+      "count": "맹호수제돈까스",
+      "id": 330
+    },
+    {
+      "word": "개성 소한마리 곰탕",
+      "count": "개성 소한마리 곰탕",
+      "id": 331
+    },
+    {
+      "word": "보배반점봉담점",
+      "count": "보배반점봉담점",
+      "id": 332
+    },
+    {
+      "word": "다담회",
+      "count": "다담회",
+      "id": 333
+    },
+    {
+      "word": "가장맛있는족발",
+      "count": "가장맛있는족발",
+      "id": 334
+    },
+    {
+      "word": "삼목교",
+      "count": "삼목교",
+      "id": 335
+    },
+    {
+      "word": "굽네치킨봉담1호점",
+      "count": "굽네치킨봉담1호점",
+      "id": 336
+    },
+    {
+      "word": "해성식당",
+      "count": "해성식당",
+      "id": 337
+    },
+    {
+      "word": "평상집",
+      "count": "평상집",
+      "id": 338
+    },
+    {
+      "word": "밥상&술상",
+      "count": "밥상&술상",
+      "id": 339
+    },
+    {
+      "word": "누구나홀딱반한닭봉담2지구점",
+      "count": "누구나홀딱반한닭봉담2지구점",
+      "id": 340
+    },
+    {
+      "word": "양푼이 막창 봉담점",
+      "count": "양푼이 막창 봉담점",
+      "id": 341
+    },
+    {
+      "word": "오방밥집",
+      "count": "오방밥집",
+      "id": 342
+    },
+    {
+      "word": "준우네 마라탕",
+      "count": "준우네 마라탕",
+      "id": 343
+    },
+    {
+      "word": "유짱식당",
+      "count": "유짱식당",
+      "id": 344
+    },
+    {
+      "word": "맘스쿡",
+      "count": "맘스쿡",
+      "id": 345
+    },
+    {
+      "word": "제비파스타앤리조또(화성봉담점)",
+      "count": "제비파스타앤리조또(화성봉담점)",
+      "id": 346
+    },
+    {
+      "word": "열정국밥",
+      "count": "열정국밥",
+      "id": 318
+    },
+    {
+      "word": "쉼,어묵그리고한잔술 봉담점",
+      "count": "쉼,어묵그리고한잔술 봉담점",
+      "id": 319
+    },
+    {
+      "word": "한상",
+      "count": "한상",
+      "id": 320
+    },
+    {
+      "word": "빽보이피자 화성봉담점",
+      "count": "빽보이피자 화성봉담점",
+      "id": 321
+    },
+    {
+      "word": "생각나는아구찜",
+      "count": "생각나는아구찜",
+      "id": 322
+    },
+    {
+      "word": "글로어 수원대점",
+      "count": "글로어 수원대점",
+      "id": 323
+    },
+    {
+      "word": "한솥도시락 화성봉담2지구점",
+      "count": "한솥도시락 화성봉담2지구점",
+      "id": 324
+    },
+    {
+      "word": "닌하오마라탕",
+      "count": "닌하오마라탕",
+      "id": 325
+    },
+    {
+      "word": "고향집",
+      "count": "고향집",
+      "id": 326
+    },
+    {
+      "word": "여우전",
+      "count": "여우전",
+      "id": 327
+    },
+    {
+      "word": "삼호푸드 주식회사",
+      "count": "삼호푸드 주식회사",
+      "id": 328
+    },
+    {
+      "word": "얌샘김밥 봉담2지구점",
+      "count": "얌샘김밥 봉담2지구점",
+      "id": 329
+    },
+    {
+      "word": "피자엠소마",
+      "count": "피자엠소마",
+      "id": 330
+    },
+    {
+      "word": "화성락 실내바다낚시터",
+      "count": "화성락 실내바다낚시터",
+      "id": 331
+    },
+    {
+      "word": "베스트 생갈비찜&찜닭",
+      "count": "베스트 생갈비찜&찜닭",
+      "id": 332
+    },
+    {
+      "word": "33떡볶이 봉담2지구점",
+      "count": "33떡볶이 봉담2지구점",
+      "id": 333
+    },
+    {
+      "word": "흥수산봉담점",
+      "count": "흥수산봉담점",
+      "id": 334
+    },
+    {
+      "word": "교동짬뽕봉담점",
+      "count": "교동짬뽕봉담점",
+      "id": 335
+    },
+    {
+      "word": "푸라닭화성봉담2지구점",
+      "count": "푸라닭화성봉담2지구점",
+      "id": 336
+    },
+    {
+      "word": "진향원마라탕",
+      "count": "진향원마라탕",
+      "id": 337
+    },
+    {
+      "word": "피자나라치킨공주화성봉담점",
+      "count": "피자나라치킨공주화성봉담점",
+      "id": 338
+    },
+    {
+      "word": "무모한초밥화성봉담점",
+      "count": "무모한초밥화성봉담점",
+      "id": 339
+    },
+    {
+      "word": "달콤공장",
+      "count": "달콤공장",
+      "id": 340
+    },
+    {
+      "word": "크레이지타코박스",
+      "count": "크레이지타코박스",
+      "id": 341
+    },
+    {
+      "word": "한가네순대국",
+      "count": "한가네순대국",
+      "id": 342
+    },
+    {
+      "word": "춘장",
+      "count": "춘장",
+      "id": 343
+    },
+    {
+      "word": "인생닭강정수원대점",
+      "count": "인생닭강정수원대점",
+      "id": 344
+    },
+    {
+      "word": "당신은지금치킨이땡긴다 봉담점",
+      "count": "당신은지금치킨이땡긴다 봉담점",
+      "id": 345
+    },
+    {
+      "word": "무쇠랑닭갈비 수원대점",
+      "count": "무쇠랑닭갈비 수원대점",
+      "id": 346
+    },
+    {
+      "word": "친구랑 떡볶이",
+      "count": "친구랑 떡볶이",
+      "id": 347
+    },
+    {
+      "word": "죽이요와우점",
+      "count": "죽이요와우점",
+      "id": 348
+    },
+    {
+      "word": "오군곱창(봉담점)",
+      "count": "오군곱창(봉담점)",
+      "id": 349
+    },
+    {
+      "word": "엄지척마라샹궈,마라탕",
+      "count": "엄지척마라샹궈,마라탕",
+      "id": 350
+    },
+    {
+      "word": "미소야(봉담와우점)",
+      "count": "미소야(봉담와우점)",
+      "id": 351
+    },
+    {
+      "word": "태봉식당",
+      "count": "태봉식당",
+      "id": 352
+    },
+    {
+      "word": "감성낙곱새 화성봉담점",
+      "count": "감성낙곱새 화성봉담점",
+      "id": 353
+    },
+    {
+      "word": "피자플래넷 봉담점",
+      "count": "피자플래넷 봉담점",
+      "id": 354
+    },
+    {
+      "word": "88포장마차 수원대점",
+      "count": "88포장마차 수원대점",
+      "id": 355
+    },
+    {
+      "word": "멕시카나 화성봉담점",
+      "count": "멕시카나 화성봉담점",
+      "id": 356
+    },
+    {
+      "word": "마라양갈비",
+      "count": "마라양갈비",
+      "id": 357
+    },
+    {
+      "word": "최상무",
+      "count": "최상무",
+      "id": 358
+    },
+    {
+      "word": "뼈대장감자탕",
+      "count": "뼈대장감자탕",
+      "id": 359
+    },
+    {
+      "word": "육회꽃 필무렵 봉담점",
+      "count": "육회꽃 필무렵 봉담점",
+      "id": 360
+    },
+    {
+      "word": "쇼쿠지봉담점",
+      "count": "쇼쿠지봉담점",
+      "id": 361
+    },
+    {
+      "word": "위자네",
+      "count": "위자네",
+      "id": 362
+    },
+    {
+      "word": "CAFE GGOM(카페꼼)",
+      "count": "CAFE GGOM(카페꼼)",
+      "id": 363
+    },
+    {
+      "word": "라라카츠 화성봉담점",
+      "count": "라라카츠 화성봉담점",
+      "id": 364
+    },
+    {
+      "word": "봉대곱창",
+      "count": "봉대곱창",
+      "id": 365
+    },
+    {
+      "word": "스뎅식당봉담점",
+      "count": "스뎅식당봉담점",
+      "id": 366
+    },
+    {
+      "word": "기영이숯불두마리치킨화성봉담점",
+      "count": "기영이숯불두마리치킨화성봉담점",
+      "id": 367
+    },
+    {
+      "word": "후니네",
+      "count": "후니네",
+      "id": 368
+    },
+    {
+      "word": "한입과일 봉담점",
+      "count": "한입과일 봉담점",
+      "id": 369
+    },
+    {
+      "word": "짝태&노가리",
+      "count": "짝태&노가리",
+      "id": 370
+    },
+    {
+      "word": "피자나라 치킨공주 봉담2지구점",
+      "count": "피자나라 치킨공주 봉담2지구점",
+      "id": 371
+    },
+    {
+      "word": "팔덕식당 화성봉담점",
+      "count": "팔덕식당 화성봉담점",
+      "id": 372
+    },
+    {
+      "word": "필라프에빠지다 봉담점",
+      "count": "필라프에빠지다 봉담점",
+      "id": 373
+    },
+    {
+      "word": "초동집",
+      "count": "초동집",
+      "id": 374
+    },
+    {
+      "word": "다드림2호점한식뷔페",
+      "count": "다드림2호점한식뷔페",
+      "id": 375
+    },
+    {
+      "word": "큰집멸치국수",
+      "count": "큰집멸치국수",
+      "id": 376
+    },
+    {
+      "word": "장등길 토종순대국",
+      "count": "장등길 토종순대국",
+      "id": 377
+    },
+    {
+      "word": "봉정옥",
+      "count": "봉정옥",
+      "id": 378
+    },
+    {
+      "word": "전기통닭집",
+      "count": "전기통닭집",
+      "id": 379
+    },
+    {
+      "word": "우리할매떡볶이 화성봉담점",
+      "count": "우리할매떡볶이 화성봉담점",
+      "id": 380
+    },
+    {
+      "word": "김호권의 청년어부 화성봉담점",
+      "count": "김호권의 청년어부 화성봉담점",
+      "id": 381
+    },
+    {
+      "word": "인쌩맥주화성봉담점",
+      "count": "인쌩맥주화성봉담점",
+      "id": 382
+    },
+    {
+      "word": "미소 정육식당",
+      "count": "미소 정육식당",
+      "id": 383
+    },
+    {
+      "word": "믿음찬",
+      "count": "믿음찬",
+      "id": 384
+    },
+    {
+      "word": "pit a pat(핏어팻)",
+      "count": "pit a pat(핏어팻)",
+      "id": 385
+    },
+    {
+      "word": "아리송",
+      "count": "아리송",
+      "id": 386
+    },
+    {
+      "word": "청년다방 봉담CGV",
+      "count": "청년다방 봉담CGV",
+      "id": 387
+    },
+    {
+      "word": "커피랑호떡이랑",
+      "count": "커피랑호떡이랑",
+      "id": 388
+    },
+    {
+      "word": "최고당수원대",
+      "count": "최고당수원대",
+      "id": 389
+    },
+    {
+      "word": "웨이닝 봉담점",
+      "count": "웨이닝 봉담점",
+      "id": 390
+    },
+    {
+      "word": "가야밀면&수제돈까스",
+      "count": "가야밀면&수제돈까스",
+      "id": 391
+    },
+    {
+      "word": "백세장어",
+      "count": "백세장어",
+      "id": 392
+    },
+    {
+      "word": "먹보푸드",
+      "count": "먹보푸드",
+      "id": 393
+    },
+    {
+      "word": "홍게#포차",
+      "count": "홍게#포차",
+      "id": 394
+    },
+    {
+      "word": "통큰멸치국수",
+      "count": "통큰멸치국수",
+      "id": 395
+    },
+    {
+      "word": "오대짬뽕",
+      "count": "오대짬뽕",
+      "id": 396
+    },
+    {
+      "word": "동해막국수",
+      "count": "동해막국수",
+      "id": 397
+    },
+    {
+      "word": "생고기전문점 진선미식당",
+      "count": "생고기전문점 진선미식당",
+      "id": 398
+    },
+    {
+      "word": "오뎅빠",
+      "count": "오뎅빠",
+      "id": 399
+    },
+    {
+      "word": "홍희통닭",
+      "count": "홍희통닭",
+      "id": 400
+    },
+    {
+      "word": "베리나이스",
+      "count": "베리나이스",
+      "id": 401
+    },
+    {
+      "word": "로충칭마라탕",
+      "count": "로충칭마라탕",
+      "id": 402
+    },
+    {
+      "word": "꾸브라꼬숯불두마리치킨",
+      "count": "꾸브라꼬숯불두마리치킨",
+      "id": 403
+    },
+    {
+      "word": "카페 베이지",
+      "count": "카페 베이지",
+      "id": 404
+    },
+    {
+      "word": "맥시칸치킨",
+      "count": "맥시칸치킨",
+      "id": 405
+    },
+    {
+      "word": "곳간스토리",
+      "count": "곳간스토리",
+      "id": 406
+    },
+    {
+      "word": "제주부향순죽전문점",
+      "count": "제주부향순죽전문점",
+      "id": 407
+    },
+    {
+      "word": "까르페디엠",
+      "count": "까르페디엠",
+      "id": 408
+    },
+    {
+      "word": "홍테이블",
+      "count": "홍테이블",
+      "id": 409
+    },
+    {
+      "word": "다온한식부페",
+      "count": "다온한식부페",
+      "id": 410
+    },
+    {
+      "word": "농수산물직판장",
+      "count": "농수산물직판장",
+      "id": 411
+    },
+    {
+      "word": "지코바봉담점",
+      "count": "지코바봉담점",
+      "id": 412
+    },
+    {
+      "word": "홍익돈까스",
+      "count": "홍익돈까스",
+      "id": 413
+    },
+    {
+      "word": "초원숯불갈비",
+      "count": "초원숯불갈비",
+      "id": 414
+    },
+    {
+      "word": "장안순대국 봉담 맛집",
+      "count": "장안순대국 봉담 맛집",
+      "id": 415
+    },
+    {
+      "word": "구구족화성봉담",
+      "count": "구구족화성봉담",
+      "id": 416
+    },
+    {
+      "word": "수기돌담집",
+      "count": "수기돌담집",
+      "id": 417
+    },
+    {
+      "word": "멕시카나수원대점",
+      "count": "멕시카나수원대점",
+      "id": 418
+    },
+    {
+      "word": "민영식당",
+      "count": "민영식당",
+      "id": 419
+    },
+    {
+      "word": "등마루",
+      "count": "등마루",
+      "id": 420
+    },
+    {
+      "word": "떡의작품 봉담2지구점",
+      "count": "떡의작품 봉담2지구점",
+      "id": 421
+    },
+    {
+      "word": "냉삼회관화성봉담CGV점",
+      "count": "냉삼회관화성봉담CGV점",
+      "id": 422
+    },
+    {
+      "word": "빡포차",
+      "count": "빡포차",
+      "id": 423
+    },
+    {
+      "word": "닭발굽는청년 봉담점",
+      "count": "닭발굽는청년 봉담점",
+      "id": 424
+    },
+    {
+      "word": "빌리언박스 화성봉담점",
+      "count": "빌리언박스 화성봉담점",
+      "id": 425
+    },
+    {
+      "word": "시느메이",
+      "count": "시느메이",
+      "id": 426
+    },
+    {
+      "word": "돼지새마을본부",
+      "count": "돼지새마을본부",
+      "id": 427
+    },
+    {
+      "word": "크라운호프 봉담2지구점",
+      "count": "크라운호프 봉담2지구점",
+      "id": 428
+    },
+    {
+      "word": "염정본가옛장터",
+      "count": "염정본가옛장터",
+      "id": 429
+    },
+    {
+      "word": "대박식당",
+      "count": "대박식당",
+      "id": 430
+    },
+    {
+      "word": "천상계(봉담점)",
+      "count": "천상계(봉담점)",
+      "id": 431
+    },
+    {
+      "word": "무지개",
+      "count": "무지개",
+      "id": 432
+    },
+    {
+      "word": "삼매집",
+      "count": "삼매집",
+      "id": 433
+    },
+    {
+      "word": "통큰대포삼겹",
+      "count": "통큰대포삼겹",
+      "id": 434
+    },
+    {
+      "word": "모정식당",
+      "count": "모정식당",
+      "id": 435
+    },
+    {
+      "word": "맛닭꼬 수원대점",
+      "count": "맛닭꼬 수원대점",
+      "id": 436
+    },
+    {
+      "word": "에머이 수원대점",
+      "count": "에머이 수원대점",
+      "id": 437
+    },
+    {
+      "word": "프랑킨숯불양념구이치킨봉담점",
+      "count": "프랑킨숯불양념구이치킨봉담점",
+      "id": 438
+    },
+    {
+      "word": "골목집",
+      "count": "골목집",
+      "id": 439
+    },
+    {
+      "word": "리틀꼬마김밥상리점",
+      "count": "리틀꼬마김밥상리점",
+      "id": 440
+    },
+    {
+      "word": "왕갑부 옛날통닭",
+      "count": "왕갑부 옛날통닭",
+      "id": 441
+    },
+    {
+      "word": "제주알찜 봉담점",
+      "count": "제주알찜 봉담점",
+      "id": 442
+    },
+    {
+      "word": "블렌딩마망 봉담점",
+      "count": "블렌딩마망 봉담점",
+      "id": 443
+    },
+    {
+      "word": "덩어리순대국",
+      "count": "덩어리순대국",
+      "id": 444
+    },
+    {
+      "word": "스테이크존 화성봉담점",
+      "count": "스테이크존 화성봉담점",
+      "id": 445
+    },
+    {
+      "word": "순살만공격 봉담점",
+      "count": "순살만공격 봉담점",
+      "id": 446
+    },
+    {
+      "word": "프랭크버거 화성봉담점",
+      "count": "프랭크버거 화성봉담점",
+      "id": 447
+    },
+    {
+      "word": "Bei Bei(베이베이)",
+      "count": "Bei Bei(베이베이)",
+      "id": 448
+    },
+    {
+      "word": "라홍방마라탕 봉담2지구점",
+      "count": "라홍방마라탕 봉담2지구점",
+      "id": 449
+    },
+    {
+      "word": "소담푸드",
+      "count": "소담푸드",
+      "id": 450
+    },
+    {
+      "word": "비스트로피자 화성봉담점",
+      "count": "비스트로피자 화성봉담점",
+      "id": 451
+    },
+    {
+      "word": "BHC(비에이치씨) 화성봉담중앙점",
+      "count": "BHC(비에이치씨) 화성봉담중앙점",
+      "id": 452
+    },
+    {
+      "word": "홍 주꾸미",
+      "count": "홍 주꾸미",
+      "id": 453
+    },
+    {
+      "word": "서봉산산장",
+      "count": "서봉산산장",
+      "id": 454
+    },
+    {
+      "word": "포케올데이 봉담점",
+      "count": "포케올데이 봉담점",
+      "id": 455
+    },
+    {
+      "word": "믹스토랑",
+      "count": "믹스토랑",
+      "id": 456
+    },
+    {
+      "word": "봉담쭈꾸미",
+      "count": "봉담쭈꾸미",
+      "id": 457
+    },
+    {
+      "word": "우가돈가",
+      "count": "우가돈가",
+      "id": 458
+    },
+    {
+      "word": "엄마손한식부페",
+      "count": "엄마손한식부페",
+      "id": 459
+    },
+    {
+      "word": "사랑채",
+      "count": "사랑채",
+      "id": 460
+    },
+    {
+      "word": "유쓰동",
+      "count": "유쓰동",
+      "id": 461
+    },
+    {
+      "word": "LYON (리옹))",
+      "count": "LYON (리옹))",
+      "id": 462
+    },
+    {
+      "word": "만두가",
+      "count": "만두가",
+      "id": 463
+    },
+    {
+      "word": "화이트스노우",
+      "count": "화이트스노우",
+      "id": 464
+    },
+    {
+      "word": "명가푸드",
+      "count": "명가푸드",
+      "id": 465
+    },
+    {
+      "word": "술빛상회",
+      "count": "술빛상회",
+      "id": 466
+    },
+    {
+      "word": "아리랑한식부페",
+      "count": "아리랑한식부페",
+      "id": 467
+    },
+    {
+      "word": "오르토그릴",
+      "count": "오르토그릴",
+      "id": 468
+    },
+    {
+      "word": "나의유부 수원대점",
+      "count": "나의유부 수원대점",
+      "id": 469
+    },
+    {
+      "word": "레브",
+      "count": "레브",
+      "id": 470
+    },
+    {
+      "word": "밀플랜비",
+      "count": "밀플랜비",
+      "id": 471
+    },
+    {
+      "word": "동화생고기",
+      "count": "동화생고기",
+      "id": 472
+    },
+    {
+      "word": "매운언니",
+      "count": "매운언니",
+      "id": 473
+    },
+    {
+      "word": "곱창홀릭 봉담점",
+      "count": "곱창홀릭 봉담점",
+      "id": 474
+    },
+    {
+      "word": "자매맛집",
+      "count": "자매맛집",
+      "id": 475
+    },
+    {
+      "word": "7080라이브",
+      "count": "7080라이브",
+      "id": 476
+    },
+    {
+      "word": "본죽",
+      "count": "본죽",
+      "id": 477
+    },
+    {
+      "word": "치킨마루와우리점",
+      "count": "치킨마루와우리점",
+      "id": 478
+    },
+    {
+      "word": "석천생선구이",
+      "count": "석천생선구이",
+      "id": 479
+    },
+    {
+      "word": "전곱(봉담점)",
+      "count": "전곱(봉담점)",
+      "id": 480
+    },
+    {
+      "word": "싱싱오동도",
+      "count": "싱싱오동도",
+      "id": 481
+    },
+    {
+      "word": "백청우 칼국수 봉담점",
+      "count": "백청우 칼국수 봉담점",
+      "id": 482
+    },
+    {
+      "word": "아그집봉담점",
+      "count": "아그집봉담점",
+      "id": 483
+    },
+    {
+      "word": "쌈촌",
+      "count": "쌈촌",
+      "id": 484
+    },
+    {
+      "word": "전주집",
+      "count": "전주집",
+      "id": 485
+    },
+    {
+      "word": "네네치킨 봉담점",
+      "count": "네네치킨 봉담점",
+      "id": 486
+    },
+    {
+      "word": "품육 봉담점",
+      "count": "품육 봉담점",
+      "id": 487
+    },
+    {
+      "word": "동복리제주갈치조림 봉담점",
+      "count": "동복리제주갈치조림 봉담점",
+      "id": 488
+    },
+    {
+      "word": "조선부뚜막 봉담2지구점",
+      "count": "조선부뚜막 봉담2지구점",
+      "id": 489
+    },
+    {
+      "word": "국민낙곱새(봉담점)",
+      "count": "국민낙곱새(봉담점)",
+      "id": 490
+    },
+    {
+      "word": "역북집화성봉담점",
+      "count": "역북집화성봉담점",
+      "id": 491
+    },
+    {
+      "word": "인생역전",
+      "count": "인생역전",
+      "id": 492
+    },
+    {
+      "word": "꼬치공방 화성봉담점",
+      "count": "꼬치공방 화성봉담점",
+      "id": 493
+    },
+    {
+      "word": "신가게맥주",
+      "count": "신가게맥주",
+      "id": 494
+    },
+    {
+      "word": "깡우동",
+      "count": "깡우동",
+      "id": 495
+    },
+    {
+      "word": "회가 대표 초밥24 봉담점",
+      "count": "회가 대표 초밥24 봉담점",
+      "id": 496
+    },
+    {
+      "word": "양평해장국",
+      "count": "양평해장국",
+      "id": 497
+    },
+    {
+      "word": "고향식당",
+      "count": "고향식당",
+      "id": 498
+    },
+    {
+      "word": "덕림전통육개장냉면",
+      "count": "덕림전통육개장냉면",
+      "id": 499
+    },
+    {
+      "word": "우리식당",
+      "count": "우리식당",
+      "id": 500
+    },
+    {
+      "word": "한가네손두부",
+      "count": "한가네손두부",
+      "id": 501
+    },
+    {
+      "word": "하루덕",
+      "count": "하루덕",
+      "id": 502
+    },
+    {
+      "word": "궁서체",
+      "count": "궁서체",
+      "id": 503
+    },
+    {
+      "word": "경복궁",
+      "count": "경복궁",
+      "id": 504
+    },
+    {
+      "word": "만금성",
+      "count": "만금성",
+      "id": 505
+    },
+    {
+      "word": "몽떼",
+      "count": "몽떼",
+      "id": 506
+    },
+    {
+      "word": "마패불고기",
+      "count": "마패불고기",
+      "id": 507
+    },
+    {
+      "word": "수성연가",
+      "count": "수성연가",
+      "id": 508
+    },
+    {
+      "word": "브라더양꼬치",
+      "count": "브라더양꼬치",
+      "id": 509
+    },
+    {
+      "word": "유명환 명품족발",
+      "count": "유명환 명품족발",
+      "id": 510
+    },
+    {
+      "word": "서울촌뚝배기",
+      "count": "서울촌뚝배기",
+      "id": 511
+    },
+    {
+      "word": "진국본가 화성직영점",
+      "count": "진국본가 화성직영점",
+      "id": 512
+    },
+    {
+      "word": "꼴두바우",
+      "count": "꼴두바우",
+      "id": 513
+    },
+    {
+      "word": "대학식당",
+      "count": "대학식당",
+      "id": 514
+    },
+    {
+      "word": "짱이와떡볶기",
+      "count": "짱이와떡볶기",
+      "id": 515
+    },
+    {
+      "word": "봉담 갈릴리",
+      "count": "봉담 갈릴리",
+      "id": 516
+    },
+    {
+      "word": "달이담",
+      "count": "달이담",
+      "id": 517
+    },
+    {
+      "word": "즘골마을",
+      "count": "즘골마을",
+      "id": 518
+    },
+    {
+      "word": "정자식당",
+      "count": "정자식당",
+      "id": 519
+    },
+    {
+      "word": "썬플라워",
+      "count": "썬플라워",
+      "id": 520
+    },
+    {
+      "word": "처갓집양념치킨 왕림점",
+      "count": "처갓집양념치킨 왕림점",
+      "id": 521
+    },
+    {
+      "word": "와우리본가순대국",
+      "count": "와우리본가순대국",
+      "id": 522
+    },
+    {
+      "word": "돈치킨 수원대점",
+      "count": "돈치킨 수원대점",
+      "id": 523
+    },
+    {
+      "word": "하나F&C",
+      "count": "하나F&C",
+      "id": 524
+    },
+    {
+      "word": "별법동태탕속초코다리냉면",
+      "count": "별법동태탕속초코다리냉면",
+      "id": 525
+    },
+    {
+      "word": "버터아이",
+      "count": "버터아이",
+      "id": 526
+    },
+    {
+      "word": "한신포차 화성봉담점",
+      "count": "한신포차 화성봉담점",
+      "id": 527
+    },
+    {
+      "word": "생고기마을",
+      "count": "생고기마을",
+      "id": 528
+    },
+    {
+      "word": "외갓집한식부페",
+      "count": "외갓집한식부페",
+      "id": 529
+    },
+    {
+      "word": "서울집설농탕",
+      "count": "서울집설농탕",
+      "id": 530
+    },
+    {
+      "word": "빈센트반커피",
+      "count": "빈센트반커피",
+      "id": 531
+    },
+    {
+      "word": "해피 홈",
+      "count": "해피 홈",
+      "id": 532
+    },
+    {
+      "word": "홍주네샤브칼국수",
+      "count": "홍주네샤브칼국수",
+      "id": 533
+    },
+    {
+      "word": "플러스82 화성봉담점",
+      "count": "플러스82 화성봉담점",
+      "id": 534
+    },
+    {
+      "word": "소코아 봉담점",
+      "count": "소코아 봉담점",
+      "id": 535
+    },
+    {
+      "word": "라홍방마라탕 봉담동화점",
+      "count": "라홍방마라탕 봉담동화점",
+      "id": 536
+    },
+    {
+      "word": "봉명동내커피 화성봉담점",
+      "count": "봉명동내커피 화성봉담점",
+      "id": 537
+    },
+    {
+      "word": "샐포시",
+      "count": "샐포시",
+      "id": 538
+    },
+    {
+      "word": "요달의찜닭봉담점",
+      "count": "요달의찜닭봉담점",
+      "id": 539
+    },
+    {
+      "word": "까몬 봉담점",
+      "count": "까몬 봉담점",
+      "id": 540
+    },
+    {
+      "word": "길동우동 화성봉담점",
+      "count": "길동우동 화성봉담점",
+      "id": 541
+    },
+    {
+      "word": "열정",
+      "count": "열정",
+      "id": 542
+    },
+    {
+      "word": "샐러리아 봉담점",
+      "count": "샐러리아 봉담점",
+      "id": 543
     }
   ]
 }

@@ -1,15 +1,15 @@
-import './style.css';
-import defaultProfileImage from 'assets/default-profile-image.png'
+import defaultProfileImage from 'assets/default-profile-image.png';
 import { CommentListItem } from 'types/interface';
+import './style.css';
 
 interface Props {
-  comListItem: CommentListItem;
+  commentListItem: CommentListItem;
 }
 //      ComItem 컴포넌트     //
 
-export default function ComItem({ comListItem }: Props) {
+export default function CommentItem({ commentListItem }: Props) {
   //properties//
-  const { nickname, profileImage, writeDatetime, content } = comListItem;
+  const { nickname, profileImage, writeDatetime, content } = commentListItem;
 //      ComItem 컴포넌트 렌더링     //
   return (
     <div className="com-list-item">
