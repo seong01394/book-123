@@ -1,32 +1,30 @@
 import axios from "axios";
 import _ from "lodash";
-import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { countState, currentPage, totalState } from "../../../store/recoil";
 import BoardPresenter from "./Board.presenter";
 
-interface word {
+interface Word {
   word: string;
-  count: number;
+  address: string;
+  name: string;
 }
 
-export default function BoardContainer() {
+const Boardcontainer: React.FC = () => {
   const [data, setData] = useState([]);
   const [allData, setAllData] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [isFilter, setIsFilter] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
-  const [word, setWord] = useState();
+  const [word, setWord] = useState<{ word: string; name: string; address: string; }[]>([]);
   const [total, setTotal] = useRecoilState(totalState);
   const [current] = useRecoilState(currentPage);
   const [count, setCount] = useRecoilState(countState);
-  let id: number;
+  let id: number | undefined;
   const inputRef = useRef<any>(null);
 
-  // const URL =
-  //   "https://raw.githubusercontent.com/jejodo-dev-team/open-api/main/frontend.json";
-
-  const URL = "http://localhost:9000";
+  const URL = 'http://localhost:4000'; // Spring Boot 서버의 주소로 변경
 
   const getAllData = async () => {
     try {
@@ -44,7 +42,7 @@ export default function BoardContainer() {
     try {
       const res = await fetch(`${URL}/data?_page=1`);
       const data = await res.json();
-      getAllData();
+      await getAllData();
       setData(data);
       setTotal(allData.length);
       return data;
@@ -56,11 +54,11 @@ export default function BoardContainer() {
   const getPage = async (page: number) => {
     let URL: any;
     if (count === 6) {
-      URL = `http://localhost:9000/data?_page=${page}`;
+      URL = `http://localhost:4000/data?_page=${page}`;
     } else if (count === 5) {
-      URL = `http://localhost:9000/data?_page=${page}?building_count_gte=5`;
+      URL = `http://localhost:4000/data?_page=${page}?building_count_gte=5`;
     } else {
-      URL = `http://localhost:9000/data?_page=${page}?building_count=${count}`;
+      URL = `http://localhost:4000/data?_page=${page}?building_count=${count}`;
     }
 
     try {
@@ -84,10 +82,9 @@ export default function BoardContainer() {
       return getData();
     }
     if (filterCount === 5) {
-      URL = `http://localhost:9000/data?&building_count_gte=5`;
-      // URL = `http://localhost:9000/data?_page=${page}&_limit=10&building_count_gte=5`;
+      URL = `http://localhost:4000/data?&building_count_gte=5`;
     } else {
-      URL = `http://localhost:9000/data?building_count=${filterCount}`;
+      URL = `http://localhost:4000/data?building_count=${filterCount}`;
     }
     try {
       const res = await fetch(URL);
@@ -101,7 +98,7 @@ export default function BoardContainer() {
 
   const getSearchData = async (keyword?: undefined | string) => {
     try {
-      const res = await fetch(`${URL}/data?q=${keyword}`);
+      const res = await fetch(`${URL}/search?keyword=${keyword}`);
       const data = await res.json();
       setData(data);
       setTotal(data.length);
@@ -111,7 +108,7 @@ export default function BoardContainer() {
   };
 
   const getWord = async (word?: string) => {
-    const URL = `http://localhost:9000/search?_sort=count&_order=desc&q=${word}`;
+    const URL = `http://localhost:4000/search?_sort=count&_order=desc&keyword=${word}`;
     try {
       const res = await fetch(URL);
       const data = await res.json();
@@ -137,17 +134,17 @@ export default function BoardContainer() {
 
   const updateData = async (keyword: string) => {
     try {
-      const getRes = await axios.get("http://localhost:9000/search");
+      const getRes = await axios.get("http://localhost:4000/search");
       const data = getRes.data.filter((el: any) => el.word === keyword);
 
       if (data.length === 0) {
-        await axios.post(`http://localhost:9000/search`, {
+        await axios.post(`http://localhost:4000/search`, {
           id,
           word: keyword,
           count: 1,
         });
       } else {
-        await axios.put(`http://localhost:9000/search/${data[0].id}`, {
+        await axios.put(`http://localhost:4000/search/${data[0].id}`, {
           word: keyword,
           count: data[0].count + 1,
         });
@@ -199,4 +196,6 @@ export default function BoardContainer() {
       inputRef={inputRef}
     />
   );
-}
+};
+
+export default Boardcontainer;

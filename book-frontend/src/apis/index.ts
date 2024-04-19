@@ -105,17 +105,3 @@ export const fileUploadRequest = async (data: FormData) => {
       return result;
 }
 
-const SEARCH_URL = () => `${API_DOMAIN}/board/End`;
-
-export const handleSearch = async (query: string) => {
-  try {
-    const response = await axios.post(SEARCH_URL(), { query });
-    const data = response.data; // 검색 결과 데이터
-
-    // 검색 결과를 반환하거나 다른 작업을 수행할 수 있습니다.
-    return data;
-  } catch (error) {
-    console.error('검색 중 오류 발생:', error);
-    return null; // 오류 발생 시 null을 반환합니다.
-  }
-};

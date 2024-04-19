@@ -14,7 +14,6 @@ import com.example.bookback.dto.request.board.PostBoardRequestDto;
 import com.example.bookback.dto.response.board.GetBoradResponseDto;
 import com.example.bookback.dto.response.board.GetCommentListResponseDto;
 import com.example.bookback.dto.response.board.GetFavoriteListResponseDto;
-import com.example.bookback.dto.response.board.GetSearchEndListResponseDto;
 import com.example.bookback.dto.response.board.PostBoardResponseDto;
 import com.example.bookback.dto.response.board.PostCommentRequestDto;
 import com.example.bookback.dto.response.board.PostCommentResponseDto;
@@ -74,14 +73,7 @@ public class BoardController {
         return response;
     }
 
-    @GetMapping("/search-list/{searchWord}")
-    public ResponseEntity<? super GetSearchEndListResponseDto> getSearchEndList(
-        @PathVariable("searchWord") String searchWord,
-        @PathVariable(value="preSearchWord", required=false) String preSearchWord
-    ) {
-        ResponseEntity<? super GetSearchEndListResponseDto> response = boardService.getSearchEndList(searchWord);
-        return response;
-    }
+
 
     @PutMapping("/{boardNumber}/favorite")
     public ResponseEntity<? super PutFavoriteResponseDto> putFavorite(

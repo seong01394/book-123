@@ -4,6 +4,12 @@ import FilterPage from "../filter/Filter.container";
 import PaginationPage from "../pagination/Pagination.container";
 import * as S from "./Board.styles";
 
+export interface Word {
+  word: string;
+  address: string;
+  name: string;
+}
+
 interface IPropsBoardPresenter {
   data?: any;
   allData?: any;
@@ -16,13 +22,8 @@ interface IPropsBoardPresenter {
   onKeyUp: (event: KeyboardEvent<HTMLInputElement>) => void;
   isSearch: boolean;
   getFilterData: (filterCount: number) => void;
-  word?: [
-    {
-      word: string;
-      count: number;
-      id: string;
-    }
-  ];
+  word?: Word[] | undefined;
+  
   onClickWord: (event: any) => void;
   setData: any;
   getAllData: () => void;
@@ -31,7 +32,6 @@ interface IPropsBoardPresenter {
   updateData: any;
   inputRef: any;
 }
-
 export default function BoardPresenter(props: IPropsBoardPresenter) {
   return (
     <S.Wrapper>
@@ -64,7 +64,7 @@ export default function BoardPresenter(props: IPropsBoardPresenter) {
           </S.SearchForm>
           {props.isSearch && props.keyword && (
             <S.Dropdown>
-              {props.word?.map((el, idx) => (
+              {Array.isArray(props.word) && props.word.map((el, idx) => (
                 <div key={uuidv4()}>
                   <S.Word
                     onClick={props.onClickWord}
@@ -99,7 +99,7 @@ export default function BoardPresenter(props: IPropsBoardPresenter) {
           />
         )}
 
-        {props.data?.map((el: any) => (
+      {Array.isArray(props.data) && props.data.map((el: any) => (
           <S.FilterItem
             key={uuidv4()}
             style={{ height: el.nickname.length >= 8 ? "118px" : "94px" }}
