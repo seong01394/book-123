@@ -1,13 +1,12 @@
-import { ChangeEvent, KeyboardEvent } from "react";
+import React, { ChangeEvent, KeyboardEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
 import FilterPage from "../filter/Filter.container";
 import PaginationPage from "../pagination/Pagination.container";
 import * as S from "./Board.styles";
 
-export interface Word {
+interface Word {
   word: string;
-  address: string;
-  name: string;
+  count: number;
 }
 
 interface IPropsBoardPresenter {
@@ -22,8 +21,7 @@ interface IPropsBoardPresenter {
   onKeyUp: (event: KeyboardEvent<HTMLInputElement>) => void;
   isSearch: boolean;
   getFilterData: (filterCount: number) => void;
-  word?: Word[] | undefined;
-  
+  word?: Word[] | undefined; 
   onClickWord: (event: any) => void;
   setData: any;
   getAllData: () => void;
@@ -32,7 +30,16 @@ interface IPropsBoardPresenter {
   updateData: any;
   inputRef: any;
 }
-export default function BoardPresenter(props: IPropsBoardPresenter) {
+
+const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
+
+  const onClickSearch = () => {
+    if (props.keyword.trim() !== "") {
+      // 검색어가 비어있지 않은 경우에만 검색 수행
+      props.getData();
+    }
+  };
+
   return (
     <S.Wrapper>
       <S.TopDiv>
@@ -41,11 +48,7 @@ export default function BoardPresenter(props: IPropsBoardPresenter) {
           같이 즐겨요!{" "}
         </S.Content>
         <S.SearchWrapper>
-          <S.SearchForm
-          // onSubmit={props.onClickSearch}
-          // method="POST"
-          // autoComplete="off"
-          >
+          <S.SearchForm>
             <S.SearchInput
               placeholder="검색"
               type="text"
@@ -56,15 +59,14 @@ export default function BoardPresenter(props: IPropsBoardPresenter) {
             />
             <S.SearchBtn
               type="button"
-              // FiSearch
-              // style={{ fontSize: 14, cursor: "pointer" }}
+              onClick={onClickSearch}
             >
               Search
             </S.SearchBtn>
           </S.SearchForm>
           {props.isSearch && props.keyword && (
             <S.Dropdown>
-              {Array.isArray(props.word) && props.word.map((el, idx) => (
+              {props.word?.map((el, idx) => (
                 <div key={uuidv4()}>
                   <S.Word
                     onClick={props.onClickWord}
@@ -99,7 +101,7 @@ export default function BoardPresenter(props: IPropsBoardPresenter) {
           />
         )}
 
-      {Array.isArray(props.data) && props.data.map((el: any) => (
+        {Array.isArray(props.data) && props.data.map((el: any) => (
           <S.FilterItem
             key={uuidv4()}
             style={{ height: el.nickname.length >= 8 ? "118px" : "94px" }}
@@ -156,4 +158,6 @@ export default function BoardPresenter(props: IPropsBoardPresenter) {
       />
     </S.Wrapper>
   );
-}
+};
+
+export default BoardPresenter;

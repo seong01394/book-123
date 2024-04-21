@@ -3,7 +3,6 @@ package com.example.bookback.dto.object;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.bookback.dto.response.board.GetYourListResponseDto;
 import com.example.bookback.repository.resultSet.GetYourListResultSet;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +21,7 @@ public class YourListItem {
         this.address = resultSet.getAddress();
     }
 
-    public static List<YourListItem> copyList(List<GetYourListResponseDto> resultSets) {
+    public static List<YourListItem> copyList(List<GetYourListResultSet> resultSets) {
         List<YourListItem> list = new ArrayList<>();
         for (GetYourListResultSet resultSet: resultSets) {
             YourListItem yourListItem = new YourListItem(resultSet);
@@ -31,8 +30,5 @@ public class YourListItem {
         return list;
     }
 
-    public static List<YourListItem> copyList(List<GetYourListResponseDto> resultSets) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'copyList'");
-    }
+    
 }

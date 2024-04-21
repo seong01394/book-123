@@ -1,4 +1,4 @@
-import BoardPage from '../../pages/board/index';
+import BoardPage from '../../pages/board';
 import './style.css';
 
 //          main components            //

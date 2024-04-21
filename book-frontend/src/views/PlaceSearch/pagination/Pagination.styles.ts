@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
+import styled from "@emotion/styled";
 
 export const BodyHTML = styled.div`
   width: 100vw;

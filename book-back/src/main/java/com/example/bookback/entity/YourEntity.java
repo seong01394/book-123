@@ -20,13 +20,10 @@ public class YourEntity {
     private String name;
     private String address;
 
-    public YourEntity(PostYourRequestDto dto, String name2, String address2) {
+    public YourEntity(PostYourRequestDto dto, String name, String address){
         this.name = dto.getName();
         this.address = dto.getAddress();
     }
-
-    public YourEntity(PostYourRequestDto dto, String name2, String address2) {
-        //TODO Auto-generated constructor stub
-    }
+    
   
 }

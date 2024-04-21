@@ -19,7 +19,7 @@ public class GetYourListResponseDto extends ResponseDto{
 
     private List<YourListItem> yourList;
 
-    private GetYourListResponseDto(List<GetYourListResponseDto> resultSets) {
+    private GetYourListResponseDto(List<GetYourListResultSet> resultSets) {
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
         this.yourList = YourListItem.copyList(resultSets);
 
@@ -31,12 +31,9 @@ public class GetYourListResponseDto extends ResponseDto{
     }
 
     public static ResponseEntity<ResponseDto> noExistName() {
-        ResponseDto result = new ResponseDto(ResponseCode.NOT_EXISTED_BOARD, ResponseMessage.NOT_EXISTED_BOARD);
+        ResponseDto result = new ResponseDto(ResponseCode.NOT_EXISTED_WORD, ResponseMessage.NOT_EXISTED_WORD);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
     }
 
-    public static ResponseEntity<? super GetYourListResponseDto> success(List<GetYourListResultSet> resultSets) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'success'");
-    }
+    
 }
