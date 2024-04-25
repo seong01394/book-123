@@ -3,9 +3,9 @@ export const AUTH_PATH = () => '/auth';
 export const SEARCH_PATH = (searchWord: string) => `/search/${searchWord}`;
 export const SEARCHPAGE_PATH = () => '/searchpage';
 export const SEARCHPAGE_ZEROPATH = () => 'zero';
-export const SEARCHPAGE_ONEPATH = () => '';
-export const SEARCHPAGE_TWOPATH = () => 'two';
-export const SEARCHPAGE_THREEPATH = () => '';
+export const SEARCHPAGE_ONEPATH = () => 'ones';
+export const SEARCHPAGE_TWOPATH = () => 'twos';
+export const SEARCHPAGE_THREEPATH = () => 'threes';
 export const USER_PATH = (userEmail: string) => `/user/${userEmail}`;
 export const BOARD_PATH = () => '/board';
 export const BOARD_DETAILPATH = (boardNumber: string | number) =>

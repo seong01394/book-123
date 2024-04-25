@@ -10,8 +10,12 @@ import {
   BOARD_UPDATE_PATH,
   BOARD_WRITE_PATH,
   MAIN_PATH,
+  SEARCHPAGE_ONEPATH,
+  SEARCHPAGE_PATH,
+  SEARCHPAGE_THREEPATH,
+  SEARCHPAGE_TWOPATH,
   SEARCH_PATH,
-  USER_PATH
+  USER_PATH,
 } from 'constant';
 import Container from 'layouts/Container';
 import { useEffect } from 'react';
@@ -28,9 +32,11 @@ import Update from 'views/Board/Update';
 import Write from 'views/Board/Write';
 import Main from 'views/Main';
 import Search from 'views/Search';
+import OneS from 'views/SearchPage/OneS';
+import ThreeS from 'views/SearchPage/ThreeS';
+import TwoS from 'views/SearchPage/TwoS';
 import UserP from 'views/User';
 import './App.css';
-
 
 //                component(app)                    //
 function App() {
@@ -69,28 +75,35 @@ function App() {
   //              description: 게시물 수정하기 : 'board/update/:boardNumber' - Boardupdate  //
   //              description: gpt : 'board/gpt' - Boardgpt //
   return (
-  <RecoilRoot>
-    <Routes>
-      <Route element={<Container />}>
-        <Route path={MAIN_PATH()} element={<Main />} />
-        <Route path={AUTH_PATH()} element={<Authentication />} />
-        <Route path={SEARCH_PATH(':searchWord')} element={<Search />}/>
-      
-        <Route path={USER_PATH(':userEmail')} element={<UserP />} />
-        <Route path={BOARD_PATH()}>
-          <Route path={BOARD_DETAILPATH(':boardNumber')} element={<Detail />} />
-          <Route path={BOARD_END_PATH()} element={<End/>} />
-          <Route path={BOARD_GPT_PATH()} element={<Gpt />} />
-          <Route path={BOARD_WRITE_PATH()} element={<Write />} />
-          <Route
-            path={BOARD_UPDATE_PATH(':boardNumber')}
-            element={<Update />}
-          />
+    <RecoilRoot>
+      <Routes>
+        <Route element={<Container />}>
+          <Route path={MAIN_PATH()} element={<Main />} />
+          <Route path={AUTH_PATH()} element={<Authentication />} />
+          <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />
+          <Route path={SEARCHPAGE_PATH()}>
+            <Route path={SEARCHPAGE_ONEPATH()} element={<OneS />} />
+            <Route path={SEARCHPAGE_TWOPATH()} element={<TwoS />} />
+            <Route path={SEARCHPAGE_THREEPATH()} element={<ThreeS />}></Route>
+          </Route>
+          <Route path={USER_PATH(':userEmail')} element={<UserP />} />
+          <Route path={BOARD_PATH()}>
+            <Route
+              path={BOARD_DETAILPATH(':boardNumber')}
+              element={<Detail />}
+            />
+            <Route path={BOARD_END_PATH()} element={<End />} />
+            <Route path={BOARD_GPT_PATH()} element={<Gpt />} />
+            <Route path={BOARD_WRITE_PATH()} element={<Write />} />
+            <Route
+              path={BOARD_UPDATE_PATH(':boardNumber')}
+              element={<Update />}
+            />
+          </Route>
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Route>
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-      </Route>
-    </Routes>
-  </RecoilRoot>
+      </Routes>
+    </RecoilRoot>
   );
 }
 
