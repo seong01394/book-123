@@ -227,25 +227,32 @@ export default function Header() {
   useEffect(() => {
     const isAuthPage = pathname.startsWith(AUTH_PATH());
     setAuthPage(isAuthPage);
+
     const isMainPage = pathname === MAIN_PATH();
     setMainPage(isMainPage);
+
     const isSearchPage = pathname.startsWith(SEARCH_PATH(''));
     setSearchPage(isSearchPage);
+
     const isBoardDetailPage = pathname.startsWith(
       BOARD_PATH() + '/' + BOARD_DETAILPATH(''),
     );
+
     setBoardDetailPage(isBoardDetailPage);
     const isBoardWritePage = pathname.startsWith(
       BOARD_PATH() + '/' + BOARD_WRITE_PATH(),
     );
+
     setBoardWritePage(isBoardWritePage);
     const isBoardUpdatePage = pathname.startsWith(
       BOARD_PATH() + '/' + BOARD_UPDATE_PATH(''),
     );
+
     setBoardUpdatePage(isBoardUpdatePage);
     const isUserPage = pathname.startsWith(USER_PATH(''));
     setUserPage(isUserPage);
   }, [pathname]);
+  
   // effect: login user가 변경 될 때마다 실행될 함수//
   useEffect(() => {
     setLogin(loginUser !== null);

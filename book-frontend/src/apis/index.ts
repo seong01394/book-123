@@ -104,3 +104,4 @@ export const fileUploadRequest = async (data: FormData) => {
       })
       return result;
 }
+

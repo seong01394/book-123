@@ -17,6 +17,7 @@ import Container from 'layouts/Container';
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { Route, Routes } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import { useLoginUserStore } from 'stores';
 import { User } from 'types/interface';
 import Authentication from 'views/Authentication';
@@ -68,6 +69,7 @@ function App() {
   //              description: 게시물 수정하기 : 'board/update/:boardNumber' - Boardupdate  //
   //              description: gpt : 'board/gpt' - Boardgpt //
   return (
+  <RecoilRoot>
     <Routes>
       <Route element={<Container />}>
         <Route path={MAIN_PATH()} element={<Main />} />
@@ -77,7 +79,7 @@ function App() {
         <Route path={USER_PATH(':userEmail')} element={<UserP />} />
         <Route path={BOARD_PATH()}>
           <Route path={BOARD_DETAILPATH(':boardNumber')} element={<Detail />} />
-          <Route path={BOARD_END_PATH()} element={<End />} />
+          <Route path={BOARD_END_PATH()} element={<End/>} />
           <Route path={BOARD_GPT_PATH()} element={<Gpt />} />
           <Route path={BOARD_WRITE_PATH()} element={<Write />} />
           <Route
@@ -88,6 +90,7 @@ function App() {
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>
+  </RecoilRoot>
   );
 }
 

@@ -1,12 +1,9 @@
-import React from 'react'
-import './style.css'
+import BoardPage from '../../pages/board';
+import './style.css';
 
 //          main components            //
-export default function Main() {
+const Main = (): JSX.Element => {
   //          render(Main)      //
-  return (
-    <div>
-      메인페이지입니다.
-    </div>
-  )
-}
+  return <BoardPage />;
+};
+export default Main;

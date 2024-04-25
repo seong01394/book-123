@@ -1,0 +1,52 @@
+import { MouseEvent, useState } from "react";
+import { useRecoilState } from "recoil";
+import { countState, currentPage, totalState } from "../../../store/recoil";
+import PaginationPresenter from "./Pagination.presenter";
+
+interface IPropsPagination {
+  setData: any;
+  data?: any;
+  allData?: any;
+  getAllData: () => void;
+  getPage: (page: number) => void;
+  getFilterData: any;
+}
+
+export default function PaginationPage(props: IPropsPagination) {
+  const [startpage, setStartpage] = useState(1);
+  const [current, setCurrent] = useRecoilState(currentPage);
+  const [count] = useRecoilState(countState);
+  const [total] = useRecoilState(totalState);
+  const lastpage = Math.ceil(total / 10);
+
+  const onClickPage = (event: MouseEvent<HTMLButtonElement>) => {
+    const target = Number((event.target as HTMLDivElement).id);
+    setCurrent(target);
+    props.getFilterData(count);
+  };
+
+  const onClickPrevPage = (event: any) => {
+    if (startpage === 1) return;
+    setStartpage((prev) => prev - 3);
+    props.getPage(Number((event.target as HTMLDivElement).id));
+    setCurrent(startpage - 3);
+  };
+
+  const onClickNextPage = (event: any) => {
+    if (!(startpage + 3 <= lastpage)) return;
+    setStartpage((prev) => prev + 3);
+    props.getPage(Number((event.target as HTMLDivElement).id));
+    setCurrent(startpage + 3);
+  };
+
+  return (
+    <PaginationPresenter
+      onClickPage={onClickPage}
+      onClickPrevPage={onClickPrevPage}
+      onClickNextPage={onClickNextPage}
+      startpage={startpage}
+      lastpage={lastpage}
+      current={current}
+    />
+  );
+}
