@@ -1,5 +1,5 @@
-import BoardContainer from "../../views/PlaceSearch/board/Board.container";
+import Boardcontainer from '../../views/SearchPage/Zero/Board.container';
 
 export default function BoardPage() {
-  return <BoardContainer />;
+  return <Boardcontainer />;
 }

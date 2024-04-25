@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.section`
   width: 100vw;
@@ -7,16 +7,6 @@ export const Wrapper = styled.section`
   align-items: center;
 `;
 
-
-export const Characters = styled.img`
-  width: 560px;
-  height: 300px;
-
-  @media (min-width: 360px) and (max-width: 1023px) {
-    width: 360px;
-    height: 193px;
-  }
-`;
 
 export const TopDiv = styled.div`
   padding-top: 350px;
@@ -128,7 +118,7 @@ interface IPropsKeyword {
 export const Keyword = styled.span`
   width: 100%;
   background-color: ${(props: IPropsKeyword) =>
-    props.isMatched ? "rgb(68, 152, 242, 0.5)" : "none"};
+    props.isMatched ? 'rgb(68, 152, 242, 0.5)' : 'none'};
 `;
 
 export const FilterDiv = styled.div`
@@ -216,7 +206,7 @@ export const ContentTop = styled.div`
   align-items: center;
 `;
 
-export const BuildingCount = styled.span`
+export const Count = styled.span`
   color: #4498f2;
   font-size: 14px;
   line-height: 20px;
@@ -253,4 +243,26 @@ export const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const SearchResultWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+`;
+
+export const SearchResult = styled.div`
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 8px 16px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #e2e2e2;
+  }
 `;
