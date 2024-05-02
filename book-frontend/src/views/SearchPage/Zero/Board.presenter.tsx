@@ -1,4 +1,10 @@
+import {
+  SEARCHPAGE_ONEPATH,
+  SEARCHPAGE_PATH,
+  SEARCHPAGE_TWOPATH,
+} from 'constant';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './Board.styles';
 
 interface IPropsBoardPresenter {
@@ -13,6 +19,7 @@ interface IPropsBoardPresenter {
 
 const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
   const [error, setError] = useState<string>('');
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     try {
@@ -29,19 +36,26 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
       return <div>{props.error || 'No results found.'}</div>; // 에러 메시지 표시
     }
     return items.map((item: any) => (
-      <S.FilterItem key={item.nickname}>
-        <S.Profile src="profile.jpg" alt="Profile" />
-        <S.ProfileContent>
-          <S.ContentTop>
-            <span>{item.nickname}</span>
-            <S.CircleWrapper>
-              <S.Circle>{item.building_count}</S.Circle>
-              <S.Count>건물수</S.Count>
-            </S.CircleWrapper>
-          </S.ContentTop>
-          <S.ContentBottom>{item.oname}</S.ContentBottom>
-        </S.ProfileContent>
-      </S.FilterItem>
+      <div
+        key={item.nickname}
+        onClick={() =>
+          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_ONEPATH(item.id)}`)
+        }
+      >
+        <S.FilterItem>
+          <S.Profile src="profile.jpg" alt="Profile" />
+          <S.ProfileContent>
+            <S.ContentTop>
+              <span>{item.nickname}</span>
+              <S.CircleWrapper>
+                <S.Circle>{item.building_count}</S.Circle>
+                <S.Count>건물수</S.Count>
+              </S.CircleWrapper>
+            </S.ContentTop>
+            <S.ContentBottom>{item.oname}</S.ContentBottom>
+          </S.ProfileContent>
+        </S.FilterItem>
+      </div>
     ));
   };
 
@@ -66,7 +80,14 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
           </S.SearchForm>
           <S.Dropdown>
             {props.search.map((tab: any) => (
-              <S.Word key={tab.id}>{tab.word}</S.Word>
+              <S.Word
+                key={tab.id}
+                onClick={() =>
+                  navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_TWOPATH()}`)
+                }
+              >
+                {tab.word}
+              </S.Word>
             ))}
           </S.Dropdown>
         </S.SearchWrapper>

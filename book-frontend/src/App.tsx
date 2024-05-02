@@ -82,7 +82,7 @@ function App() {
           <Route path={AUTH_PATH()} element={<Authentication />} />
           <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />
           <Route path={SEARCHPAGE_PATH()}>
-            <Route path={SEARCHPAGE_ONEPATH()} element={<OneS />} />
+            <Route path={SEARCHPAGE_ONEPATH(':id')} element={<OneS />} />
             <Route path={SEARCHPAGE_TWOPATH()} element={<TwoS />} />
             <Route path={SEARCHPAGE_THREEPATH()} element={<ThreeS />}></Route>
           </Route>
