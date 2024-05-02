@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledFeed = styled.div`
   height: 100%;
@@ -37,18 +37,13 @@ const StyledPosts = styled.div`
   }
 `;
 
-  const Domain = () => {
-
-
-
+const Domain = () => {
   return (
     <StyledFeed>
       <HeaderContainer>
-        <h1>오늘의 맛 Post</h1>
+        <h1>장바구니 Post</h1>
       </HeaderContainer>
-      <StyledPosts>
-        
-      </StyledPosts>
+      <StyledPosts></StyledPosts>
     </StyledFeed>
   );
 };

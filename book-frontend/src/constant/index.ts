@@ -4,7 +4,7 @@ export const SEARCH_PATH = (searchWord: string) => `/search/${searchWord}`;
 export const SEARCHPAGE_PATH = () => '/searchpage';
 export const SEARCHPAGE_ZEROPATH = () => 'zero';
 export const SEARCHPAGE_ONEPATH = (id: string) => 'ones/${id}';
-export const SEARCHPAGE_TWOPATH = () => 'twos/${id}';
+export const SEARCHPAGE_TWOPATH = () => 'twos';
 export const SEARCHPAGE_THREEPATH = () => 'threes';
 export const USER_PATH = (userEmail: string) => `/user/${userEmail}`;
 export const BOARD_PATH = () => '/board';
