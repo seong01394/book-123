@@ -88,7 +88,7 @@ const Chat = () => {
 
   //채팅창 레이아웃
   return (
-    <div className="Chat">
+    <div className="root-container Chat">
       <div style={{ position: 'relative', height: '800px', width: '700px' }}>
         <MainContainer>
           <ChatContainer>
