@@ -136,11 +136,23 @@ const NaverMapAndRestaurantInfo = () => {
 
   // Render reviews from the dataset
   const renderReviews = (data, startIndex, prefix) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <p key={prefix + (index + 1)}>{`${prefix}${index + 1}: ${
-        data[startIndex + index]
-      }`}</p>
-    ));
+    if (!data || data.length <= startIndex) {
+      return <p>No reviews available.</p>;
+    }
+
+    for (let index = 0; index < 5; index++) {
+      if (data[startIndex + index] === null) {
+        return <p key={prefix + index}>No review available</p>;
+      }
+    }
+
+    return Array.from({ length: 5 }, (_, index) => {
+      return (
+        <p key={prefix + (index + 1)}>{`${prefix}${index + 1}: ${
+          data[startIndex + index]
+        }`}</p>
+      );
+    });
   };
 
   // Component render method

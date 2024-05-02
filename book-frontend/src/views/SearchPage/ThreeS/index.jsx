@@ -1,3 +1,4 @@
+import proj4 from 'proj4';
 import { useEffect, useRef, useState } from 'react';
 import jsonData from '../../../assets/projdb_comp.json';
 import './style.css'; // CSS 파일을 잘 불러오고 있는지 확인하세요.
@@ -5,16 +6,25 @@ import './style.css'; // CSS 파일을 잘 불러오고 있는지 확인하세�
 const NaverMapAndRestaurantInfo = () => {
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
-  const [infoWindow, setInfoWindow] = useState(null);
   const [restaurantData, setRestaurantData] = useState(null);
   const [restaurantName, setRestaurantName] = useState('');
   const [marker, setMarker] = useState(null);
+  const [infoWindow, setInfoWindow] = useState(null);
+  const [currentLocationMarker, setCurrentLocationMarker] = useState(null);
+
+  // Define the projection strings for TM and WGS84
+  const tmProjection =
+    '+proj=tmerc +lat_0=38 +lon_0=127 +k=1 +x_0=200000 +y_0=600000 +ellps=GRS80 +units=m +no_defs';
+  const wgs84Projection = 'EPSG:4326';
 
   // Function to update the map's center and create a marker at the new location
-  const updateMapCenter = (lat, lng) => {
+  const updateMapCenter = (tmX, tmY) => {
+    tmX += 80;
+    tmY += 100280; // Add 100000 to tmY coordinate
+    const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
     if (!map) return; // Ensure map is not null
     const navermaps = window.naver.maps;
-    const newCenter = new navermaps.LatLng(lat, lng);
+    const newCenter = new navermaps.LatLng(lat, lon);
     map.setCenter(newCenter);
 
     if (marker) {
@@ -30,16 +40,43 @@ const NaverMapAndRestaurantInfo = () => {
   };
 
   // Function to handle moving to the current location
+  const createMarker = (lat, lng, map) => {
+    return new window.naver.maps.Marker({
+      position: new window.naver.maps.LatLng(lat, lng),
+      map: map,
+    });
+  };
+
   const handleCurrentLocation = () => {
+    if (!map) {
+      console.error('Map is not initialized.');
+      return;
+    }
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          updateMapCenter(position.coords.latitude, position.coords.longitude);
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const newCenter = new window.naver.maps.LatLng(lat, lng);
+
+          // 현재 위치 마커 업데이트 또는 새로 생성
+          if (currentLocationMarker) {
+            currentLocationMarker.setPosition(newCenter);
+          } else {
+            const newMarker = createMarker(lat, lng, map);
+            setCurrentLocationMarker(newMarker);
+          }
+
+          map.setCenter(newCenter);
         },
-        () => {
-          console.error('Failed to fetch current location.');
+        (error) => {
+          console.error('Failed to fetch current location:', error.message);
         },
+        { timeout: 10000 },
       );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
     }
   };
 
@@ -89,17 +126,10 @@ const NaverMapAndRestaurantInfo = () => {
 
   // Update the map marker and center when restaurant data changes
   useEffect(() => {
-    if (
-      map &&
-      restaurantData &&
-      restaurantData.length > 6 &&
-      restaurantData[5] &&
-      restaurantData[6]
-    ) {
-      updateMapCenter(
-        parseFloat(restaurantData[5]),
-        parseFloat(restaurantData[6]),
-      );
+    if (map && restaurantData) {
+      const tmX = parseFloat(restaurantData[5]);
+      const tmY = parseFloat(restaurantData[6]);
+      updateMapCenter(tmX, tmY);
     }
   }, [restaurantData, map]);
 
@@ -137,11 +167,23 @@ const NaverMapAndRestaurantInfo = () => {
 
   // Render reviews from the dataset
   const renderReviews = (data, startIndex, prefix) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <p key={prefix + (index + 1)}>{`${prefix}${index + 1}: ${
-        data[startIndex + index]
-      }`}</p>
-    ));
+    if (!data || data.length <= startIndex) {
+      return <p>No reviews available.</p>;
+    }
+
+    for (let index = 0; index < 5; index++) {
+      if (data[startIndex + index] === null) {
+        return <p key={prefix + index}>No review available</p>;
+      }
+    }
+
+    return Array.from({ length: 5 }, (_, index) => {
+      return (
+        <p key={prefix + (index + 1)}>{`${prefix}${index + 1}: ${
+          data[startIndex + index]
+        }`}</p>
+      );
+    });
   };
 
   // Component render method
