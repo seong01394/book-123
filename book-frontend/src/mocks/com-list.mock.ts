@@ -2,24 +2,24 @@ import { CommentListItem } from 'types/interface';
 
 const commentListMock: CommentListItem[] = [
   {
-    nickname: '안녕',
+    nickname: 'nickname',
     profileImage: null,
     writeDatetime: '3분전',
-    content: '안녕',
+    content: '환영해요!',
   },
 
   {
-    nickname: '안녕',
+    nickname: 'nickname1',
     profileImage: null,
     writeDatetime: '3분전',
-    content: '안녕',
+    content: '좋네요',
   },
 
   {
-    nickname: '안녕',
+    nickname: 'nickname12',
     profileImage: null,
     writeDatetime: '3분전',
-    content: '안녕',
+    content: '공감해요',
   },
 ];
 

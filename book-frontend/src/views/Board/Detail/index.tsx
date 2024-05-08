@@ -46,10 +46,10 @@ export default function Detail() {
         </div>
         <div className="divider"></div>
         <div className="board-detail-top-main">
-          <div className="board-detail-main-text">{'에이'}</div>
+          <div className="board-detail-main-text">{'테스트입니다'}</div>
           <img
             className="board-detail-main-image"
-            src="https://cdn.pixabay.com/photo/2022/09/02/19/55/crystal-7428278_1280.jpg"
+            src="https://ifh.cc/g/23akyH.jpg"
           />
         </div>
       </div>
@@ -74,7 +74,7 @@ export default function Detail() {
             <div className="icon-button">
               <div className="icon favorite-fill-icon"></div>
             </div>
-            <div className="board-detail-bottom-button-text">{`좋아요 ${12}`}</div>
+            <div className="board-detail-bottom-button-text">{`좋아요 ${3}`}</div>
             <div className="icon-button">
               <div className="icon up-light-icon"></div>
             </div>
@@ -83,7 +83,7 @@ export default function Detail() {
             <div className="icon-button">
               <div className="icon comment-icon"></div>
             </div>
-            <div className="board-detail-bottom-button-text">{`댓글 ${12}`}</div>
+            <div className="board-detail-bottom-button-text">{`댓글 ${3}`}</div>
             <div className="icon-button">
               <div className="icon up-light-icon"></div>
             </div>
@@ -93,7 +93,7 @@ export default function Detail() {
           <div className="board-detail-bottom-favorite-container">
             <div className="board-detail-bottom-favorite-title">
               {'좋아요 '}
-              <span className="emphasis">{12}</span>
+              <span className="emphasis">{3}</span>
             </div>
             <div className="board-detail-bottom-favorite-contents">
               {favoriteList.map((item) => (
@@ -106,7 +106,7 @@ export default function Detail() {
           <div className="board-detail-bottom-comment-container">
             <div className="board-detail-bottom-comment-title">
               {'댓글 '}
-              <span className="emphasis">{12}</span>
+              <span className="emphasis">{3}</span>
             </div>
             <div className="board-detail-bottom-comment-list-container">
               {commentList.map((item) => (

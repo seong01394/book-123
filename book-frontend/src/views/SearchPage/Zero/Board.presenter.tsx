@@ -3,8 +3,10 @@ import {
   SEARCHPAGE_PATH,
   SEARCHPAGE_TWOPATH,
 } from 'constant';
-import React, { useState } from 'react';
+import React from 'react';
+import { FaStar } from 'react-icons/fa'; // react-icons/fa에서 FaStar 아이콘을 가져옵니다.
 import { useNavigate } from 'react-router-dom';
+import ProFileImage from '../../../assets/free-icon-jp-9346261.png';
 import * as S from './Board.styles';
 
 interface IPropsBoardPresenter {
@@ -18,17 +20,7 @@ interface IPropsBoardPresenter {
 }
 
 const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
-  const [error, setError] = useState<string>('');
   const navigate = useNavigate();
-
-  const handleSearch = async () => {
-    try {
-      await props.onSearch(); // 검색 실행
-      setError(''); // 에러 초기화
-    } catch (error) {
-      setError('Failed to search data. Please try again later.'); // 검색 오류 발생 시 에러 설정
-    }
-  };
 
   const renderItems = () => {
     const items = props.isSearch ? props.search : props.data;
@@ -43,13 +35,21 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
         }
       >
         <S.FilterItem>
-          <S.Profile src="profile.jpg" alt="Profile" />
+          <S.Profile src={ProFileImage} />
           <S.ProfileContent>
             <S.ContentTop>
               <span>{item.nickname}</span>
               <S.CircleWrapper>
                 <S.Circle>{item.building_count}</S.Circle>
-                <S.Count>건물수</S.Count>
+                <S.Count>조회수</S.Count>
+                <S.Favor>
+                  평점
+                  <S.StarRatingWrapper>
+                    <StarRating rating={item.rating} />{' '}
+                    {/* StarRating 컴포넌트를 사용합니다. */}
+                    <S.Rating>{item.rating}</S.Rating>
+                  </S.StarRatingWrapper>
+                </S.Favor>
               </S.CircleWrapper>
             </S.ContentTop>
             <S.ContentBottom>{item.oname}</S.ContentBottom>
@@ -74,7 +74,7 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
               onChange={props.onChangeKeyword}
               value={props.keyword || ''}
             />
-            <S.SearchBtn type="button" onClick={handleSearch}>
+            <S.SearchBtn type="button" onClick={props.onSearch}>
               Search
             </S.SearchBtn>
           </S.SearchForm>
@@ -94,6 +94,17 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
       </S.TopDiv>
       <S.FilterDiv>{renderItems()}</S.FilterDiv>
     </S.Wrapper>
+  );
+};
+
+const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
+  const fullStars = Math.floor(rating);
+  return (
+    <S.StarRatingWrapper>
+      {[...Array(5)].map((_, index) => (
+        <FaStar key={index} color={index < fullStars ? 'yellow' : 'gray'} />
+      ))}
+    </S.StarRatingWrapper>
   );
 };
 

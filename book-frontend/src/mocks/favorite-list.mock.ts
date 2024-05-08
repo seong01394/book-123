@@ -1,21 +1,21 @@
 const favoriteListMock = [
     {
         "email": "email@email.com",
-        "nickname": "hi",
+        "nickname": "nickname12",
         "profileImage": null
     },
 
     {   
         
         "email": "email@email.com",
-        "nickname": "hi",
+        "nickname": "nickname1",
         "profileImage": null
     },
 
     {
         
         "email": "email@email.com",
-        "nickname": "hi",
+        "nickname": "sdf",
         "profileImage": null
     }
 

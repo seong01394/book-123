@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FaStar } from 'react-icons/fa';
 
 export const Wrapper = styled.section`
   width: 100vw;
@@ -6,7 +7,6 @@ export const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
 `;
-
 
 export const TopDiv = styled.div`
   padding-top: 350px;
@@ -211,8 +211,16 @@ export const Count = styled.span`
   font-size: 14px;
   line-height: 20px;
   padding-bottom: 8px;
+  margin-right: 40px;
 `;
-
+export const Favor = styled.span`
+  display: flex;
+  align-items: center;
+  color: #74745d;
+  padding-bottom: 8px;
+  font-size: 14px;
+  line-height: 20px;
+`;
 export const ContentBottom = styled.div`
   width: 100%;
   font-weight: 500;
@@ -225,21 +233,23 @@ export const ContentBottom = styled.div`
 
 export const CircleWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Circle을 위로 올림 */
+  margin-right: 4px; /* 여백 추가 */
 `;
 
 export const Circle = styled.div`
   width: 16px;
   height: 16px;
-  border: 0.7px solid #000;
-  border-radius: 10px;
+  border: 0.1px solid #000;
+  border-radius: 20px;
   font-weight: 700;
   font-size: 8px;
   line-height: 10px;
   text-align: center;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.05sem;
   color: #000;
-  margin-right: 4px;
+  margin-right: 4px; /* 여백 추가 */
+  margin-top: 2px; /* Circle을 위로 올림 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,4 +275,28 @@ export const SearchResult = styled.div`
   &:hover {
     background-color: #e2e2e2;
   }
+`;
+
+export const StarIcon = styled(FaStar)`
+  color: ${(props: { isFilled: boolean }) =>
+    props.isFilled ? 'yellow' : '#ccc'};
+  margin-right: 2px;
+`;
+
+export const StarRatingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const StarRating = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Rating = styled.span`
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 8px;
+  margin-left: 4px; /* 별점과 평점 사이 여백 */
 `;
