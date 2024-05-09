@@ -1,6 +1,7 @@
 book-back/src/main/java/com/example/bookback/controller/SearchController.java
 node_modules
 
+book-frontend/.env
 book-frontedn/node_modules
 book-frontend/node_modules/.cache
 book-frontend/node_modules/.cache/default-development/index.pack.old

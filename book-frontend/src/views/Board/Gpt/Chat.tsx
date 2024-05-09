@@ -13,7 +13,7 @@ import React, { useEffect, useState } from 'react';
 import Message from '../Gpt/Message';
 import { MessageDto } from '../Gpt/MessageDto';
 import './style.css';
-const Chat: React.FC = () => {
+const Gpt: React.FC = () => {
   const [isWaiting, setIsWaiting] = useState<boolean>(false);
   const [messages, setMessages] = useState<Array<MessageDto>>(
     new Array<MessageDto>(),
@@ -172,4 +172,4 @@ const Chat: React.FC = () => {
   );
 };
 
-export default Chat;
+export default Gpt;
