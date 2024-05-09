@@ -12,6 +12,30 @@ import './style.css';
 
 const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
+const initChatBot = async () => {
+  const openai = new OpenAI({
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true,
+  });
+
+  /* Create an assistant
+  const assistant = await openai.beta.assistants.create({
+    name: "Hockey Expert",
+    instructions: "You are a hockey expert. You specialize in helping others learn about hockey.",
+    tools: [{ type: "code_interpreter" }],
+    model: "gpt-3.5-turbo",
+  });*/
+
+  //Retrive an assistant
+  const assistant = await openai.beta.assistants.retrieve("asst_7ndVYiWftSY1lqgMlTa6h0dj");
+  // Create a thread
+  const thread = await openai.beta.threads.create();
+
+  setOpenai(openai);
+  setAssistant(assistant);
+  setThread(thread);
+};
+
 const Chat = () => {
   // setMessage 유즈스텟
   const [messages, setMessages] = useState([
