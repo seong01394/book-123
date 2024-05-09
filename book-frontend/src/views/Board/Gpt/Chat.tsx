@@ -30,7 +30,7 @@ const Gpt: React.FC = () => {
   useEffect(() => {
     setMessages([
       {
-        content: '안녕하세요! 오늘도 맛있는 식사를 추천해드립니다!',
+        content: '안녕하세요! 오늘도 맛있는 식사를 추천해드립니다',
         isUser: false,
       },
     ]);
