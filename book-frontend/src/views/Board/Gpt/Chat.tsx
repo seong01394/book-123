@@ -1,15 +1,24 @@
 // src/components/Chat.tsx
-import React, { useEffect, useState } from "react";
-import { TextField, Button, Container, Grid, LinearProgress, CircularProgress } from "@mui/material";
-import Message from "./Message";
-import OpenAI from "openai";
-import { MessageDto } from "./MessageDto";
-import SendIcon from "@mui/icons-material/Send";
-
+import SendIcon from '@mui/icons-material/Send';
+import {
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  LinearProgress,
+  TextField,
+} from '@mui/material';
+import OpenAI from 'openai';
+import React, { useEffect, useState } from 'react';
+import Message from '../Gpt/Message';
+import { MessageDto } from '../Gpt/MessageDto';
+import './style.css';
 const Chat: React.FC = () => {
   const [isWaiting, setIsWaiting] = useState<boolean>(false);
-  const [messages, setMessages] = useState<Array<MessageDto>>(new Array<MessageDto>());
-  const [input, setInput] = useState<string>("");
+  const [messages, setMessages] = useState<Array<MessageDto>>(
+    new Array<MessageDto>(),
+  );
+  const [input, setInput] = useState<string>('');
   const [assistant, setAssistant] = useState<any>(null);
   const [thread, setThread] = useState<any>(null);
   const [openai, setOpenai] = useState<any>(null);
@@ -21,7 +30,7 @@ const Chat: React.FC = () => {
   useEffect(() => {
     setMessages([
       {
-        content: "안녕하세요! 오늘도 맛있는 식사를 추천해드립니다!",
+        content: '안녕하세요! 오늘도 맛있는 식사를 추천해드립니다!',
         isUser: false,
       },
     ]);
@@ -42,7 +51,9 @@ const Chat: React.FC = () => {
     });*/
 
     //Retrive an assistant
-    const assistant = await openai.beta.assistants.retrieve("asst_7ndVYiWftSY1lqgMlTa6h0dj");
+    const assistant = await openai.beta.assistants.retrieve(
+      'asst_7ndVYiWftSY1lqgMlTa6h0dj',
+    );
     // Create a thread
     const thread = await openai.beta.threads.create();
 
@@ -59,11 +70,11 @@ const Chat: React.FC = () => {
   const handleSendMessage = async () => {
     messages.push(createNewMessage(input, true));
     setMessages([...messages]);
-    setInput("");
+    setInput('');
 
     // Send a message to the thread
     await openai.beta.threads.messages.create(thread.id, {
-      role: "user",
+      role: 'user',
       content: input,
     });
 
@@ -76,8 +87,8 @@ const Chat: React.FC = () => {
     let response = await openai.beta.threads.runs.retrieve(thread.id, run.id);
 
     // Wait for the response to be ready
-    while (response.status === "in_progress" || response.status === "queued") {
-      console.log("waiting...");
+    while (response.status === 'in_progress' || response.status === 'queued') {
+      console.log('waiting...');
       setIsWaiting(true);
       await new Promise((resolve) => setTimeout(resolve, 5000));
       response = await openai.beta.threads.runs.retrieve(thread.id, run.id);
@@ -90,19 +101,25 @@ const Chat: React.FC = () => {
 
     // Find the last message for the current run
     const lastMessage = messageList.data
-      .filter((message: any) => message.run_id === run.id && message.role === "assistant")
+      .filter(
+        (message: any) =>
+          message.run_id === run.id && message.role === 'assistant',
+      )
       .pop();
 
     // Print the last message coming from the assistant
     if (lastMessage) {
-      console.log(lastMessage.content[0]["text"].value);
-      setMessages([...messages, createNewMessage(lastMessage.content[0]["text"].value, false)]);
+      console.log(lastMessage.content[0]['text'].value);
+      setMessages([
+        ...messages,
+        createNewMessage(lastMessage.content[0]['text'].value, false),
+      ]);
     }
   };
 
   // detect enter key and send message
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       handleSendMessage();
     }
   };
@@ -111,12 +128,21 @@ const Chat: React.FC = () => {
     <Container>
       <Grid container direction="column" spacing={2} paddingBottom={2}>
         {messages.map((message, index) => (
-          <Grid item alignSelf={message.isUser ? "flex-end" : "flex-start"} key={index}>
+          <Grid
+            item
+            alignSelf={message.isUser ? 'flex-end' : 'flex-start'}
+            key={index}
+          >
             <Message key={index} message={message} />
           </Grid>
         ))}
       </Grid>
-      <Grid container direction="row" paddingBottom={5} justifyContent={"space-between"}>
+      <Grid
+        container
+        direction="row"
+        paddingBottom={5}
+        justifyContent={'space-between'}
+      >
         <Grid item sm={11} xs={9}>
           <TextField
             label="Type your message"
@@ -130,7 +156,13 @@ const Chat: React.FC = () => {
           {isWaiting && <LinearProgress color="inherit" />}
         </Grid>
         <Grid item sm={1} xs={3}>
-          <Button variant="contained" size="large" color="primary" onClick={handleSendMessage} disabled={isWaiting}>
+          <Button
+            variant="contained"
+            size="large"
+            color="primary"
+            onClick={handleSendMessage}
+            disabled={isWaiting}
+          >
             {isWaiting && <CircularProgress color="inherit" />}
             {!isWaiting && <SendIcon fontSize="large" />}
           </Button>
