@@ -11,6 +11,9 @@ import { FaStar } from 'react-icons/fa'; // react-icons/fa에서 FaStar 아이�
 import { useNavigate } from 'react-router-dom';
 import ProFileImage from '../../../assets/free-icon-jp-9346261.png';
 import * as S from './Board.styles';
+import jsonData from '../../../assets/projdb_comp.json'; // Import the JSON file
+
+
 
 interface IPropsBoardPresenter {
   data: any[];
@@ -38,8 +41,8 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
       <div
         key={item.nickname}
         onClick={() =>
-          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_THREEPATH(item.nickname)}`)
-        }
+          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_THREEPATH()}`,{state:{searchKey:item.nickname}})
+      }
       >
         <S.FilterItem>
           <S.Profile src={ProFileImage} />
@@ -53,7 +56,6 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
                   평점
                   <S.StarRatingWrapper>
                     <StarRating rating={item.rating} />{' '}
-                    {/* StarRating 컴포넌트를 사용합니다. */}
                     <S.Rating>{item.rating}</S.Rating>
                   </S.StarRatingWrapper>
                 </S.Favor>
