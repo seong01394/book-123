@@ -1,22 +1,20 @@
 import styled from '@emotion/styled';
 import { FaStar } from 'react-icons/fa';
 
+export const TopDiv = styled.div`
+  padding-top: 20px; // 상단 패딩을 줄여 컴포넌트를 상단으로 이동
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
 export const Wrapper = styled.section`
+  min-height: calc(100vh - 200px); // 헤더와 footer의 높이를 고려하여 조정
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const TopDiv = styled.div`
-  padding-top: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (min-width: 360px) and (max-width: 1023px) {
-    padding-top: 288px;
-  }
 `;
 
 export const H1 = styled.h1`
@@ -52,35 +50,6 @@ export const SearchWrapper = styled.div`
   }
 `;
 
-export const SearchForm = styled.div`
-  width: 100%;
-  height: 32px;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 20px;
-  padding: 0 12px 0 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 56px;
-  z-index: 10;
-  box-sizing: border-box;
-`;
-
-export const SearchInput = styled.input`
-  width: 90%;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.05em;
-  border: none;
-  outline: none;
-`;
-
-export const SearchBtn = styled.button`
-  cursor: pointer;
-`;
-
 export const Dropdown = styled.div`
   width: 100%;
   height: auto;
@@ -100,6 +69,7 @@ export const Dropdown = styled.div`
   position: absolute;
   top: 16px;
   box-sizing: border-box;
+  display: none;
 `;
 
 export const Word = styled.div`
@@ -299,4 +269,49 @@ export const Rating = styled.span`
   line-height: 20px;
   padding-bottom: 8px;
   margin-left: 4px; /* 별점과 평점 사이 여백 */
+`;
+
+export const ManitoButton = styled.button`
+  width: 80px; // 버튼 너비 조정
+  height: 40px; // 버튼 높이 동일하게 설정
+  background-color: #f44336; // 배경색
+  border: 1px solid #f44336; // 테두리 색
+  color: white; // 글자색
+  border-radius: 20px; // 전체 둥근 모서리
+  cursor: pointer; // 마우스 오버 시 커서 변경
+  margin-left: 8px; // 검색 버튼과의 간격
+
+  &:hover {
+    background-color: #e31e10;
+  }
+`;
+
+export const SearchBtn = styled.button`
+  width: 100px; // 버튼 너비
+  height: 40px; // 버튼 높이
+  background-color: #4caf50; // 배경색
+  border: 1px solid #4caf50; // 테두리 색
+  color: white; // 글자색
+  border-radius: 0 20px 20px 0; // 오른쪽 끝에 둥근 모서리
+  cursor: pointer; // 마우스 오버 시 커서 변경
+
+  &:hover {
+    background-color: #45a049;
+  }
+`;
+
+export const SearchForm = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center; // 버튼과 입력창을 수평 정렬
+  justify-content: space-between;
+`;
+
+export const SearchInput = styled.input`
+  flex: 1; // 나머지 공간을 모두 차지하도록 설정
+  height: 40px; // 입력창 높이 설정
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-right: none; // 오른쪽 테두리 제거
+  border-radius: 20px 0 0 20px; // 왼쪽 끝에 둥근 모서리
 `;

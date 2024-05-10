@@ -11,8 +11,10 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import { Avatar } from 'antd';
 import OpenAI from 'openai';
 import React, { useEffect, useState } from 'react';
+import dragonIcon from '../../../assets/free-icon-dragon-4475009.png';
 import Message from '../Gpt/Message';
 import { MessageDto } from '../Gpt/MessageDto';
 
@@ -33,7 +35,7 @@ const Gpt: React.FC = () => {
   useEffect(() => {
     setMessages([
       {
-        content: '안녕하세요, 저는 ChatGPT입니다! 무엇이든 물어보세요!',
+        content: '안녕하세요, 저는 마니또입니다! 무엇이든 물어보세요!',
         isUser: false,
       },
     ]);
@@ -123,9 +125,20 @@ const Gpt: React.FC = () => {
         elevation={3}
         style={{ padding: '10px', backgroundColor: '#f5f5f5' }}
       >
-        <Typography variant="h6" style={{ fontWeight: 'bold' }}>
-          JP FOR JP
-        </Typography>
+        <Grid container alignItems="center" spacing={1}>
+          <Grid item>
+            <Avatar
+              src={dragonIcon}
+              alt="Dragon"
+              style={{ width: 32, height: 32 }}
+            />
+          </Grid>
+          <Grid item>
+            <Typography variant="h6" style={{ fontWeight: 'bold' }}>
+              마니또
+            </Typography>
+          </Grid>
+        </Grid>
       </Paper>
       <Box
         sx={{

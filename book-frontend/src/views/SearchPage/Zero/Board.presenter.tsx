@@ -1,4 +1,6 @@
 import {
+  BOARD_GPT_PATH,
+  BOARD_PATH,
   SEARCHPAGE_ONEPATH,
   SEARCHPAGE_PATH,
   SEARCHPAGE_TWOPATH,
@@ -21,6 +23,10 @@ interface IPropsBoardPresenter {
 
 const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
   const navigate = useNavigate();
+
+  const goToGptPage = () => {
+    navigate(`${BOARD_PATH()}/${BOARD_GPT_PATH()}`);
+  };
 
   const renderItems = () => {
     const items = props.isSearch ? props.search : props.data;
@@ -77,6 +83,9 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
             <S.SearchBtn type="button" onClick={props.onSearch}>
               Search
             </S.SearchBtn>
+            <S.ManitoButton type="button" onClick={goToGptPage}>
+              마니또
+            </S.ManitoButton>
           </S.SearchForm>
           <S.Dropdown>
             {props.search.map((tab: any) => (
