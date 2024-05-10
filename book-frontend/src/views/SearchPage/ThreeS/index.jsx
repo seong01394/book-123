@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import jsonData from '../../../assets/projdb_comp.json';
 import './style.css'; // CSS 파일을 잘 불러오고 있는지 확인하세요.
-
 const NaverMapAndRestaurantInfo = () => {
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
@@ -174,20 +173,26 @@ const NaverMapAndRestaurantInfo = () => {
   // Render reviews from the dataset
   const renderReviews = (data, startIndex, prefix) => {
     if (!data || data.length <= startIndex) {
-      return <p>No reviews available.</p>;
+      return <p className="review-item">No reviews available.</p>;
     }
 
+    // 데이터 중에 null 값이 있을 경우 'No review available' 메시지를 표시
     for (let index = 0; index < 5; index++) {
       if (data[startIndex + index] === null) {
-        return <p key={prefix + index}>No review available</p>;
+        return (
+          <p key={prefix + index} className="review-item">
+            No review available
+          </p>
+        );
       }
     }
 
+    // 5개의 리뷰를 렌더링하며, 각 리뷰에 고유한 키와 스타일 클래스를 추가
     return Array.from({ length: 5 }, (_, index) => {
       return (
-        <p key={prefix + (index + 1)}>{`${prefix}${index + 1}: ${
-          data[startIndex + index]
-        }`}</p>
+        <p key={prefix + (index + 1)} className="review-item">{`${prefix}${
+          index + 1
+        }: ${data[startIndex + index]}`}</p>
       );
     });
   };
@@ -204,14 +209,24 @@ const NaverMapAndRestaurantInfo = () => {
           className="search-input"
         />
         {restaurantData ? (
-          <div>
-            <h2>Restaurant Information:</h2>
-            <p>Name: {restaurantData[3]}</p>
-            <p>Phone: {restaurantData[0]}</p>
-            <p>Address: {restaurantData[2]}</p>
-            <p>Type: {restaurantData[4]}</p>
-            {renderReviews(restaurantData, 8, 'naver_r')}
-            {renderReviews(restaurantData, 14, 'kakao_r')}
+          <div className="restaurant-card">
+            <div className="restaurant-title">{restaurantData[3]}</div>
+            <div className="restaurant-subtitle">{restaurantData[4]}</div>
+            <div className="restaurant-info">
+              <span className="restaurant-info-icon">icon phone-icon</span>
+              <span className="restaurant-info-text">{restaurantData[0]}</span>
+            </div>
+            <div className="restaurant-info">
+              <span className="restaurant-info-icon">icon addess-icon</span>
+              <span className="restaurant-info-text">{restaurantData[2]}</span>
+            </div>
+
+            <div className="review-section">
+              <h3>Naver Reviews:</h3>
+              {renderReviews(restaurantData, 8, 'naver_r')}
+              <h3>Kakao Reviews:</h3>
+              {renderReviews(restaurantData, 14, 'kakao_r')}
+            </div>
           </div>
         ) : (
           <p>No data available for the specified restaurant.</p>
