@@ -3,6 +3,7 @@ import {
   BOARD_PATH,
   SEARCHPAGE_ONEPATH,
   SEARCHPAGE_PATH,
+  SEARCHPAGE_THREEPATH,
   SEARCHPAGE_TWOPATH,
 } from 'constant';
 import React from 'react';
@@ -37,7 +38,7 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
       <div
         key={item.nickname}
         onClick={() =>
-          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_ONEPATH(item.id)}`)
+          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_THREEPATH(item.nickname)}`)
         }
       >
         <S.FilterItem>

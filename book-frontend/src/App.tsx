@@ -82,7 +82,7 @@ function App() {
         <Route path={SEARCHPAGE_PATH()}>
           <Route path={SEARCHPAGE_ONEPATH(':id')} element={<OneS />} />
           <Route path={SEARCHPAGE_TWOPATH()} element={<TwoS />} />
-          <Route path={SEARCHPAGE_THREEPATH()} element={<ThreeS />}></Route>
+          <Route path={SEARCHPAGE_THREEPATH(':id')} element={<ThreeS />}></Route>
         </Route>
         <Route path={USER_PATH(':userEmail')} element={<UserP />} />
         <Route path={BOARD_PATH()}>
