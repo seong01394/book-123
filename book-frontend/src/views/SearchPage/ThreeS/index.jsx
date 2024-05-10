@@ -1,6 +1,6 @@
 import proj4 from 'proj4';
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 import jsonData from '../../../assets/projdb_comp.json';
 import './style.css'; // CSS 파일을 잘 불러오고 있는지 확인하세요.
 const NaverMapAndRestaurantInfo = () => {
@@ -11,7 +11,6 @@ const NaverMapAndRestaurantInfo = () => {
   const [marker, setMarker] = useState(null);
   const [infoWindow, setInfoWindow] = useState(null);
   const [currentLocationMarker, setCurrentLocationMarker] = useState(null);
-
 
   // Define the projection strings for TM and WGS84
   const tmProjection =
@@ -95,7 +94,7 @@ const NaverMapAndRestaurantInfo = () => {
     return document.getElementById(id);
   };
 
-  const searchKey = useLocation().state?.searchKey
+  const searchKey = useLocation().state?.searchKey;
   // Initialize the map and info window once the Naver Maps script is loaded
   useEffect(() => {
     if (searchKey) {
@@ -122,7 +121,6 @@ const NaverMapAndRestaurantInfo = () => {
         anchorSkew: true,
       });
       setInfoWindow(infoWindowInstance);
-      
     };
     return () => {
       if (map) map.destroy();
@@ -213,11 +211,11 @@ const NaverMapAndRestaurantInfo = () => {
             <div className="restaurant-title">{restaurantData[3]}</div>
             <div className="restaurant-subtitle">{restaurantData[4]}</div>
             <div className="restaurant-info">
-              <span className="restaurant-info-icon">icon phone-icon</span>
+              <span className="restaurant-info-icon phone-icon"></span>
               <span className="restaurant-info-text">{restaurantData[0]}</span>
             </div>
             <div className="restaurant-info">
-              <span className="restaurant-info-icon">icon addess-icon</span>
+              <span className="restaurant-info-icon address-icon"></span>
               <span className="restaurant-info-text">{restaurantData[2]}</span>
             </div>
 

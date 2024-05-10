@@ -97,6 +97,19 @@
   font-size: 20px;
   margin-right: 10px;
 }
+.phone-icon {
+  width: 30px; /* Set a specific width */
+  height: 30px; /* Set a specific height */
+  background-image: url('../../../assets/free-icon-phone-receiver-244809.png');
+  background-size: cover; /* Cover the entire area of the div */
+}
+
+.address-icon {
+  width: 30px; /* Set a specific width */
+  height: 30px; /* Set a specific height */
+  background-image: url('../../../assets/free-icon-house-6597708.png');
+  background-size: cover; /* Cover the entire area of the div */
+}
 
 .restaurant-info-text {
   font-size: 16px;
@@ -126,4 +139,3 @@
   border: 1px solid #ccc; /* 경계선 추가로 리뷰 구분 명확히 */
   background-color: #f8f9fa; /* 배경색 추가 */
 }
-
