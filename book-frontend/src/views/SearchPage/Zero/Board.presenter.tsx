@@ -10,9 +10,6 @@ import { FaStar } from 'react-icons/fa'; // react-icons/fa에서 FaStar 아이�
 import { useNavigate } from 'react-router-dom';
 import ProFileImage from '../../../assets/free-icon-jp-9346261.png';
 import * as S from './Board.styles';
-import jsonData from '../../../assets/projdb_comp.json'; // Import the JSON file
-
-
 
 interface IPropsBoardPresenter {
   data: any[];
@@ -40,8 +37,10 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
       <div
         key={item[3]}
         onClick={() =>
-          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_THREEPATH()}`,{state:{searchKey:item.nickname}})
-      }
+          navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_THREEPATH()}`, {
+            state: { searchKey: item[3] },
+          })
+        }
       >
         <S.FilterItem>
           <S.Profile src={ProFileImage} />

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import BoardPresenter from './Board.presenter';
 import jsonData from '../../../assets/projdb_comp.json'; // Import the JSON file
+import BoardPresenter from './Board.presenter';
 
 const BoardContainer: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -9,9 +9,7 @@ const BoardContainer: React.FC = () => {
   const [isSearch, setIsSearch] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   const lists = jsonData.rows.filter((jsonData) => {
     // null 체크 및 문자열 여부 확인

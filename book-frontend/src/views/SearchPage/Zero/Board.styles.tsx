@@ -272,46 +272,45 @@ export const Rating = styled.span`
 `;
 
 export const ManitoButton = styled.button`
-  width: 80px; // 버튼 너비 조정
-  height: 40px; // 버튼 높이 동일하게 설정
-  background-color: #f44336; // 배경색
-  border: 1px solid #f44336; // 테두리 색
-  color: white; // 글자색
-  border-radius: 20px; // 전체 둥근 모서리
-  cursor: pointer; // 마우스 오버 시 커서 변경
-  margin-left: 8px; // 검색 버튼과의 간격
+  width: 100px; // Updated to fill the available width
+  height: 40px; // Matches the height of the search bar
+  background-color: #f44336; // Background color
+  border: 1px solid #f44336; // Border color
+  color: white; // Text color
+  border-radius: 20px; // Rounded corners
+  cursor: pointer; // Pointer on hover
 
   &:hover {
-    background-color: #e31e10;
+    background-color: #e31e10; // Darker red on hover
   }
 `;
 
 export const SearchBtn = styled.button`
-  width: 100px; // 버튼 너비
-  height: 40px; // 버튼 높이
-  background-color: #4caf50; // 배경색
-  border: 1px solid #4caf50; // 테두리 색
-  color: white; // 글자색
-  border-radius: 0 20px 20px 0; // 오른쪽 끝에 둥근 모서리
-  cursor: pointer; // 마우스 오버 시 커서 변경
+  width: 100px; // Updated to fill the available width
+  height: 40px; // Matches the height of the search bar
+  background-color: #4caf50; // Background color
+  border: 1px solid #4caf50; // Border color
+  color: white; // Text color
+  border-radius: 0 20px 20px 0; // Rounded corners on the right side
+  cursor: pointer; // Pointer on hover
 
   &:hover {
-    background-color: #45a049;
+    background-color: #45a049; // Darker green on hover
   }
 `;
 
 export const SearchForm = styled.div`
   width: 100%;
   display: flex;
-  align-items: center; // 버튼과 입력창을 수평 정렬
-  justify-content: space-between;
+  align-items: center; // Vertical alignment
+  justify-content: space-between; // Distribute space
 `;
 
 export const SearchInput = styled.input`
-  flex: 1; // 나머지 공간을 모두 차지하도록 설정
-  height: 40px; // 입력창 높이 설정
-  padding: 0 12px;
-  border: 1px solid #ccc;
-  border-right: none; // 오른쪽 테두리 제거
-  border-radius: 20px 0 0 20px; // 왼쪽 끝에 둥근 모서리
+  flex: 1; // Take up the remaining space
+  height: 40px; // Height of the input
+  padding: 0 12px; // Padding inside the input
+  border: 1px solid #ccc; // Border color
+  border-right: none; // No right border
+  border-radius: 20px 0 0 20px; // Rounded corners on the left side
 `;
