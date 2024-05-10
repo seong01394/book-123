@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import BoardPresenter from './Board.presenter';
+import jsonData from '../../../assets/projdb_comp.json'; // Import the JSON file
 
 const BoardContainer: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -10,26 +10,25 @@ const BoardContainer: React.FC = () => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const responseData = await axios.get('http://localhost:9000/data');
-        setData(responseData.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setError('Failed to fetch data. Please try again later.');
-      }
-    };
-
-    fetchData();
+    
   }, []);
 
-  const handleSearch = async () => {
+  const lists = jsonData.rows.filter((jsonData) => {
+    // null 체크 및 문자열 여부 확인
+    const name = typeof jsonData[3] === 'string' ? jsonData[3] : '';
+    const product = typeof jsonData[4] === 'string' ? jsonData[4] : '';
+    return name.includes(keyword) || product.includes(keyword);
+  });
+
+  const handleInputChange = async () => {
     try {
-      const encodedKeyword = encodeURIComponent(keyword); // 검색어 인코딩
-      const response = await axios.get(
-        `http://localhost:9000/search?q=${encodedKeyword}`,
-      );
-      setSearch(response.data);
+      const response = jsonData.rows.filter((jsonData) => {
+        // null 체크 및 문자열 여부 확인
+        const name = typeof jsonData[3] === 'string' ? jsonData[3] : '';
+        const product = typeof jsonData[4] === 'string' ? jsonData[4] : '';
+        return name.includes(keyword) || product.includes(keyword);
+      });
+      setSearch(response);
       setIsSearch(true);
       setError('');
     } catch (error) {
@@ -47,7 +46,7 @@ const BoardContainer: React.FC = () => {
       data={data}
       search={search}
       onChangeKeyword={handleChangeKeyword}
-      onSearch={handleSearch}
+      onSearch={handleInputChange}
       keyword={keyword}
       isSearch={isSearch}
       error={error}

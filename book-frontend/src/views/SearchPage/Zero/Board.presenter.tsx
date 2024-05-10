@@ -1,7 +1,6 @@
 import {
   BOARD_GPT_PATH,
   BOARD_PATH,
-  SEARCHPAGE_ONEPATH,
   SEARCHPAGE_PATH,
   SEARCHPAGE_THREEPATH,
   SEARCHPAGE_TWOPATH,
@@ -39,7 +38,7 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
     }
     return items.map((item: any) => (
       <div
-        key={item.nickname}
+        key={item[3]}
         onClick={() =>
           navigate(`${SEARCHPAGE_PATH()}/${SEARCHPAGE_THREEPATH()}`,{state:{searchKey:item.nickname}})
       }
@@ -48,7 +47,7 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
           <S.Profile src={ProFileImage} />
           <S.ProfileContent>
             <S.ContentTop>
-              <span>{item.nickname}</span>
+              <span>{item[3]}</span>
               <S.CircleWrapper>
                 <S.Circle>{item.building_count}</S.Circle>
                 <S.Count>조회수</S.Count>
