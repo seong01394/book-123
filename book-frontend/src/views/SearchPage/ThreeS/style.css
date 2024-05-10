@@ -13,6 +13,16 @@
   padding-left: 20px;
 }
 
+.review-item {
+  min-height: 80px; /* 최소 높이 설정 */
+  overflow: auto; /* 내용이 긴 경우 스크롤바 표시 */
+  white-space: normal; /* 자동 줄바꿈 */
+  margin-bottom: 12px; /* 아래쪽 마진 */
+  padding: 10px; /* 패딩 */
+  border: 1px solid #ccc; /* 경계선 */
+  background-color: #f8f9fa; /* 배경색 */
+}
+
 /* Add the search input style */
 .search-input {
   padding: 8px 12px;
@@ -52,3 +62,68 @@
   color: #fff;
   cursor: pointer;
 }
+
+.restaurant-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.restaurant-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.restaurant-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.restaurant-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.restaurant-info-icon {
+  color: #2a9df4;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.restaurant-info-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.review-section {
+  max-height: 500px; /* 적절한 최대 높이 설정 */
+  overflow-y: auto; /* 세로 스크롤바 활성화 */
+  padding: 15px; /* 패딩 추가 */
+  margin-bottom: 20px; /* 푸터와의 간격 확보 */
+  border: 1px solid #ccc; /* 섹션 경계 표시 */
+  background-color: #f8f9fa; /* 배경색 설정 */
+}
+
+.review-section h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.review-section p {
+  min-height: 80px; /* 최소 높이를 지정하여 내용이 잘리는 것을 방지 */
+  overflow: auto; /* 내용이 넘칠 경우 스크롤바를 표시 */
+  white-space: normal; /* 내용이 자동으로 줄 바뀜되도록 */
+  margin-bottom: 12px; /* 리뷰 간 간격 */
+  padding: 10px; /* 패딩 추가로 가독성 향상 */
+  border: 1px solid #ccc; /* 경계선 추가로 리뷰 구분 명확히 */
+  background-color: #f8f9fa; /* 배경색 추가 */
+}
+
