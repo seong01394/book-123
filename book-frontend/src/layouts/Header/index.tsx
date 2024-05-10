@@ -264,16 +264,13 @@ export default function Header() {
         <div className="header-left-box" onClick={onLogoClickHandler}>
           <div className="icon-box">
             <div className="icon logo-dark-icon"></div>
-          </div>
+          </div> 
           <div className="header-logo">{'FOR JP'}</div>
         </div>
         <div className="header-right-box">
-          {(isAuthPage || isMainPage || isSearchPage || isBoardDetailPage) && (
-            <SearchButton />
-          )}
-          {(isMainPage || isBoardDetailPage || isSearchPage || isUserPage) && (
-            <MyPageButton />
-          )}
+          
+          <MyPageButton />
+
           {(isBoardWritePage || isBoardUpdatePage) && <UploadButton />}
         </div>
       </div>
