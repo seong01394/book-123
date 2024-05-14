@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import jsonData from '../../../assets/projdb_comp.json';
 import './style.css'; // CSS 파일을 잘 불러오고 있는지 확인하세요.
+
 const NaverMapAndRestaurantInfo = () => {
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
@@ -11,18 +12,38 @@ const NaverMapAndRestaurantInfo = () => {
   const [marker, setMarker] = useState(null);
   const [infoWindow, setInfoWindow] = useState(null);
   const [currentLocationMarker, setCurrentLocationMarker] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [selectedRestaurants, setSelectedRestaurants] = useState([]);
 
-  // Define the projection strings for TM and WGS84
+  const deleteRestaurant = () => {
+    setRestaurantData(null); // Clears the selected restaurant data
+    setRestaurantName(''); // Clears the search input
+    setSelectedRestaurants([]);
+    setSearchTerm('');
+  };
+
+  const addRestaurantToList = (restaurant) => {
+    setSelectedRestaurants((prevRestaurants) => [
+      ...prevRestaurants,
+      restaurant,
+    ]);
+  };
+
+  const handleRestaurantClick = (restaurant) => {
+    setRestaurantData(restaurant); // 선택된 레스토랑 정보 저장
+    setFilteredResults([]); // 검색 결과 목록을 비워 검색 결과를 숨김
+  };
+
   const tmProjection =
     '+proj=tmerc +lat_0=38 +lon_0=127 +k=1 +x_0=200000 +y_0=600000 +ellps=GRS80 +units=m +no_defs';
   const wgs84Projection = 'EPSG:4326';
 
-  // Function to update the map's center and create a marker at the new location
   const updateMapCenter = (tmX, tmY) => {
     tmX += 80;
-    tmY += 100280; // Add 100000 to tmY coordinate
+    tmY += 100280;
     const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
-    if (!map) return; // Ensure map is not null
+    if (!map) return;
     const navermaps = window.naver.maps;
     const newCenter = new navermaps.LatLng(lat, lon);
     map.setCenter(newCenter);
@@ -39,7 +60,6 @@ const NaverMapAndRestaurantInfo = () => {
     }
   };
 
-  // Function to handle moving to the current location
   const createMarker = (lat, lng, map) => {
     return new window.naver.maps.Marker({
       position: new window.naver.maps.LatLng(lat, lng),
@@ -60,7 +80,6 @@ const NaverMapAndRestaurantInfo = () => {
           const lng = position.coords.longitude;
           const newCenter = new window.naver.maps.LatLng(lat, lng);
 
-          // 현재 위치 마커 업데이트 또는 새로 생성
           if (currentLocationMarker) {
             currentLocationMarker.setPosition(newCenter);
           } else {
@@ -80,7 +99,6 @@ const NaverMapAndRestaurantInfo = () => {
     }
   };
 
-  // Dynamically load the Naver Maps script
   const loadScript = (src, position, id) => {
     if (!document.getElementById(id)) {
       const script = document.createElement('script');
@@ -95,7 +113,6 @@ const NaverMapAndRestaurantInfo = () => {
   };
 
   const searchKey = useLocation().state?.searchKey;
-  // Initialize the map and info window once the Naver Maps script is loaded
   useEffect(() => {
     if (searchKey) {
       setRestaurantName(searchKey);
@@ -122,21 +139,31 @@ const NaverMapAndRestaurantInfo = () => {
       });
       setInfoWindow(infoWindowInstance);
     };
-    return () => {
-      if (map) map.destroy();
-    };
+    return () => script.remove();
   }, []);
 
-  // Update the map marker and center when restaurant data changes
   useEffect(() => {
     if (map && restaurantData) {
       const tmX = parseFloat(restaurantData[5]);
       const tmY = parseFloat(restaurantData[6]);
       updateMapCenter(tmX, tmY);
+      const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
+      if (map) {
+        const newCenter = new window.naver.maps.LatLng(lat, lon);
+        map.setCenter(newCenter);
+        if (!marker) {
+          const newMarker = new window.naver.maps.Marker({
+            position: newCenter,
+            map: map,
+          });
+          setMarker(newMarker);
+        } else {
+          marker.setPosition(newCenter);
+        }
+      }
     }
   }, [restaurantData, map]);
 
-  // Fetch restaurant data when restaurant name changes
   useEffect(() => {
     if (restaurantName) {
       fetch(`/api/restaurant/${restaurantName}`)
@@ -162,11 +189,6 @@ const NaverMapAndRestaurantInfo = () => {
         });
     }
   }, [restaurantName]);
-
-  // Handle input changes
-  const handleInputChange = (event) => {
-    setRestaurantName(event.target.value);
-  };
 
   // Render reviews from the dataset
   const renderReviews = (data, startIndex, prefix) => {
@@ -195,18 +217,61 @@ const NaverMapAndRestaurantInfo = () => {
     });
   };
 
-  // Component render method
+  // 검색 입력을 처리하는 함수
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    if (value) {
+      // 입력값에 따라 검색 결과 필터링
+      const results = jsonData.rows
+        .filter((row) => row[3].toLowerCase().includes(value.toLowerCase()))
+        .map((row) => ({
+          name: row[3],
+          details: row,
+        }));
+      setFilteredResults(results);
+    } else {
+      // 입력값이 없을 때는 모든 상태 초기화
+      setFilteredResults([]);
+      setRestaurantData(null);
+    }
+  };
+
   return (
     <div className="container">
       <div className="left">
-        <input
-          type="text"
-          placeholder="Enter restaurant name"
-          value={restaurantName}
-          onChange={handleInputChange}
-          className="search-input"
-        />
-        {restaurantData ? (
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Enter restaurant name"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+          <button onClick={deleteRestaurant} className="delete-button">
+            X
+          </button>
+        </div>
+        {filteredResults.length > 0 ? (
+          <div className="scrollable-container">
+            {filteredResults.map((result, index) => (
+              <div
+                key={index}
+                onClick={() => handleRestaurantClick(result.details)}
+              >
+                <span>
+                  {result.name}⭐ - {result.rating}
+                </span>
+                <button
+                  onClick={() => addRestaurantToList(result)}
+                  className="plus-button"
+                >
+                  +
+                </button>
+              </div>
+            ))}
+          </div>
+        ) : restaurantData ? (
           <div className="restaurant-card">
             <div className="restaurant-title">{restaurantData[3]}</div>
             <div className="restaurant-subtitle">{restaurantData[4]}</div>
@@ -226,10 +291,17 @@ const NaverMapAndRestaurantInfo = () => {
               {renderReviews(restaurantData, 14, 'kakao_r')}
             </div>
           </div>
-        ) : (
-          <p>No data available for the specified restaurant.</p>
-        )}
+        ) : null}
       </div>
+
+      <div className="middle">
+        {selectedRestaurants.map((restaurant, index) => (
+          <div key={index} className="selected-restaurant-item">
+            {restaurant.name} - ⭐{restaurant.rating}
+          </div>
+        ))}
+      </div>
+
       <div className="right" style={{ position: 'relative' }}>
         <div ref={mapRef} className="navermap"></div>
         <button className="button" onClick={handleCurrentLocation}>
@@ -239,5 +311,4 @@ const NaverMapAndRestaurantInfo = () => {
     </div>
   );
 };
-
 export default NaverMapAndRestaurantInfo;
