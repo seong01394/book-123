@@ -223,9 +223,10 @@ const NaverMapAndRestaurantInfo = () => {
     if (value) {
       // 입력값에 따라 검색 결과 필터링
       const results = jsonData.rows
-        .filter((row) => row[3].toLowerCase().includes(value.toLowerCase()))
+        .filter((row) => row[3].toLowerCase().includes(value.toLowerCase()) || row[4].toLowerCase().includes(value.toLowerCase()) )
         .map((row) => ({
           name: row[3],
+          types: row[4],
           details: row,
         }));
       setFilteredResults(results);

@@ -65,10 +65,7 @@
   cursor: pointer;
 }
 
-.scrollable-container {
-  height: calc(100vh - 60px); /* 검색창과 버튼 높이를 제외한 나머지 높이 */
-  overflow-y: scroll;
-}
+
 
 .search-input::placeholder {
   color: #999;
@@ -176,7 +173,7 @@
 }
 
 .scrollable-container {
-  max-height: 400px; /* Adjust based on your preference */
+  max-height: 800px; /* Adjust based on your preference */
   overflow-y: scroll;
 }
 

@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="footer-logo-text">{'FOR JP'}</div>
           </div>
           <div className="footer-link-box">
-            <div className="footer-email-link">{'abc@gmail.com'}</div>
+            <div className="footer-email-link">{'asa2024@gmail.com'}</div>
             <div
               className="icon-button"
               onClick={onInstaIconButtonClickHandler}
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <div className="footer-copyright">
-            {'copyright © 2022 JP rights reserved'}
+            {'copyright © 2024 JP rights reserved'}
           </div>
         </div>
       </div>
