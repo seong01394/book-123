@@ -19,7 +19,6 @@ const NaverMapAndRestaurantInfo = () => {
   const deleteRestaurant = () => {
     setRestaurantData(null); // Clears the selected restaurant data
     setRestaurantName(''); // Clears the search input
-    setSelectedRestaurants([]);
     setSearchTerm('');
   };
 
