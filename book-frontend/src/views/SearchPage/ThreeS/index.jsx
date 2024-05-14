@@ -146,7 +146,7 @@ const NaverMapAndRestaurantInfo = () => {
       const tmX = parseFloat(restaurantData[5]);
       const tmY = parseFloat(restaurantData[6]);
       updateMapCenter(tmX, tmY);
-      const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
+      const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX+80, tmY+100280]);
       if (map) {
         const newCenter = new window.naver.maps.LatLng(lat, lon);
         map.setCenter(newCenter);
