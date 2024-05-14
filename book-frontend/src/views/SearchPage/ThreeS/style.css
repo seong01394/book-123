@@ -8,11 +8,11 @@
 .right {
   flex: 1; /* 세 영역이 동일한 크기를 갖도록 설정 */
   overflow-y: auto; /* 필요할 경우 스크롤바 표시 */
-  padding: 20px;
+  padding: 0px;
 }
 
 .left {
-  border-right: 1px solid #ccc; /* 중앙과 오른쪽 영역 구분선 */
+  border-right: 3px solid #ccc; /* 중앙과 오른쪽 영역 구분선 */
 }
 
 .middle {
@@ -81,13 +81,13 @@
 /* Adjust the map size */
 .navermap {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 30px);
 }
 
 .button {
   font-family: 'Pretendard-Regular', sans-serif;
   position: absolute;
-  top: 50px;
+  top: 60px;
   right: 10px;
   padding: 8px 12px;
   font-size: 10px; /* 'fontsize' 대신 'font-size'로 수정 */
