@@ -15,20 +15,49 @@ const NaverMapAndRestaurantInfo = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [selectedRestaurants, setSelectedRestaurants] = useState([]);
+/*
+  // 저장된 식당 불러오기
+  useEffect(() => {
+    const storedRestaurants = loadSelectedRestaurants();
+    setSelectedRestaurants(storedRestaurants);
+  }, []);
 
+  // 선택된 식당을 로컬 스토리지에 저장
+  const saveSelectedRestaurants = (selectedRestaurants) => {
+    localStorage.setItem('selectedRestaurants', JSON.stringify(selectedRestaurants));
+  };
+
+  // 로컬 스토리지에서 저장된 식당 불러오기
+  const loadSelectedRestaurants = () => {
+    const storedRestaurants = localStorage.getItem('selectedRestaurants');
+    if (storedRestaurants) {
+      return JSON.parse(storedRestaurants);
+    } else {
+      return []; // 저장된 식당이 없을 경우 빈 배열을 반환
+    }
+  };
+
+  // 식당 삭제
   const deleteRestaurant = () => {
-    setRestaurantData(null); // Clears the selected restaurant data
-    setRestaurantName(''); // Clears the search input
+    setRestaurantData(null); // 선택된 레스토랑 데이터 지우기
+    setRestaurantName(''); // 검색 입력 지우기
     setSearchTerm('');
   };
 
+  // 선택된 식당 추가
   const addRestaurantToList = (restaurant) => {
     setSelectedRestaurants((prevRestaurants) => [
       ...prevRestaurants,
       restaurant,
     ]);
+    saveSelectedRestaurants([...selectedRestaurants, restaurant]); // 변경된 선택된 식당을 저장
   };
 
+  useEffect(() => {
+    const storedRestaurants = loadSelectedRestaurants();
+    setSelectedRestaurants(storedRestaurants);
+  }, []); 
+  */
   const handleRestaurantClick = (restaurant) => {
     setRestaurantData(restaurant); // 선택된 레스토랑 정보 저장
     setFilteredResults([]); // 검색 결과 목록을 비워 검색 결과를 숨김
@@ -227,6 +256,7 @@ const NaverMapAndRestaurantInfo = () => {
         .map((row) => ({
           name: row[3],
           types: row[4],
+          phone: row[0],
           details: row,
         }));
       setFilteredResults(results);
@@ -236,6 +266,10 @@ const NaverMapAndRestaurantInfo = () => {
       setRestaurantData(null);
     }
   };
+
+  const Coodinatedchange = () =>  {
+
+  }
 
   return (
     <div className="container">
@@ -260,7 +294,7 @@ const NaverMapAndRestaurantInfo = () => {
                 onClick={() => handleRestaurantClick(result.details)}
               >
                 <span>
-                  {result.name}⭐ - {result.rating}
+                  {result.name}⭐ - {result.types}
                 </span>
                 <button
                   onClick={() => addRestaurantToList(result)}
@@ -297,7 +331,7 @@ const NaverMapAndRestaurantInfo = () => {
       <div className="middle">
         {selectedRestaurants.map((restaurant, index) => (
           <div key={index} className="selected-restaurant-item">
-            {restaurant.name} - ⭐{restaurant.rating}
+            {restaurant.name} - {restaurant.types}
           </div>
         ))}
       </div>
