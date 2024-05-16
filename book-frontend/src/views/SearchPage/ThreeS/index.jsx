@@ -15,7 +15,7 @@ const NaverMapAndRestaurantInfo = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [selectedRestaurants, setSelectedRestaurants] = useState([]);
-/*
+
   // 저장된 식당 불러오기
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
@@ -57,7 +57,7 @@ const NaverMapAndRestaurantInfo = () => {
     const storedRestaurants = loadSelectedRestaurants();
     setSelectedRestaurants(storedRestaurants);
   }, []); 
-  */
+  
   const handleRestaurantClick = (restaurant) => {
     setRestaurantData(restaurant); // 선택된 레스토랑 정보 저장
     setFilteredResults([]); // 검색 결과 목록을 비워 검색 결과를 숨김
