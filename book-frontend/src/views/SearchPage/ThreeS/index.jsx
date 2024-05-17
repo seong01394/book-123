@@ -15,7 +15,12 @@ const NaverMapAndRestaurantInfo = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [selectedRestaurants, setSelectedRestaurants] = useState([]);
-/*
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [previousState, setPreviousState] = useState({
+    searchTerm: '',
+    filteredResults: [],
+    restaurantData: null,
+  });
   // 저장된 식당 불러오기
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
@@ -68,8 +73,8 @@ const NaverMapAndRestaurantInfo = () => {
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
     setSelectedRestaurants(storedRestaurants);
-  }, []); 
-  */
+  }, []);
+
   const handleRestaurantClick = (restaurant) => {
     // 이전 상태 저장
     setPreviousState({
