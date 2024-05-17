@@ -12,6 +12,10 @@ const NaverMapAndRestaurantInfo = () => {
   const [marker, setMarker] = useState(null);
   const [infoWindow, setInfoWindow] = useState(null);
   const [currentLocationMarker, setCurrentLocationMarker] = useState(null);
+  const [currentLocation, setCurrentLocation] = useState({
+    x: 37.5665,
+    y: 126.978,
+  });
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [selectedRestaurants, setSelectedRestaurants] = useState([]);
@@ -22,19 +26,80 @@ const NaverMapAndRestaurantInfo = () => {
     restaurantData: null,
   });
 
+  const getCurrentPriority = () => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    if (
+      (12 <= currentHour && currentHour <= 14) ||
+      (17 <= currentHour && currentHour <= 19)
+    ) {
+      return '고기집';
+    } else if (currentHour >= 20) {
+      return '치킨';
+    } else {
+      return '카페';
+    }
+  };
+
+  // Haversine formula to calculate distance between two points (in km)
+  const calculateDistance = (lat1, lon1, lat2, lon2) => {
+    const toRad = (value) => (value * Math.PI) / 180;
+    const R = 6371; // Radius of Earth in km
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon1 - lon2);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  const dijkstra = (graph, startNode) => {
+    const distances = {};
+    const visited = new Set();
+    const pq = [[startNode, 0]];
+
+    for (let node in graph) {
+      distances[node] = Infinity;
+    }
+    distances[startNode] = 0;
+
+    while (pq.length > 0) {
+      const [currentNode, currentDistance] = pq.shift();
+      visited.add(currentNode);
+
+      for (let neighbor in graph[currentNode]) {
+        const distance = graph[currentNode][neighbor];
+        const totalDistance = currentDistance + distance;
+
+        if (totalDistance < distances[neighbor]) {
+          distances[neighbor] = totalDistance;
+          pq.push([neighbor, totalDistance]);
+        }
+      }
+      pq.sort((a, b) => a[1] - b[1]);
+    }
+
+    return distances;
+  };
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setCurrentLocation({
+        x: position.coords.latitude,
+        y: position.coords.longitude,
+      });
+    });
+  }, []);
+
   // 저장한 식당 불러오기
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
     setSelectedRestaurants(storedRestaurants);
   }, []);
-
-  // 선택된 식당을 로컬 스토리지에 저장
-  const saveSelectedRestaurants = (selectedRestaurants) => {
-    localStorage.setItem(
-      'selectedRestaurants',
-      JSON.stringify(selectedRestaurants),
-    );
-  };
 
   // 로컬 스토리지에서 저장된 식당 불러오기
   const loadSelectedRestaurants = () => {
@@ -42,8 +107,16 @@ const NaverMapAndRestaurantInfo = () => {
     if (storedRestaurants) {
       return JSON.parse(storedRestaurants);
     } else {
-      return []; // 저장된 식당이 없을 경우 빈 배열을 반환
+      return []; // 저장된 식당이 없을 경우 빈 배열 반환
     }
+  };
+
+  // 선택된 식당을 로컬 스토리지에 저장
+  const saveSelectedRestaurants = (selectedRestaurants) => {
+    localStorage.setItem(
+      'selectedRestaurants',
+      JSON.stringify(selectedRestaurants),
+    );
   };
 
   // 식당 삭제
@@ -63,14 +136,75 @@ const NaverMapAndRestaurantInfo = () => {
     saveSelectedRestaurants(updatedRestaurants); // 변경된 선택된 식당을 저장
   };
 
-  // 선택된 식당 추가
   const addRestaurantToList = (restaurant) => {
-    setSelectedRestaurants((prevRestaurants) => [
-      ...prevRestaurants,
-      restaurant,
-    ]);
-    saveSelectedRestaurants([...selectedRestaurants, restaurant]); // 변경된 선택된 식당을 저장
+    setSelectedRestaurants((prevRestaurants) => {
+      const updatedRestaurants = [...prevRestaurants, restaurant];
+      saveSelectedRestaurants(updatedRestaurants); // 업데이트된 선택된 식당 목록 저장
+      return updatedRestaurants;
+    });
   };
+
+  const handleReorderRestaurants = () => {
+    const priority = getCurrentPriority();
+    let priorityRestaurant = null;
+    const remainingRestaurants = [];
+
+    // types에 따른 우선순위 결정
+    for (const restaurant of selectedRestaurants) {
+      if (restaurant.types === priority) {
+        priorityRestaurant = restaurant;
+      } else {
+        remainingRestaurants.push(restaurant);
+      }
+    }
+
+    console.log('Priority:', priority);
+    console.log('Priority Restaurant:', priorityRestaurant);
+    console.log('Remaining Restaurants:', remainingRestaurants);
+
+    // remainingRestaurants를 다익스트라 알고리즘으로 정렬
+    if (priorityRestaurant && remainingRestaurants.length > 0) {
+      const graph = {};
+
+      for (const restaurant of remainingRestaurants) {
+        graph[restaurant.name] = {};
+        for (const otherRestaurant of remainingRestaurants) {
+          if (restaurant.name !== otherRestaurant.name) {
+            graph[restaurant.name][otherRestaurant.name] = calculateDistance(
+              restaurant.y_coordi, // x_coordi와 y_coordi 순서 변경
+              restaurant.x_coordi,
+              otherRestaurant.y_coordi,
+              otherRestaurant.x_coordi,
+            );
+          }
+        }
+      }
+
+      console.log('Graph:', graph);
+
+      const distances = dijkstra(graph, priorityRestaurant.name);
+      remainingRestaurants.sort(
+        (a, b) => distances[a.name] - distances[b.name],
+      );
+
+      console.log('Distances:', distances);
+    }
+
+    // 정렬된 배열을 설정
+    const reorderedRestaurants = priorityRestaurant
+      ? [priorityRestaurant, ...remainingRestaurants]
+      : remainingRestaurants;
+
+    // 상태 업데이트
+    setSelectedRestaurants(reorderedRestaurants);
+    saveSelectedRestaurants(reorderedRestaurants);
+    console.log('Updated selectedRestaurants:', reorderedRestaurants); // 상태 업데이트 후 콘솔 로그 출력
+  };
+
+  // 상태가 변경되면 컴포넌트를 다시 렌더링
+  useEffect(() => {
+    console.log('selectedRestaurants state updated:', selectedRestaurants);
+  }, [selectedRestaurants]);
 
   const handleRestaurantClick = (restaurant) => {
     // 이전 상태 저장
@@ -282,15 +416,37 @@ const NaverMapAndRestaurantInfo = () => {
             row[3].toLowerCase().includes(value.toLowerCase()) ||
             row[4].toLowerCase().includes(value.toLowerCase()),
         )
-        .map((row) => ({
-          name: row[3],
-          types: row[4],
-          phone: row[0],
-          details: row,
-        }));
+        .map((row) => {
+          let tmX = row[5];
+          let tmY = row[6];
+
+          tmX += 80;
+          tmY += 100280;
+
+          const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
+
+          const transformedRow = {
+            name: row[3],
+            types: row[4],
+            phone: row[0],
+            x_coordi: lon,
+            y_coordi: lat,
+            details: row,
+          };
+
+          return transformedRow;
+        })
+        // 이미 선택된 식당을 제외
+        .filter(
+          (result) =>
+            !selectedRestaurants.some(
+              (restaurant) => restaurant.name === result.name,
+            ),
+        );
+
       setFilteredResults(results);
     } else {
-      // 입력값이 없을 때는 모든 상태 초기화
+      // 입력값이 없을 때 상태 초기화
       setFilteredResults([]);
       setRestaurantData(null);
     }
@@ -328,12 +484,26 @@ const NaverMapAndRestaurantInfo = () => {
         selectedCategories.some((category) => row[4].includes(category)),
       );
       setFilteredResults(
-        results.map((row) => ({
-          name: row[3],
-          types: row[4],
-          phone: row[0],
-          details: row,
-        })),
+        results.map((row) => {
+          let tmX = row[5];
+          let tmY = row[6];
+
+          tmX += 80;
+          tmY += 100280;
+
+          const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
+
+          const transformedRow = {
+            name: row[3],
+            types: row[4],
+            phone: row[0],
+            x_coordi: lon,
+            y_coordi: lat,
+            details: row,
+          };
+
+          return transformedRow;
+        }),
       );
     } else {
       setFilteredResults([]);
@@ -376,14 +546,7 @@ const NaverMapAndRestaurantInfo = () => {
           >
             고기집
           </button>
-          <button
-            onClick={() => filterByCategory('식당')}
-            className={`category-button ${
-              selectedCategories.includes('식당') ? 'active' : ''
-            }`}
-          >
-            식당
-          </button>
+          
           <button
             onClick={() => filterByCategory('카페')}
             className={`category-button ${
@@ -399,6 +562,55 @@ const NaverMapAndRestaurantInfo = () => {
             }`}
           >
             치킨
+          </button>
+          <button
+            onClick={() => filterByCategory('한식')}
+            className={`category-button ${
+              selectedCategories.includes('한식') ? 'active' : ''
+            }`}
+          >
+            한식
+          </button>
+          <button
+            onClick={() => filterByCategory('뷰(맛집)')}
+            className={`category-button ${
+              selectedCategories.includes('뷰(맛집)') ? 'active' : ''
+            }`}
+          >
+            뷰(맛집)
+          </button>
+          <button
+            onClick={() => filterByCategory('경양식')}
+            className={`category-button ${
+              selectedCategories.includes('경양식') ? 'active' : ''
+            }`}
+          >
+            경양식
+          </button>
+          <button
+            onClick={() => filterByCategory('전시회')}
+            className={`category-button ${
+              selectedCategories.includes('전시회') ? 'active' : ''
+            }`}
+          >
+            전시회
+          </button>
+
+          <button
+            onClick={() => filterByCategory('분식')}
+            className={`category-button ${
+              selectedCategories.includes('분식') ? 'active' : ''
+            }`}
+          >
+            분식
+          </button>
+          <button
+            onClick={() => filterByCategory('횟집')}
+            className={`category-button ${
+              selectedCategories.includes('횟집') ? 'active' : ''
+            }`}
+          >
+            횟집
           </button>
         </div>
         {filteredResults.length > 0 ? (
@@ -466,6 +678,11 @@ const NaverMapAndRestaurantInfo = () => {
             </button>
           </div>
         ))}
+        <div>
+          <button onClick={handleReorderRestaurants}>
+            Reorder by Distance
+          </button>
+        </div>
       </div>
 
       <div className="right" style={{ position: 'relative' }}>
@@ -477,4 +694,5 @@ const NaverMapAndRestaurantInfo = () => {
     </div>
   );
 };
+
 export default NaverMapAndRestaurantInfo;
