@@ -21,11 +21,6 @@ const NaverMapAndRestaurantInfo = () => {
     filteredResults: [],
     restaurantData: null,
   });
-  // 저장된 식당 불러오기
-  useEffect(() => {
-    const storedRestaurants = loadSelectedRestaurants();
-    setSelectedRestaurants(storedRestaurants);
-  }, []);
 
   // 선택된 식당을 로컬 스토리지에 저장
   const saveSelectedRestaurants = (selectedRestaurants) => {
