@@ -50,6 +50,7 @@ const NaverMapAndRestaurantInfo = () => {
     setRestaurantData(null); // 선택된 레스토랑 데이터 지우기
     setRestaurantName(''); // 검색 입력 지우기
     setSearchTerm('');
+    setFilteredResults([]); // 검색 결과 초기화
   };
 
   // 선택된 식당 삭제
@@ -299,6 +300,20 @@ const NaverMapAndRestaurantInfo = () => {
     }
   };
 
+  const handleSearchClick = () => {
+    if (searchTerm) {
+      const results = jsonData.rows.filter((row) =>
+        row[3].toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+      if (results.length > 0) {
+        setRestaurantData(results[0]);
+      } else {
+        setRestaurantData(null);
+      }
+      setFilteredResults(results);
+    }
+  };
+
   const filterByCategory = (category) => {
     setSelectedCategories((prevSelectedCategories) => {
       if (prevSelectedCategories.includes(category)) {
@@ -347,15 +362,14 @@ const NaverMapAndRestaurantInfo = () => {
             onChange={handleSearchChange}
             className="search-input"
           />
-          {searchTerm ? (
+          {searchTerm && (
             <button onClick={deleteRestaurant} className="delete-button">
               X
             </button>
-          ) : (
-            <button className="search-button">
-              <div className="search-icon" />
-            </button>
           )}
+          <button onClick={handleSearchClick} className="search-button">
+            <div className="search-icon" />
+          </button>
         </div>
         <div className="category-buttons">
           <button
@@ -392,7 +406,7 @@ const NaverMapAndRestaurantInfo = () => {
           </button>
         </div>
         {filteredResults.length > 0 ? (
-          <div className="scrollable-container">
+          <div>
             {filteredResults.map((result, index) => (
               <div
                 key={index}
