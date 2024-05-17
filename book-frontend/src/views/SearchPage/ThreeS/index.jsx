@@ -22,6 +22,12 @@ const NaverMapAndRestaurantInfo = () => {
     restaurantData: null,
   });
 
+  // 저장한 식당 불러오기
+  useEffect(() => {
+    const storedRestaurants = loadSelectedRestaurants();
+    setSelectedRestaurants(storedRestaurants);
+  }, []);
+
   // 선택된 식당을 로컬 스토리지에 저장
   const saveSelectedRestaurants = (selectedRestaurants) => {
     localStorage.setItem(
@@ -65,11 +71,6 @@ const NaverMapAndRestaurantInfo = () => {
     ]);
     saveSelectedRestaurants([...selectedRestaurants, restaurant]); // 변경된 선택된 식당을 저장
   };
-
-  useEffect(() => {
-    const storedRestaurants = loadSelectedRestaurants();
-    setSelectedRestaurants(storedRestaurants);
-  }, []);
 
   const handleRestaurantClick = (restaurant) => {
     // 이전 상태 저장
