@@ -33,11 +33,25 @@ const NaverMapAndRestaurantInfo = () => {
       (12 <= currentHour && currentHour <= 14) ||
       (17 <= currentHour && currentHour <= 19)
     ) {
-      return '고기집';
+      return [
+        '중식',
+        '한식',
+        '일식',
+        '고기집',
+        '패스트푸드',
+        '횟집',
+        '분식',
+        '이색음식점',
+      ];
+    } else if (
+      (15 <= currentHour && currentHour <= 16) ||
+      (9 <= currentHour && currentHour <= 11)
+    ) {
+      return ['전시회', '뷰(맛집)'];
     } else if (currentHour >= 20) {
-      return '치킨';
+      return ['술집', '치킨/맥주'];
     } else {
-      return '카페';
+      return ['카페'];
     }
   };
 
@@ -146,24 +160,24 @@ const NaverMapAndRestaurantInfo = () => {
 
   const handleReorderRestaurants = () => {
     const priority = getCurrentPriority();
-    let priorityRestaurant = null;
+    let priorityRestaurants = [];
     const remainingRestaurants = [];
 
     // types에 따른 우선순위 결정
     for (const restaurant of selectedRestaurants) {
-      if (restaurant.types === priority) {
-        priorityRestaurant = restaurant;
+      if (priority.includes(restaurant.types)) {
+        priorityRestaurants.push(restaurant);
       } else {
         remainingRestaurants.push(restaurant);
       }
     }
 
     console.log('Priority:', priority);
-    console.log('Priority Restaurant:', priorityRestaurant);
+    console.log('Priority Restaurant:', priorityRestaurants);
     console.log('Remaining Restaurants:', remainingRestaurants);
 
     // remainingRestaurants를 다익스트라 알고리즘으로 정렬
-    if (priorityRestaurant && remainingRestaurants.length > 0) {
+    if (priorityRestaurants.length > 0 && remainingRestaurants.length > 0) {
       const graph = {};
 
       for (const restaurant of remainingRestaurants) {
@@ -171,29 +185,26 @@ const NaverMapAndRestaurantInfo = () => {
         for (const otherRestaurant of remainingRestaurants) {
           if (restaurant.name !== otherRestaurant.name) {
             graph[restaurant.name][otherRestaurant.name] = calculateDistance(
-              restaurant.y_coordi, // x_coordi와 y_coordi 순서 변경
               restaurant.x_coordi,
-              otherRestaurant.y_coordi,
+              restaurant.y_coordi,
               otherRestaurant.x_coordi,
+              otherRestaurant.y_coordi,
             );
           }
         }
       }
 
-      console.log('Graph:', graph);
-
-      const distances = dijkstra(graph, priorityRestaurant.name);
+      const distances = dijkstra(graph, remainingRestaurants[0].name);
       remainingRestaurants.sort(
         (a, b) => distances[a.name] - distances[b.name],
       );
-
-      console.log('Distances:', distances);
     }
 
     // 정렬된 배열을 설정
-    const reorderedRestaurants = priorityRestaurant
-      ? [priorityRestaurant, ...remainingRestaurants]
-      : remainingRestaurants;
+    const reorderedRestaurants = [
+      ...priorityRestaurants,
+      ...remainingRestaurants,
+    ];
 
     // 상태 업데이트
     setSelectedRestaurants(reorderedRestaurants);
@@ -539,14 +550,14 @@ const NaverMapAndRestaurantInfo = () => {
         </div>
         <div className="category-buttons">
           <button
-            onClick={() => filterByCategory('고기집')}
+            onClick={() => filterByCategory('중식')}
             className={`category-button ${
-              selectedCategories.includes('고기집') ? 'active' : ''
+              selectedCategories.includes('중식') ? 'active' : ''
             }`}
           >
-            고기집
+            중식
           </button>
-          
+
           <button
             onClick={() => filterByCategory('카페')}
             className={`category-button ${
@@ -554,14 +565,6 @@ const NaverMapAndRestaurantInfo = () => {
             }`}
           >
             카페
-          </button>
-          <button
-            onClick={() => filterByCategory('치킨')}
-            className={`category-button ${
-              selectedCategories.includes('치킨') ? 'active' : ''
-            }`}
-          >
-            치킨
           </button>
           <button
             onClick={() => filterByCategory('한식')}
@@ -580,12 +583,12 @@ const NaverMapAndRestaurantInfo = () => {
             뷰(맛집)
           </button>
           <button
-            onClick={() => filterByCategory('경양식')}
+            onClick={() => filterByCategory('일식')}
             className={`category-button ${
-              selectedCategories.includes('경양식') ? 'active' : ''
+              selectedCategories.includes('일식') ? 'active' : ''
             }`}
           >
-            경양식
+            일식
           </button>
           <button
             onClick={() => filterByCategory('전시회')}
@@ -594,23 +597,6 @@ const NaverMapAndRestaurantInfo = () => {
             }`}
           >
             전시회
-          </button>
-
-          <button
-            onClick={() => filterByCategory('분식')}
-            className={`category-button ${
-              selectedCategories.includes('분식') ? 'active' : ''
-            }`}
-          >
-            분식
-          </button>
-          <button
-            onClick={() => filterByCategory('횟집')}
-            className={`category-button ${
-              selectedCategories.includes('횟집') ? 'active' : ''
-            }`}
-          >
-            횟집
           </button>
         </div>
         {filteredResults.length > 0 ? (
