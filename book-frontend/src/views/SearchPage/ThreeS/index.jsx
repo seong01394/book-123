@@ -15,7 +15,12 @@ const NaverMapAndRestaurantInfo = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [selectedRestaurants, setSelectedRestaurants] = useState([]);
-/*
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [previousState, setPreviousState] = useState({
+    searchTerm: '',
+    filteredResults: [],
+    restaurantData: null,
+  });
   // 저장된 식당 불러오기
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
@@ -24,7 +29,10 @@ const NaverMapAndRestaurantInfo = () => {
 
   // 선택된 식당을 로컬 스토리지에 저장
   const saveSelectedRestaurants = (selectedRestaurants) => {
-    localStorage.setItem('selectedRestaurants', JSON.stringify(selectedRestaurants));
+    localStorage.setItem(
+      'selectedRestaurants',
+      JSON.stringify(selectedRestaurants),
+    );
   };
 
   // 로컬 스토리지에서 저장된 식당 불러오기
@@ -44,6 +52,15 @@ const NaverMapAndRestaurantInfo = () => {
     setSearchTerm('');
   };
 
+  // 선택된 식당 삭제
+  const removeRestaurantFromList = (index) => {
+    const updatedRestaurants = selectedRestaurants.filter(
+      (_, i) => i !== index,
+    );
+    setSelectedRestaurants(updatedRestaurants);
+    saveSelectedRestaurants(updatedRestaurants); // 변경된 선택된 식당을 저장
+  };
+
   // 선택된 식당 추가
   const addRestaurantToList = (restaurant) => {
     setSelectedRestaurants((prevRestaurants) => [
@@ -56,9 +73,16 @@ const NaverMapAndRestaurantInfo = () => {
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
     setSelectedRestaurants(storedRestaurants);
-  }, []); 
-  */
+  }, []);
+
   const handleRestaurantClick = (restaurant) => {
+    // 이전 상태 저장
+    setPreviousState({
+      searchTerm: searchTerm,
+      filteredResults: filteredResults,
+      restaurantData: restaurantData,
+    });
+
     setRestaurantData(restaurant); // 선택된 레스토랑 정보 저장
     setFilteredResults([]); // 검색 결과 목록을 비워 검색 결과를 숨김
   };
@@ -144,6 +168,7 @@ const NaverMapAndRestaurantInfo = () => {
   useEffect(() => {
     if (searchKey) {
       setRestaurantName(searchKey);
+      setSearchTerm(searchKey);
     }
     const script = loadScript(
       'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xodt3v6svf',
@@ -175,7 +200,10 @@ const NaverMapAndRestaurantInfo = () => {
       const tmX = parseFloat(restaurantData[5]);
       const tmY = parseFloat(restaurantData[6]);
       updateMapCenter(tmX, tmY);
-      const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX+80, tmY+100280]);
+      const [lon, lat] = proj4(tmProjection, wgs84Projection, [
+        tmX + 80,
+        tmY + 100280,
+      ]);
       if (map) {
         const newCenter = new window.naver.maps.LatLng(lat, lon);
         map.setCenter(newCenter);
@@ -252,7 +280,11 @@ const NaverMapAndRestaurantInfo = () => {
     if (value) {
       // 입력값에 따라 검색 결과 필터링
       const results = jsonData.rows
-        .filter((row) => row[3].toLowerCase().includes(value.toLowerCase()) || row[4].toLowerCase().includes(value.toLowerCase()) )
+        .filter(
+          (row) =>
+            row[3].toLowerCase().includes(value.toLowerCase()) ||
+            row[4].toLowerCase().includes(value.toLowerCase()),
+        )
         .map((row) => ({
           name: row[3],
           types: row[4],
@@ -267,9 +299,42 @@ const NaverMapAndRestaurantInfo = () => {
     }
   };
 
-  const Coodinatedchange = () =>  {
+  const filterByCategory = (category) => {
+    setSelectedCategories((prevSelectedCategories) => {
+      if (prevSelectedCategories.includes(category)) {
+        // 이미 선택된 카테고리를 클릭하면 해당 카테고리 제거
+        return prevSelectedCategories.filter((cat) => cat !== category);
+      } else {
+        // 선택되지 않은 카테고리를 클릭하면 해당 카테고리 추가
+        return [...prevSelectedCategories, category];
+      }
+    });
+  };
 
-  }
+  useEffect(() => {
+    if (selectedCategories.length > 0) {
+      const results = jsonData.rows.filter((row) =>
+        selectedCategories.some((category) => row[4].includes(category)),
+      );
+      setFilteredResults(
+        results.map((row) => ({
+          name: row[3],
+          types: row[4],
+          phone: row[0],
+          details: row,
+        })),
+      );
+    } else {
+      setFilteredResults([]);
+    }
+  }, [selectedCategories]);
+
+  // 이전 상태로 복원하는 함수
+  const handleGoBack = () => {
+    setSearchTerm(previousState.searchTerm);
+    setFilteredResults(previousState.filteredResults);
+    setRestaurantData(previousState.restaurantData);
+  };
 
   return (
     <div className="container">
@@ -282,8 +347,48 @@ const NaverMapAndRestaurantInfo = () => {
             onChange={handleSearchChange}
             className="search-input"
           />
-          <button onClick={deleteRestaurant} className="delete-button">
-            X
+          {searchTerm ? (
+            <button onClick={deleteRestaurant} className="delete-button">
+              X
+            </button>
+          ) : (
+            <button className="search-button">
+              <div className="search-icon" />
+            </button>
+          )}
+        </div>
+        <div className="category-buttons">
+          <button
+            onClick={() => filterByCategory('고기집')}
+            className={`category-button ${
+              selectedCategories.includes('고기집') ? 'active' : ''
+            }`}
+          >
+            고기집
+          </button>
+          <button
+            onClick={() => filterByCategory('식당')}
+            className={`category-button ${
+              selectedCategories.includes('식당') ? 'active' : ''
+            }`}
+          >
+            식당
+          </button>
+          <button
+            onClick={() => filterByCategory('카페')}
+            className={`category-button ${
+              selectedCategories.includes('카페') ? 'active' : ''
+            }`}
+          >
+            카페
+          </button>
+          <button
+            onClick={() => filterByCategory('치킨')}
+            className={`category-button ${
+              selectedCategories.includes('치킨') ? 'active' : ''
+            }`}
+          >
+            치킨
           </button>
         </div>
         {filteredResults.length > 0 ? (
@@ -292,12 +397,18 @@ const NaverMapAndRestaurantInfo = () => {
               <div
                 key={index}
                 onClick={() => handleRestaurantClick(result.details)}
+                className="result-card"
               >
-                <span>
-                  {result.name}⭐ - {result.types}
-                </span>
+                <div className="result-content">
+                  <span className="result-name">{result.name}</span>
+                  <span className="result-types">{result.types}</span>
+                </div>
                 <button
-                  onClick={() => addRestaurantToList(result)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // 부모 클릭 이벤트 전파 중지
+                    addRestaurantToList(result);
+                    setRestaurantData(null); // 추가 후 선택된 가게 정보 비우기
+                  }}
                   className="plus-button"
                 >
                   +
@@ -307,7 +418,10 @@ const NaverMapAndRestaurantInfo = () => {
           </div>
         ) : restaurantData ? (
           <div className="restaurant-card">
-            <div className="restaurant-title">{restaurantData[3]}</div>
+            <div className="restaurant-header">
+              <div className="restaurant-title">{restaurantData[3]}</div>
+              <span className="back-button" onClick={handleGoBack}></span>
+            </div>
             <div className="restaurant-subtitle">{restaurantData[4]}</div>
             <div className="restaurant-info">
               <span className="restaurant-info-icon phone-icon"></span>
@@ -331,7 +445,15 @@ const NaverMapAndRestaurantInfo = () => {
       <div className="middle">
         {selectedRestaurants.map((restaurant, index) => (
           <div key={index} className="selected-restaurant-item">
-            {restaurant.name} - {restaurant.types}
+            <span>
+              {restaurant.name} - {restaurant.types}
+            </span>
+            <button
+              className="trash-button"
+              onClick={() => removeRestaurantFromList(index)}
+            >
+              🗑️
+            </button>
           </div>
         ))}
       </div>

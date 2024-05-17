@@ -65,3 +65,5 @@ https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress
 <a href="https://www.flaticon.com/kr/free-icons/" title="전화 아이콘">전화 아이콘 제작자: Freepik - Flaticon</a>
 
 <a href="https://www.flaticon.com/kr/free-icons/" title="집 아이콘">집 아이콘 제작자: Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/kr/free-icons/" title="뒤 아이콘">뒤 아이콘 제작자: Kirill Kazachek - Flaticon</a>

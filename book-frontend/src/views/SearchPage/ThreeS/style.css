@@ -33,6 +33,8 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
+  gap: 8px; /* 검색창과 버튼 간의 간격 설정 */
 }
 
 /* Add the search input style */
@@ -46,14 +48,14 @@
   outline: none;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 20px;
 }
 
-.delete-button {
+.delete-button,
+.search-button {
   position: absolute;
   right: 0;
   top: 0;
-  height: 61%;
+  height: 100%;
   width: 40px; /* 버튼의 너비 지정 */
   display: flex;
   align-items: center;
@@ -64,15 +66,95 @@
   padding: 5px 10px;
   cursor: pointer;
 }
-
-
-
+.search-icon {
+  width: 20px; /* Set a specific width */
+  height: 20px; /* Set a specific height */
+  background-image: url('../../../assets/search-light.png');
+  background-size: cover; /* Cover the entire area of the div */
+}
+.search-button {
+  background-color: transparent;
+}
 .search-input::placeholder {
   color: #999;
 }
 
 .search-input:focus {
   border-color: #007bff;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.category-button {
+  flex: 1;
+  margin: 0 5px; /* 버튼 간의 간격 설정 */
+  padding: 8px 16px; /* 패딩 추가 */
+  font-size: 16px;
+  border: 1px solid #ccc; /* 테두리 추가 */
+  border-radius: 20px; /* 둥근 테두리 */
+  background-color: #f8f9fa;
+  color: #333;
+  cursor: pointer;
+}
+
+.category-button:hover {
+  background-color: #0056b3;
+}
+
+.category-button.active {
+  background-color: #007bff;
+  color: #fff;
+  border: none; /* 활성화된 버튼 테두리 제거 */
+}
+
+.scrollable-container {
+  max-height: 800px; /* Adjust based on your preference */
+  overflow-y: scroll;
+}
+
+.result-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.result-card:hover {
+  background-color: #e9ecef;
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.result-types {
+  font-size: 14px;
+  color: #666;
+}
+
+.plus-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 /* Adjust the map size */
@@ -87,10 +169,10 @@
   top: 60px;
   right: 10px;
   padding: 8px 12px;
-  font-size: 10px; /* 'fontsize' 대신 'font-size'로 수정 */
+  font-size: 10px;
   border: 0px solid #007bff;
-  border-radius: 4px; /* 'borderradius' 대신 'border-radius'로 수정 */
-  background-color: #007bff; /* 'backgroundcolor' 대신 'background-color'로 수정 */
+  border-radius: 4px;
+  background-color: #007bff;
   color: #fff;
   cursor: pointer;
 }
@@ -105,11 +187,25 @@
   font-family: Arial, sans-serif;
 }
 
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .restaurant-title {
   font-size: 24px;
   font-weight: bold;
   color: #333;
   margin-bottom: 5px;
+}
+
+.back-button {
+  width: 20px; /* Set a specific width */
+  height: 20px; /* Set a specific height */
+  cursor: pointer;
+  background-image: url('../../../assets/free-icon-arrow-507257.png');
+  background-size: cover;
 }
 
 .restaurant-subtitle {
@@ -186,10 +282,6 @@
   border-bottom: 1px solid #ccc;
 }
 
-.plus-button {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
+.trash-button {
+  margin-left: 10px;
 }
