@@ -2,7 +2,7 @@ import proj4 from 'proj4';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import jsonData from '../../../assets/projdb_comp.json';
-import './style.css'; // CSS 파일을 잘 불러오고 있는지 확인하세요.
+import './style.css';
 
 const NaverMapAndRestaurantInfo = () => {
   const mapRef = useRef(null);
@@ -25,6 +25,7 @@ const NaverMapAndRestaurantInfo = () => {
     filteredResults: [],
     restaurantData: null,
   });
+  const [closestRestaurants, setClosestRestaurants] = useState([]); // 추가
 
   const getCurrentPriority = () => {
     const now = new Date();
@@ -55,7 +56,6 @@ const NaverMapAndRestaurantInfo = () => {
     }
   };
 
-  // Haversine formula to calculate distance between two points (in km)
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const toRad = (value) => (value * Math.PI) / 180;
     const R = 6371; // Radius of Earth in km
@@ -109,23 +109,20 @@ const NaverMapAndRestaurantInfo = () => {
     });
   }, []);
 
-  // 저장한 식당 불러오기
   useEffect(() => {
     const storedRestaurants = loadSelectedRestaurants();
     setSelectedRestaurants(storedRestaurants);
   }, []);
 
-  // 로컬 스토리지에서 저장된 식당 불러오기
   const loadSelectedRestaurants = () => {
     const storedRestaurants = localStorage.getItem('selectedRestaurants');
     if (storedRestaurants) {
       return JSON.parse(storedRestaurants);
     } else {
-      return []; // 저장된 식당이 없을 경우 빈 배열 반환
+      return [];
     }
   };
 
-  // 선택된 식당을 로컬 스토리지에 저장
   const saveSelectedRestaurants = (selectedRestaurants) => {
     localStorage.setItem(
       'selectedRestaurants',
@@ -133,27 +130,25 @@ const NaverMapAndRestaurantInfo = () => {
     );
   };
 
-  // 식당 삭제
   const deleteRestaurant = () => {
-    setRestaurantData(null); // 선택된 레스토랑 데이터 지우기
-    setRestaurantName(''); // 검색 입력 지우기
+    setRestaurantData(null);
+    setRestaurantName('');
     setSearchTerm('');
-    setFilteredResults([]); // 검색 결과 초기화
+    setFilteredResults([]);
   };
 
-  // 선택된 식당 삭제
   const removeRestaurantFromList = (index) => {
     const updatedRestaurants = selectedRestaurants.filter(
       (_, i) => i !== index,
     );
     setSelectedRestaurants(updatedRestaurants);
-    saveSelectedRestaurants(updatedRestaurants); // 변경된 선택된 식당을 저장
+    saveSelectedRestaurants(updatedRestaurants);
   };
 
   const addRestaurantToList = (restaurant) => {
     setSelectedRestaurants((prevRestaurants) => {
       const updatedRestaurants = [...prevRestaurants, restaurant];
-      saveSelectedRestaurants(updatedRestaurants); // 업데이트된 선택된 식당 목록 저장
+      saveSelectedRestaurants(updatedRestaurants);
       return updatedRestaurants;
     });
   };
@@ -163,7 +158,6 @@ const NaverMapAndRestaurantInfo = () => {
     let priorityRestaurants = [];
     const remainingRestaurants = [];
 
-    // types에 따른 우선순위 결정
     for (const restaurant of selectedRestaurants) {
       if (priority.includes(restaurant.types)) {
         priorityRestaurants.push(restaurant);
@@ -172,11 +166,6 @@ const NaverMapAndRestaurantInfo = () => {
       }
     }
 
-    console.log('Priority:', priority);
-    console.log('Priority Restaurant:', priorityRestaurants);
-    console.log('Remaining Restaurants:', remainingRestaurants);
-
-    // remainingRestaurants를 다익스트라 알고리즘으로 정렬
     if (priorityRestaurants.length > 0 && remainingRestaurants.length > 0) {
       const graph = {};
 
@@ -200,33 +189,71 @@ const NaverMapAndRestaurantInfo = () => {
       );
     }
 
-    // 정렬된 배열을 설정
     const reorderedRestaurants = [
       ...priorityRestaurants,
       ...remainingRestaurants,
     ];
 
-    // 상태 업데이트
     setSelectedRestaurants(reorderedRestaurants);
     saveSelectedRestaurants(reorderedRestaurants);
-    console.log('Updated selectedRestaurants:', reorderedRestaurants); // 상태 업데이트 후 콘솔 로그 출력
   };
 
-  // 상태가 변경되면 컴포넌트를 다시 렌더링
+  const handleReorderByDistance = () => {
+    // 현재 우선순위 타입 가져오기
+    const priorityTypes = getCurrentPriority();
+    const firstPriorityType = priorityTypes[0];
+
+    // setSelectedRestaurants 배열의 첫 번째 요소 가져오기
+    const firstRestaurant = selectedRestaurants[0];
+    const firstRestaurantX = parseFloat(firstRestaurant.x_coordi);
+    const firstRestaurantY = parseFloat(firstRestaurant.y_coordi);
+
+    // 같은 타입의 장소 필터링
+    const filteredByType = jsonData.rows.filter(
+      (row) => row[4] === firstPriorityType,
+    );
+
+    // 거리를 계산하여 추가
+    const distances = filteredByType.map((restaurant) => {
+      const distance = calculateDistance(
+        firstRestaurantX,
+        firstRestaurantY,
+        parseFloat(restaurant[5]),
+        parseFloat(restaurant[6]),
+      );
+      return { ...restaurant, distance };
+    });
+
+    // 거리순으로 정렬
+    distances.sort((a, b) => a.distance - b.distance);
+
+    // 가장 가까운 5개의 장소 추천
+    const closest = distances.slice(0, 5).map((restaurant) => ({
+      name: restaurant[3],
+      types: restaurant[4],
+      phone: restaurant[0],
+      x_coordi: restaurant[5],
+      y_coordi: restaurant[6],
+      details: restaurant,
+    }));
+
+    setClosestRestaurants(closest); // 상태 업데이트
+    console.log('Closest restaurants:', closest);
+  };
+
   useEffect(() => {
     console.log('selectedRestaurants state updated:', selectedRestaurants);
   }, [selectedRestaurants]);
 
   const handleRestaurantClick = (restaurant) => {
-    // 이전 상태 저장
     setPreviousState({
       searchTerm: searchTerm,
       filteredResults: filteredResults,
       restaurantData: restaurantData,
     });
 
-    setRestaurantData(restaurant); // 선택된 레스토랑 정보 저장
-    setFilteredResults([]); // 검색 결과 목록을 비워 검색 결과를 숨김
+    setRestaurantData(restaurant);
+    setFilteredResults([]);
   };
 
   const tmProjection =
@@ -388,13 +415,11 @@ const NaverMapAndRestaurantInfo = () => {
     }
   }, [restaurantName]);
 
-  // Render reviews from the dataset
   const renderReviews = (data, startIndex, prefix) => {
     if (!data || data.length <= startIndex) {
       return <p className="review-item">No reviews available.</p>;
     }
 
-    // 데이터 중에 null 값이 있을 경우 'No review available' 메시지를 표시
     for (let index = 0; index < 5; index++) {
       if (data[startIndex + index] === null) {
         return (
@@ -405,7 +430,6 @@ const NaverMapAndRestaurantInfo = () => {
       }
     }
 
-    // 5개의 리뷰를 렌더링하며, 각 리뷰에 고유한 키와 스타일 클래스를 추가
     return Array.from({ length: 5 }, (_, index) => {
       return (
         <p key={prefix + (index + 1)} className="review-item">{`${prefix}${
@@ -415,12 +439,10 @@ const NaverMapAndRestaurantInfo = () => {
     });
   };
 
-  // 검색 입력을 처리하는 함수
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
     if (value) {
-      // 입력값에 따라 검색 결과 필터링
       const results = jsonData.rows
         .filter(
           (row) =>
@@ -447,7 +469,6 @@ const NaverMapAndRestaurantInfo = () => {
 
           return transformedRow;
         })
-        // 이미 선택된 식당을 제외
         .filter(
           (result) =>
             !selectedRestaurants.some(
@@ -457,7 +478,6 @@ const NaverMapAndRestaurantInfo = () => {
 
       setFilteredResults(results);
     } else {
-      // 입력값이 없을 때 상태 초기화
       setFilteredResults([]);
       setRestaurantData(null);
     }
@@ -480,10 +500,8 @@ const NaverMapAndRestaurantInfo = () => {
   const filterByCategory = (category) => {
     setSelectedCategories((prevSelectedCategories) => {
       if (prevSelectedCategories.includes(category)) {
-        // 이미 선택된 카테고리를 클릭하면 해당 카테고리 제거
         return prevSelectedCategories.filter((cat) => cat !== category);
       } else {
-        // 선택되지 않은 카테고리를 클릭하면 해당 카테고리 추가
         return [...prevSelectedCategories, category];
       }
     });
@@ -521,11 +539,15 @@ const NaverMapAndRestaurantInfo = () => {
     }
   }, [selectedCategories]);
 
-  // 이전 상태로 복원하는 함수
   const handleGoBack = () => {
     setSearchTerm(previousState.searchTerm);
     setFilteredResults(previousState.filteredResults);
     setRestaurantData(previousState.restaurantData);
+  };
+
+  const clearRestaurants = () => {
+    setSelectedRestaurants([]);
+    setClosestRestaurants([]);
   };
 
   return (
@@ -557,7 +579,6 @@ const NaverMapAndRestaurantInfo = () => {
           >
             중식
           </button>
-
           <button
             onClick={() => filterByCategory('카페')}
             className={`category-button ${
@@ -613,9 +634,9 @@ const NaverMapAndRestaurantInfo = () => {
                 </div>
                 <button
                   onClick={(e) => {
-                    e.stopPropagation(); // 부모 클릭 이벤트 전파 중지
+                    e.stopPropagation();
                     addRestaurantToList(result);
-                    setRestaurantData(null); // 추가 후 선택된 가게 정보 비우기
+                    setRestaurantData(null);
                   }}
                   className="plus-button"
                 >
@@ -666,8 +687,20 @@ const NaverMapAndRestaurantInfo = () => {
         ))}
         <div>
           <button onClick={handleReorderRestaurants}>
-            Reorder by Distance
+            Reorder by Priority
           </button>
+          <button onClick={handleReorderByDistance}>Reorder by Distance</button>
+          <button onClick={clearRestaurants}>reset</button>
+        </div>
+        <div className="closest-restaurants">
+          <h3>Closest Restaurants:</h3>
+          <ul>
+            {closestRestaurants.map((restaurant, index) => (
+              <li key={index}>
+                {restaurant.name} - {restaurant.types}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
