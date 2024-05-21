@@ -14,7 +14,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/express-serve-static-core": "^4.19.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.50",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.2.7",
@@ -25,6 +24,7 @@
     "json-server": "^1.0.0-alpha.23",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1",
+    "openai": "^4.47.1",
     "proj4": "^2.11.0",
     "react": "^18.3.1",
     "react-cookie": "^6.1.1",
@@ -68,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "@types/lodash": "^4.17.0",
     "@types/mysql": "^2.15.26",
     "@types/navermaps": "^3.7.5",
