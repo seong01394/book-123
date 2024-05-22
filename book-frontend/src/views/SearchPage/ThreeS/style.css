@@ -196,7 +196,7 @@
 .add-button {
   margin-left: 10px;
   padding: 5px 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -327,5 +327,82 @@
   background-color: white;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS 파일 (예: style.css) */
+
+.reorder {
+  background-color: #3490dc; /* 파란색 */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.reorder:hover {
+  background-color: #2779bd; /* 어두운 파란색 */
+}
+
+.CPR {
+  background-color: #38c172; /* 녹색 */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.CPR:hover {
+  background-color: #2f9e62; /* 어두운 녹색 */
+}
+
+.found {
+  background-color: #e3342f; /* 빨간색 */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.found:hover {
+  background-color: #cc1f1a; /* 어두운 빨간색 */
+}
+
+.reset {
+  background-color: #6c757d; /* 회색 */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+  background-color: #5a6268; /* 어두운 회색 */
+}
+
+.path-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.path-header {
+  padding: 16px;
+}
+
+.path-body {
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.sub-path {
+  margin-top: 8px;
+  padding: 8px;
+  border-top: 1px solid #ddd;
 }

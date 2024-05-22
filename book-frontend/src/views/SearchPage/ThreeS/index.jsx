@@ -79,96 +79,111 @@ const NaverMapAndRestaurantInfo = () => {
   };
 
   const searchPubTransPathAJAX = (SX, SY, EX, EY, colorIndex) => {
-    const distance = calculateDistance(SY, SX, EY, EX);
+    return new Promise((resolve, reject) => {
+      const distance = calculateDistance(SY, SX, EY, EX);
 
-    const xhr = new XMLHttpRequest();
-    const url = `https://api.odsay.com/v1/api/searchPubTransPathT?SX=${SX}&SY=${SY}&EX=${EX}&EY=${EY}&apiKey=3oN7X1QUnTil99wEjCYGKtYmr%2BemP3%2FqOR4Monpr1GA`;
-    xhr.open('GET', url, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
+      const xhr = new XMLHttpRequest();
+      const url = `https://api.odsay.com/v1/api/searchPubTransPathT?SX=${SX}&SY=${SY}&EX=${EX}&EY=${EY}&apiKey=3oN7X1QUnTil99wEjCYGKtYmr%2BemP3%2FqOR4Monpr1GA`;
+      xhr.open('GET', url, true);
+      xhr.send();
+      xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText);
-                console.log(response);
-                if (
-                    response.result &&
-                    response.result.path &&
-                    response.result.path.length > 0
-                ) {
-                    const mapObj = response.result.path[0].info.mapObj;
-                    callMapObjApiAJAX(mapObj, SX, SY, EX, EY, colorIndex);
-                    displayPathInfo(response.result.path[0]);
-                } else if (distance < 0.7) {  // 수정된 부분: 거리 조건을 명확히 함
-                    console.log('700m 이내 경로라 직선으로 표기합니다');
-                    document.getElementById('trip-summary').innerHTML = `
-                        <div class="bg-white p-4 rounded shadow">
-                            <p><strong>700m 이내 경로라 직선으로 표기합니다.</strong></p>
-                        </div>
-                    `;
-                    drawBasicPath(SX, SY, EX, EY, -1); // -1을 사용하여 검정색을 지정
-                } else {
-                    console.error('No path found');
-                }
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            console.log(response);
+            if (
+              response.result &&
+              response.result.path &&
+              response.result.path.length > 0
+            ) {
+              const mapObj = response.result.path[0].info.mapObj;
+              callMapObjApiAJAX(mapObj, SX, SY, EX, EY, colorIndex);
+              displayPathInfo(response.result.path[0], colorIndex); // colorIndex 추가
+              resolve();
+            } else if (distance < 0.7) {
+              // 수정된 부분: 거리 조건을 명확히 함
+              console.log('700m 이내 경로라 직선으로 표기합니다');
+              drawBasicPath(SX, SY, EX, EY, -1); // -1을 사용하여 검정색을 지정
+              resolve();
             } else {
-                console.error(
-                    `Error fetching path: ${xhr.status} - ${xhr.statusText}`
-                );
+              console.error('No path found');
+              reject(new Error('No path found'));
             }
+          } else {
+            console.error(
+              `Error fetching path: ${xhr.status} - ${xhr.statusText}`,
+            );
+            reject(
+              new Error(
+                `Error fetching path: ${xhr.status} - ${xhr.statusText}`,
+              ),
+            );
+          }
         }
-    };
-};
+      };
+    });
+  };
 
-const displayPathInfo = (pathData) => {
-  const tripSummary = document.getElementById('trip-summary');
-  const pathsContainer = document.getElementById('paths-container');
+  const colorNames = [
+    '빨간색 경로',
+    '주황색 경로',
+    '노란색 경로',
+    '초록색 경로',
+    '파란색 경로',
+    '남색 경로',
+    '보라색 경로',
+    '검정색 경로',
+  ];
 
-  tripSummary.innerHTML = `
-    <div class="bg-white p-4 rounded shadow">
-      <p><strong>총 거리:</strong> ${pathData.info.totalDistance} 미터</p>
-      <p><strong>총 도보 거리:</strong> ${pathData.info.totalWalk} 미터</p>
-      <p><strong>버스 환승 횟수:</strong> ${pathData.info.busTransitCount}회</p>
-      <p><strong>지하철 환승 횟수:</strong> ${pathData.info.subwayTransitCount}회</p>
-      <p><strong>총 소요 시간:</strong> ${pathData.info.totalTime} 분</p>
-      <p><strong>비용:</strong> ${pathData.info.payment} 원</p>
-    </div>
-  `;
+  const displayPathInfo = (pathData, colorIndex) => {
+    const pathsContainer = document.getElementById('paths-container');
+    const colorName = colorNames[colorIndex % colorNames.length];
+    const pathColor = getColorByIndex(colorIndex);
 
-  const pathElement = document.createElement('div');
-  pathElement.className = 'bg-white p-4 rounded shadow mb-4';
+    const pathElement = document.createElement('div');
+    pathElement.className = 'path-card';
 
-  let pathDetails = `
-    <h2 class="text-xl font-semibold mb-2">경로 세부 정보</h2>
-    <p><strong>총 거리:</strong> ${pathData.info.totalDistance} 미터</p>
-    <p><strong>도보 거리:</strong> ${pathData.info.totalWalk} 미터</p>
-    <p><strong>소요 시간:</strong> ${pathData.info.totalTime} 분</p>
-    <p><strong>비용:</strong> ${pathData.info.payment} 원</p>
-  `;
-
-  pathData.subPath.forEach((subPath, subIndex) => {
-    if (subPath.trafficType === 2) {
-      pathDetails += `
-        <div class="mt-4">
-          <h3 class="text-lg font-medium">경로 ${subIndex + 1} - 버스 ${subPath.lane[0].busNo}</h3>
-          <p><strong>거리:</strong> ${subPath.distance} 미터</p>
-          <p><strong>정류장 수:</strong> ${subPath.stationCount}개</p>
-          <p><strong>출발 정류장:</strong> ${subPath.startName}</p>
-          <p><strong>도착 정류장:</strong> ${subPath.endName}</p>
-        </div>
+    let pathDetails = `
+  <div class="path-header" style="background-color: ${pathColor}; color: white;">
+  <h2>${colorName} 안내</h2>
+      </div>
+      <div class="path-body">
+          <p><strong>총 거리:</strong> ${pathData.info.totalDistance} meters</p>
+          <p><strong>총 도보 거리:</strong> ${pathData.info.totalWalk} meters</p>
+          <p><strong>버스 환승 횟수:</strong> ${pathData.info.busTransitCount}</p>
+          <p><strong>지하철 환승 횟수:</strong> ${pathData.info.subwayTransitCount}</p>
+          <p><strong>총 소요 시간:</strong> ${pathData.info.totalTime} minutes</p>
+          <p><strong>비용:</strong> ${pathData.info.payment} won</p>
       `;
-    } else if (subPath.trafficType === 3) {
-      pathDetails += `
-        <div class="mt-4">
-          <h3 class="text-lg font-medium">경로 ${subIndex + 1} - 도보</h3>
-          <p><strong>거리:</strong> ${subPath.distance} 미터</p>
-          <p><strong>소요 시간:</strong> ${subPath.sectionTime} 분</p>
-        </div>
-      `;
-    }
-  });
 
-  pathElement.innerHTML = pathDetails;
-  pathsContainer.appendChild(pathElement);
-};
+    pathData.subPath.forEach((subPath, subIndex) => {
+      if (subPath.trafficType === 2) {
+        pathDetails += `
+              <div class="sub-path">
+                  <h3>경로 ${subIndex + 1} - 버스 ${subPath.lane[0].busNo}</h3>
+                  <p><strong>거리:</strong> ${subPath.distance} meters</p>
+                  <p><strong>정류장 수:</strong> ${subPath.stationCount}</p>
+                  <p><strong>출발 정류장:</strong> ${subPath.startName}</p>
+                  <p><strong>도착 정류장:</strong> ${subPath.endName}</p>
+              </div>
+          `;
+      } else if (subPath.trafficType === 3) {
+        pathDetails += `
+              <div class="sub-path">
+                  <h3>경로 ${subIndex + 1} - 도보</h3>
+                  <p><strong>거리:</strong> ${subPath.distance} meters</p>
+                  <p><strong>소요 시간:</strong> ${
+                    subPath.sectionTime
+                  } minutes</p>
+              </div>
+          `;
+      }
+    });
+
+    pathDetails += `</div>`;
+    pathElement.innerHTML = pathDetails;
+    pathsContainer.appendChild(pathElement);
+  };
 
   const callMapObjApiAJAX = (mapObj, SX, SY, EX, EY, colorIndex) => {
     const xhr = new XMLHttpRequest();
@@ -198,7 +213,6 @@ const displayPathInfo = (pathData) => {
     };
   };
 
-
   const drawNaverMarker = (x, y) => {
     new window.naver.maps.Marker({
       position: new window.naver.maps.LatLng(y, x),
@@ -207,15 +221,23 @@ const displayPathInfo = (pathData) => {
   };
 
   const drawNaverPolyLine = (data, colorIndex) => {
-    const colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
+    const colors = [
+      '#FF0000',
+      '#FFA500',
+      '#FFFF00',
+      '#008000',
+      '#0000FF',
+      '#4B0082',
+      '#EE82EE',
+    ];
     const strokeColor = colors[colorIndex % colors.length];
-  
+
     data.result.lane.forEach((lane) => {
       lane.section.forEach((section) => {
         const lineArray = section.graphPos.map(
           (pos) => new window.naver.maps.LatLng(pos.y, pos.x),
         );
-  
+
         new window.naver.maps.Polyline({
           map: map,
           path: lineArray,
@@ -227,31 +249,61 @@ const displayPathInfo = (pathData) => {
   };
 
   const drawBasicPath = (SX, SY, EX, EY, colorIndex) => {
-    const colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE', '#000000'];
-    const strokeColor = colorIndex === -1 ? '#000000' : colors[colorIndex % colors.length];
+    const pathColor =
+      colorIndex === -1 ? '#000000' : getColorByIndex(colorIndex);
+    const strokeColor = pathColor;
 
     const lineArray = [
-        new window.naver.maps.LatLng(SY, SX),
-        new window.naver.maps.LatLng(EY, EX),
+      new window.naver.maps.LatLng(SY, SX),
+      new window.naver.maps.LatLng(EY, EX),
     ];
     new window.naver.maps.Polyline({
-        map: map,
-        path: lineArray,
-        strokeWeight: 3,
-        strokeColor: strokeColor,
+      map: map,
+      path: lineArray,
+      strokeWeight: 3,
+      strokeColor: strokeColor,
     });
     drawNaverMarker(SX, SY);
     drawNaverMarker(EX, EY);
-};
 
+    // 검정색 경로 안내 메시지 추가
+    if (colorIndex === -1) {
+      const colorName = colorNames[7]; // 검정색 경로 이름
+      const pathElement = document.createElement('div');
+      pathElement.className = 'path-card';
+      pathElement.innerHTML = `
+            <div class="path-header" style="background-color: ${pathColor}; color: white;">
+                <h2>${colorName}</h2>
+            </div>
+            <div class="path-body">
+                <p><strong>700m 이내 입니다. 걸어서 이동 하세요</strong></p>
+            </div>
+        `;
+      document.getElementById('paths-container').appendChild(pathElement);
+    }
+  };
 
-  const handleFindPath = () => {
+  const getColorByIndex = (index) => {
+    const colors = [
+      '#FF0000',
+      '#FFA500',
+      '#FFFF00',
+      '#008000',
+      '#0000FF',
+      '#4B0082',
+      '#EE82EE',
+      '#000000',
+    ];
+    return colors[index % colors.length];
+  };
+
+  const handleFindPath = async () => {
     const fixedLocation = {
       x: 37.2117679,
       y: 126.9531452,
     };
 
-    const findPath = (currentIndex, colorIndex = 0) => {
+    const findPath = async (currentIndex, colorIndex = 0) => {
       if (currentIndex === 0) {
         searchPubTransPathAJAX(
           fixedLocation.y,
@@ -261,7 +313,7 @@ const displayPathInfo = (pathData) => {
           colorIndex,
         );
       } else {
-        searchPubTransPathAJAX(
+        await searchPubTransPathAJAX(
           selectedRestaurants[currentIndex - 1].x_coordi,
           selectedRestaurants[currentIndex - 1].y_coordi,
           selectedRestaurants[currentIndex].x_coordi,
@@ -332,11 +384,11 @@ const displayPathInfo = (pathData) => {
     setMap(null); // 지도 초기화
     setRestaurantData(null); // 식당 데이터 초기화
     setSearchTerm(''); // 검색어 초기화
-    setFilteredResults([]); // 필터링 결과 초기화  
+    setFilteredResults([]); // 필터링 결과 초기화
 
     const tripSummary = document.getElementById('trip-summary');
     const pathsContainer = document.getElementById('paths-container');
-  
+
     // 경로 요약 정보 및 세부 정보 초기화
     if (tripSummary) {
       tripSummary.innerHTML = '';
@@ -350,24 +402,24 @@ const displayPathInfo = (pathData) => {
     script.async = true;
     script.onload = () => {
       const navermaps = window.naver.maps;
-  
+
       const mapOptions = {
         center: new navermaps.LatLng(37.5666103, 126.9783882),
         zoom: 15,
         mapTypeControl: true,
       };
-  
+
       const mapInstance = new navermaps.Map(mapRef.current, mapOptions);
       setMap(mapInstance);
-  
+
       const infoWindowInstance = new navermaps.InfoWindow({
         anchorSkew: true,
       });
       setInfoWindow(infoWindowInstance);
-  
+
       const storedRestaurants = loadSelectedRestaurants();
       setSelectedRestaurants(storedRestaurants);
-  
+
       // Create markers for stored restaurants
       if (storedRestaurants && mapInstance) {
         const newMarkers = storedRestaurants.map((restaurant) =>
@@ -378,7 +430,7 @@ const displayPathInfo = (pathData) => {
     };
     document.head.appendChild(script);
   };
-  
+
   const loadScript = (src, position, id) => {
     if (!document.getElementById(id)) {
       const script = document.createElement('script');
@@ -904,12 +956,18 @@ const displayPathInfo = (pathData) => {
         ) : restaurantData ? (
           <div className="restaurant-card">
             <div className="restaurant-header">
-              <div className="restaurant-title">{restaurantData[3]}
-              <button className="add-button" onClick={(e) => {
+              <div className="restaurant-title">
+                {restaurantData[3]}
+                <button
+                  className="add-button"
+                  onClick={(e) => {
                     e.stopPropagation();
                     let tmX = restaurantData[5] + 80;
                     let tmY = restaurantData[6] + 100280;
-                    const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
+                    const [lon, lat] = proj4(tmProjection, wgs84Projection, [
+                      tmX,
+                      tmY,
+                    ]);
 
                     addRestaurantToList({
                       name: restaurantData[3],
@@ -920,7 +978,10 @@ const displayPathInfo = (pathData) => {
                       details: restaurantData,
                     });
                     setRestaurantData(null);
-                  }}>+</button>
+                  }}
+                >
+                  +
+                </button>
               </div>
               <span className="back-button" onClick={handleGoBack}></span>
             </div>
@@ -959,28 +1020,32 @@ const displayPathInfo = (pathData) => {
           </div>
         ))}
         <div>
-          <button onClick={handleReorderRestaurants}>
+          <button className="reorder" onClick={handleReorderRestaurants}>
             동선 재배열
           </button>
-          <button onClick={handleReorderByDistance}>5개 선택지</button>
-          <button onClick={handleFindPath}>길찾기</button>
-          <button onClick={handleReset}>초기화</button>
+          <button className="CPR" onClick={handleReorderByDistance}>
+            5개 선택지
+          </button>
+          <button className="found" onClick={handleFindPath}>
+            길찾기
+          </button>
+          <button className="reset" onClick={handleReset}>
+            초기화
+          </button>
         </div>
-          <div className="section-b"></div>
-          <div className="section-c">
-            <ul>
+        <div className="section-b"></div>
+        <div className="section-c">
+          <ul>
             {closestRestaurants.map((restaurant, index) => (
               <li key={index}>
                 {restaurant.name} - {restaurant.types}
               </li>
             ))}
           </ul>
-          </div>
-          <div id="trip-summary" className="mb-8">
-          </div>
-          <div id="paths-container">
-          </div>
         </div>
+        <div id="trip-summary" className="mb-8"></div>
+        <div id="paths-container"></div>
+      </div>
 
       <div className="right" style={{ position: 'relative' }}>
         <div ref={mapRef} className="navermap"></div>
