@@ -1,4 +1,3 @@
-
 import { fileUploadRequest, postBoardRequest } from 'apis';
 import PostBoardRequestDto from 'apis/request/board/post-board.request.dto';
 import { ResponseDto } from 'apis/response';
@@ -170,33 +169,45 @@ export default function Header() {
       </div>
     );
   };
+
+  const GoWriteButtonHandler = () => {
+    navigate(BOARD_WRITE_PATH());
+
+    return (
+      <div className="center-button" onClick={GoWriteButtonHandler}>
+        {'글쓰기'}
+      </div>
+    );
+  };
   //              components(업로드 버튼 컴포넌트)      //
   const UploadButton = () => {
     // state: 게시물 상태   //
     const { title, content, boardImageFileList, resetBoard } = useBoardStore();
 
     // function: post board response 처리 함수  //
-    const postBoardResponse = (responseBody: PostBoardResponseDto | ResponseDto | null) => {
+    const postBoardResponse = (
+      responseBody: PostBoardResponseDto | ResponseDto | null,
+    ) => {
       if (!responseBody) return;
-      const { code } =responseBody;
+      const { code } = responseBody;
       if (code === 'AF' || code === 'NU') navigate(AUTH_PATH());
       if (code === 'VF') alert('제목과 내용은 필수입니다.');
       if (code === 'DBE') alert('데이터베이스 오류입니다.');
       if (code !== 'SU') return;
 
       resetBoard();
-      if(!loginUser) return;
+      if (!loginUser) return;
       const { email } = loginUser;
       navigate(USER_PATH(email));
-    }
+    };
 
     // event handler : 업로드 버튼 클릭 이벤트 처리 함수  //
-    const onUploadButtonClickHandler = async() => {
+    const onUploadButtonClickHandler = async () => {
       const accessToken = cookies.accessToken;
-      if(!accessToken) return;
+      if (!accessToken) return;
 
       const boardImageList: string[] = [];
-      
+
       for (const file of boardImageFileList) {
         const data = new FormData();
         data.append('file', file);
@@ -206,8 +217,10 @@ export default function Header() {
       }
 
       const requestBody: PostBoardRequestDto = {
-        title, content, boardImageList
-      }
+        title,
+        content,
+        boardImageList,
+      };
       postBoardRequest(requestBody, accessToken).then(postBoardResponse);
     };
 
@@ -252,7 +265,7 @@ export default function Header() {
     const isUserPage = pathname.startsWith(USER_PATH(''));
     setUserPage(isUserPage);
   }, [pathname]);
-  
+
   // effect: login user가 변경 될 때마다 실행될 함수//
   useEffect(() => {
     setLogin(loginUser !== null);
@@ -264,11 +277,10 @@ export default function Header() {
         <div className="header-left-box" onClick={onLogoClickHandler}>
           <div className="icon-box">
             <div className="icon logo-dark-icon"></div>
-          </div> 
+          </div>
           <div className="header-logo">{'FOR JP'}</div>
         </div>
         <div className="header-right-box">
-          
           <MyPageButton />
 
           {(isBoardWritePage || isBoardUpdatePage) && <UploadButton />}

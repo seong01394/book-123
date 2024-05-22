@@ -83,19 +83,20 @@
 
 .category-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .category-button {
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  background-color: #fff;
-  font-size: 14px;
+  flex: 1;
+  margin: 0 5px; /* 버튼 간의 간격 설정 */
+  padding: 8px 16px; /* 패딩 추가 */
+  font-size: 16px;
+  border: 1px solid #ccc; /* 테두리 추가 */
+  border-radius: 20px; /* 둥근 테두리 */
+  background-color: #f8f9fa;
+  color: #333;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .category-button:hover {
@@ -192,6 +193,20 @@
   margin-bottom: 5px;
 }
 
+.add-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
 .back-button {
   width: 20px; /* Set a specific width */
   height: 20px; /* Set a specific height */
@@ -271,4 +286,46 @@
 
 .trash-button {
   margin-left: 10px;
+}
+
+.section-a,
+.section-b,
+.section-c {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.section-a {
+  background-color: #f9f9f9;
+}
+
+.section-b {
+  width: 80px;
+  height: 80px;
+  background-image: url('../../../assets/5recommend.jpeg');
+  background-size: cover;
+}
+
+.section-c {
+  background-color: #f1f1f1;
+}
+
+.closest-restaurants ul {
+  list-style: none;
+  padding: 0;
+}
+
+.closest-restaurants li {
+  margin: 5px 0;
+}
+
+.route-display {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

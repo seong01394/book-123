@@ -25,42 +25,49 @@ const NaverMapAndRestaurantInfo = () => {
     filteredResults: [],
     restaurantData: null,
   });
-  const [closestRestaurants, setClosestRestaurants] = useState([]); // 추가
+  const [closestRestaurants, setClosestRestaurants] = useState([]);
+  const [markers, setMarkers] = useState([]); // State to store markers
 
-  const getCurrentPriority = () => {
-    const now = new Date();
-    const currentHour = now.getHours();
-    if (
-      (12 <= currentHour && currentHour <= 14) ||
-      (17 <= currentHour && currentHour <= 19)
-    ) {
-      return [
-        '중식',
-        '한식',
-        '일식',
-        '고기집',
-        '패스트푸드',
-        '횟집',
-        '분식',
-        '이색음식점',
-      ];
-    } else if (
-      (15 <= currentHour && currentHour <= 16) ||
-      (9 <= currentHour && currentHour <= 11)
-    ) {
-      return ['전시회', '뷰(맛집)'];
-    } else if (currentHour >= 20) {
-      return ['술집', '치킨/맥주'];
-    } else {
-      return ['카페'];
-    }
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xodt3v6svf`;
+    script.async = true;
+    script.onload = () => {
+      const navermaps = window.naver.maps;
+
+      const mapOptions = {
+        center: new navermaps.LatLng(37.5666103, 126.9783882),
+        zoom: 15,
+        mapTypeControl: true,
+      };
+
+      const mapInstance = new navermaps.Map(mapRef.current, mapOptions);
+      setMap(mapInstance);
+
+      const infoWindowInstance = new navermaps.InfoWindow({
+        anchorSkew: true,
+      });
+      setInfoWindow(infoWindowInstance);
+
+      const storedRestaurants = loadSelectedRestaurants();
+      setSelectedRestaurants(storedRestaurants);
+
+      // Create markers for stored restaurants
+      if (storedRestaurants && mapInstance) {
+        const newMarkers = storedRestaurants.map((restaurant) =>
+          createMarker(restaurant.x_coordi, restaurant.y_coordi, mapInstance),
+        );
+        setMarkers(newMarkers);
+      }
+    };
+    document.head.appendChild(script);
+  }, []);
 
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const toRad = (value) => (value * Math.PI) / 180;
     const R = 6371; // Radius of Earth in km
     const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon1 - lon2);
+    const dLon = toRad(lon2 - lon1);
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(toRad(lat1)) *
@@ -71,34 +78,327 @@ const NaverMapAndRestaurantInfo = () => {
     return R * c;
   };
 
-  const dijkstra = (graph, startNode) => {
-    const distances = {};
-    const visited = new Set();
-    const pq = [[startNode, 0]];
+  const searchPubTransPathAJAX = (SX, SY, EX, EY, colorIndex) => {
+    const distance = calculateDistance(SY, SX, EY, EX);
 
-    for (let node in graph) {
-      distances[node] = Infinity;
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.odsay.com/v1/api/searchPubTransPathT?SX=${SX}&SY=${SY}&EX=${EX}&EY=${EY}&apiKey=3oN7X1QUnTil99wEjCYGKtYmr%2BemP3%2FqOR4Monpr1GA`;
+    xhr.open('GET', url, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                console.log(response);
+                if (
+                    response.result &&
+                    response.result.path &&
+                    response.result.path.length > 0
+                ) {
+                    const mapObj = response.result.path[0].info.mapObj;
+                    callMapObjApiAJAX(mapObj, SX, SY, EX, EY, colorIndex);
+                    displayPathInfo(response.result.path[0]);
+                } else if (distance < 0.7) {  // 수정된 부분: 거리 조건을 명확히 함
+                    console.log('700m 이내 경로라 직선으로 표기합니다');
+                    document.getElementById('trip-summary').innerHTML = `
+                        <div class="bg-white p-4 rounded shadow">
+                            <p><strong>700m 이내 경로라 직선으로 표기합니다.</strong></p>
+                        </div>
+                    `;
+                    drawBasicPath(SX, SY, EX, EY, -1); // -1을 사용하여 검정색을 지정
+                } else {
+                    console.error('No path found');
+                }
+            } else {
+                console.error(
+                    `Error fetching path: ${xhr.status} - ${xhr.statusText}`
+                );
+            }
+        }
+    };
+};
+
+const displayPathInfo = (pathData) => {
+  const tripSummary = document.getElementById('trip-summary');
+  const pathsContainer = document.getElementById('paths-container');
+
+  tripSummary.innerHTML = `
+    <div class="bg-white p-4 rounded shadow">
+      <p><strong>총 거리:</strong> ${pathData.info.totalDistance} 미터</p>
+      <p><strong>총 도보 거리:</strong> ${pathData.info.totalWalk} 미터</p>
+      <p><strong>버스 환승 횟수:</strong> ${pathData.info.busTransitCount}회</p>
+      <p><strong>지하철 환승 횟수:</strong> ${pathData.info.subwayTransitCount}회</p>
+      <p><strong>총 소요 시간:</strong> ${pathData.info.totalTime} 분</p>
+      <p><strong>비용:</strong> ${pathData.info.payment} 원</p>
+    </div>
+  `;
+
+  const pathElement = document.createElement('div');
+  pathElement.className = 'bg-white p-4 rounded shadow mb-4';
+
+  let pathDetails = `
+    <h2 class="text-xl font-semibold mb-2">경로 세부 정보</h2>
+    <p><strong>총 거리:</strong> ${pathData.info.totalDistance} 미터</p>
+    <p><strong>도보 거리:</strong> ${pathData.info.totalWalk} 미터</p>
+    <p><strong>소요 시간:</strong> ${pathData.info.totalTime} 분</p>
+    <p><strong>비용:</strong> ${pathData.info.payment} 원</p>
+  `;
+
+  pathData.subPath.forEach((subPath, subIndex) => {
+    if (subPath.trafficType === 2) {
+      pathDetails += `
+        <div class="mt-4">
+          <h3 class="text-lg font-medium">경로 ${subIndex + 1} - 버스 ${subPath.lane[0].busNo}</h3>
+          <p><strong>거리:</strong> ${subPath.distance} 미터</p>
+          <p><strong>정류장 수:</strong> ${subPath.stationCount}개</p>
+          <p><strong>출발 정류장:</strong> ${subPath.startName}</p>
+          <p><strong>도착 정류장:</strong> ${subPath.endName}</p>
+        </div>
+      `;
+    } else if (subPath.trafficType === 3) {
+      pathDetails += `
+        <div class="mt-4">
+          <h3 class="text-lg font-medium">경로 ${subIndex + 1} - 도보</h3>
+          <p><strong>거리:</strong> ${subPath.distance} 미터</p>
+          <p><strong>소요 시간:</strong> ${subPath.sectionTime} 분</p>
+        </div>
+      `;
     }
-    distances[startNode] = 0;
+  });
 
-    while (pq.length > 0) {
-      const [currentNode, currentDistance] = pq.shift();
-      visited.add(currentNode);
+  pathElement.innerHTML = pathDetails;
+  pathsContainer.appendChild(pathElement);
+};
 
-      for (let neighbor in graph[currentNode]) {
-        const distance = graph[currentNode][neighbor];
-        const totalDistance = currentDistance + distance;
-
-        if (totalDistance < distances[neighbor]) {
-          distances[neighbor] = totalDistance;
-          pq.push([neighbor, totalDistance]);
+  const callMapObjApiAJAX = (mapObj, SX, SY, EX, EY, colorIndex) => {
+    const xhr = new XMLHttpRequest();
+    const url = `https://api.odsay.com/v1/api/loadLane?mapObject=0:0@${mapObj}&apiKey=3oN7X1QUnTil99wEjCYGKtYmr%2BemP3%2FqOR4Monpr1GA`;
+    xhr.open('GET', url, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const resultJsonData = JSON.parse(xhr.responseText);
+        drawNaverMarker(SX, SY);
+        drawNaverMarker(EX, EY);
+        drawNaverPolyLine(resultJsonData, colorIndex);
+        if (resultJsonData.result.boundary) {
+          const boundary = new window.naver.maps.LatLngBounds(
+            new window.naver.maps.LatLng(
+              resultJsonData.result.boundary.top,
+              resultJsonData.result.boundary.left,
+            ),
+            new window.naver.maps.LatLng(
+              resultJsonData.result.boundary.bottom,
+              resultJsonData.result.boundary.right,
+            ),
+          );
+          map.panToBounds(boundary);
         }
       }
-      pq.sort((a, b) => a[1] - b[1]);
+    };
+  };
+
+
+  const drawNaverMarker = (x, y) => {
+    new window.naver.maps.Marker({
+      position: new window.naver.maps.LatLng(y, x),
+      map: map,
+    });
+  };
+
+  const drawNaverPolyLine = (data, colorIndex) => {
+    const colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
+    const strokeColor = colors[colorIndex % colors.length];
+  
+    data.result.lane.forEach((lane) => {
+      lane.section.forEach((section) => {
+        const lineArray = section.graphPos.map(
+          (pos) => new window.naver.maps.LatLng(pos.y, pos.x),
+        );
+  
+        new window.naver.maps.Polyline({
+          map: map,
+          path: lineArray,
+          strokeWeight: 3,
+          strokeColor: strokeColor,
+        });
+      });
+    });
+  };
+
+  const drawBasicPath = (SX, SY, EX, EY, colorIndex) => {
+    const colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE', '#000000'];
+    const strokeColor = colorIndex === -1 ? '#000000' : colors[colorIndex % colors.length];
+
+    const lineArray = [
+        new window.naver.maps.LatLng(SY, SX),
+        new window.naver.maps.LatLng(EY, EX),
+    ];
+    new window.naver.maps.Polyline({
+        map: map,
+        path: lineArray,
+        strokeWeight: 3,
+        strokeColor: strokeColor,
+    });
+    drawNaverMarker(SX, SY);
+    drawNaverMarker(EX, EY);
+};
+
+
+  const handleFindPath = () => {
+    const fixedLocation = {
+      x: 37.2117679,
+      y: 126.9531452,
+    };
+
+    const findPath = (currentIndex, colorIndex = 0) => {
+      if (currentIndex === 0) {
+        searchPubTransPathAJAX(
+          fixedLocation.y,
+          fixedLocation.x,
+          selectedRestaurants[currentIndex].x_coordi,
+          selectedRestaurants[currentIndex].y_coordi,
+          colorIndex,
+        );
+      } else {
+        searchPubTransPathAJAX(
+          selectedRestaurants[currentIndex - 1].x_coordi,
+          selectedRestaurants[currentIndex - 1].y_coordi,
+          selectedRestaurants[currentIndex].x_coordi,
+          selectedRestaurants[currentIndex].y_coordi,
+          colorIndex,
+        );
+      }
+      if (currentIndex < selectedRestaurants.length - 1) {
+        findPath(currentIndex + 1, colorIndex + 1);
+      }
+    };
+
+    if (selectedRestaurants.length > 0) {
+      findPath(0);
+    } else {
+      console.error('No restaurants selected to find a path.');
+    }
+  };
+
+  const handleCurrentLocation = () => {
+    if (!map) {
+      console.error('Map is not initialized.');
+      return;
     }
 
-    return distances;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const newCenter = new window.naver.maps.LatLng(lat, lng);
+
+          if (currentLocationMarker) {
+            currentLocationMarker.setPosition(newCenter);
+          } else {
+            const newMarker = createMarker(lat, lng, map);
+            setCurrentLocationMarker(newMarker);
+          }
+
+          map.setCenter(newCenter);
+        },
+        (error) => {
+          console.error('Failed to fetch current location:', error.message);
+        },
+        { timeout: 10000 },
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
   };
+
+  const createMarker = (lat, lng, map) => {
+    return new window.naver.maps.Marker({
+      position: new window.naver.maps.LatLng(lat, lng),
+      map: map,
+      icon: {
+        url: 'https://navermaps.github.io/maps.js/docs/img/example/sp_pins_spot_v3.png', // 사용자 정의 아이콘 URL
+        size: new window.naver.maps.Size(24, 37),
+        origin: new window.naver.maps.Point(0, 0),
+        anchor: new window.naver.maps.Point(12, 37),
+      },
+    });
+  };
+
+  const handleReset = () => {
+    clearMarkers(); // 기존 마커 제거
+    clearRestaurants(); // 선택된 식당 배열 초기화
+    setMap(null); // 지도 초기화
+    setRestaurantData(null); // 식당 데이터 초기화
+    setSearchTerm(''); // 검색어 초기화
+    setFilteredResults([]); // 필터링 결과 초기화  
+
+    const tripSummary = document.getElementById('trip-summary');
+    const pathsContainer = document.getElementById('paths-container');
+  
+    // 경로 요약 정보 및 세부 정보 초기화
+    if (tripSummary) {
+      tripSummary.innerHTML = '';
+    }
+    if (pathsContainer) {
+      pathsContainer.innerHTML = '';
+    }
+
+    const script = document.createElement('script');
+    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xodt3v6svf`;
+    script.async = true;
+    script.onload = () => {
+      const navermaps = window.naver.maps;
+  
+      const mapOptions = {
+        center: new navermaps.LatLng(37.5666103, 126.9783882),
+        zoom: 15,
+        mapTypeControl: true,
+      };
+  
+      const mapInstance = new navermaps.Map(mapRef.current, mapOptions);
+      setMap(mapInstance);
+  
+      const infoWindowInstance = new navermaps.InfoWindow({
+        anchorSkew: true,
+      });
+      setInfoWindow(infoWindowInstance);
+  
+      const storedRestaurants = loadSelectedRestaurants();
+      setSelectedRestaurants(storedRestaurants);
+  
+      // Create markers for stored restaurants
+      if (storedRestaurants && mapInstance) {
+        const newMarkers = storedRestaurants.map((restaurant) =>
+          createMarker(restaurant.x_coordi, restaurant.y_coordi, mapInstance),
+        );
+        setMarkers(newMarkers);
+      }
+    };
+    document.head.appendChild(script);
+  };
+  
+  const loadScript = (src, position, id) => {
+    if (!document.getElementById(id)) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = src;
+      script.id = id;
+      script.async = true;
+      position.appendChild(script);
+      return script;
+    }
+    return document.getElementById(id);
+  };
+
+  const searchKey = useLocation().state?.searchKey;
+  useEffect(() => {
+    if (searchKey) {
+      setRestaurantName(searchKey);
+      setSearchTerm(searchKey);
+    }
+  }, [searchKey]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -199,35 +499,24 @@ const NaverMapAndRestaurantInfo = () => {
   };
 
   const handleReorderByDistance = () => {
-    // 현재 우선순위 타입 가져오기
     const priorityTypes = getCurrentPriority();
     const firstPriorityType = priorityTypes[0];
-
-    // setSelectedRestaurants 배열의 첫 번째 요소 가져오기
-    const firstRestaurant = selectedRestaurants[0];
-    const firstRestaurantX = parseFloat(firstRestaurant.x_coordi);
-    const firstRestaurantY = parseFloat(firstRestaurant.y_coordi);
-
-    // 같은 타입의 장소 필터링
     const filteredByType = jsonData.rows.filter(
       (row) => row[4] === firstPriorityType,
     );
 
-    // 거리를 계산하여 추가
     const distances = filteredByType.map((restaurant) => {
       const distance = calculateDistance(
-        firstRestaurantX,
-        firstRestaurantY,
-        parseFloat(restaurant[5]),
-        parseFloat(restaurant[6]),
+        currentLocation.x,
+        currentLocation.y,
+        restaurant[5],
+        restaurant[6],
       );
       return { ...restaurant, distance };
     });
 
-    // 거리순으로 정렬
     distances.sort((a, b) => a.distance - b.distance);
 
-    // 가장 가까운 5개의 장소 추천
     const closest = distances.slice(0, 5).map((restaurant) => ({
       name: restaurant[3],
       types: restaurant[4],
@@ -281,162 +570,62 @@ const NaverMapAndRestaurantInfo = () => {
     }
   };
 
-  const createMarker = (lat, lng, map) => {
-    return new window.naver.maps.Marker({
-      position: new window.naver.maps.LatLng(lat, lng),
-      map: map,
-    });
-  };
-
-  const handleCurrentLocation = () => {
-    if (!map) {
-      console.error('Map is not initialized.');
-      return;
-    }
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          const newCenter = new window.naver.maps.LatLng(lat, lng);
-
-          if (currentLocationMarker) {
-            currentLocationMarker.setPosition(newCenter);
-          } else {
-            const newMarker = createMarker(lat, lng, map);
-            setCurrentLocationMarker(newMarker);
-          }
-
-          map.setCenter(newCenter);
-        },
-        (error) => {
-          console.error('Failed to fetch current location:', error.message);
-        },
-        { timeout: 10000 },
-      );
+  const getCurrentPriority = () => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    if (
+      (12 <= currentHour && currentHour <= 14) ||
+      (17 <= currentHour && currentHour <= 19)
+    ) {
+      return [
+        '중식',
+        '한식',
+        '일식',
+        '고기집',
+        '패스트푸드',
+        '횟집',
+        '분식',
+        '이색음식점',
+      ];
+    } else if (
+      (15 <= currentHour && currentHour <= 16) ||
+      (9 <= currentHour && currentHour <= 11)
+    ) {
+      return ['전시회', '뷰(맛집)'];
+    } else if (currentHour >= 20) {
+      return ['술집', '치킨/맥주'];
     } else {
-      console.error('Geolocation is not supported by this browser.');
+      return ['카페'];
     }
   };
 
-  const loadScript = (src, position, id) => {
-    if (!document.getElementById(id)) {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = src;
-      script.id = id;
-      script.async = true;
-      position.appendChild(script);
-      return script;
+  const dijkstra = (graph, startNode) => {
+    const distances = {};
+    const visited = new Set();
+    const pq = [[startNode, 0]];
+
+    for (let node in graph) {
+      distances[node] = Infinity;
     }
-    return document.getElementById(id);
-  };
+    distances[startNode] = 0;
 
-  const searchKey = useLocation().state?.searchKey;
-  useEffect(() => {
-    if (searchKey) {
-      setRestaurantName(searchKey);
-      setSearchTerm(searchKey);
-    }
-    const script = loadScript(
-      'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xodt3v6svf',
-      document.head,
-      'naver-maps-script',
-    );
-    script.onload = () => {
-      const navermaps = window.naver.maps;
+    while (pq.length > 0) {
+      const [currentNode, currentDistance] = pq.shift();
+      visited.add(currentNode);
 
-      const mapOptions = {
-        center: new navermaps.LatLng(37.5666103, 126.9783882),
-        zoom: 15,
-        mapTypeControl: true,
-      };
+      for (let neighbor in graph[currentNode]) {
+        const distance = graph[currentNode][neighbor];
+        const totalDistance = currentDistance + distance;
 
-      const mapInstance = new navermaps.Map(mapRef.current, mapOptions);
-      setMap(mapInstance);
-
-      const infoWindowInstance = new navermaps.InfoWindow({
-        anchorSkew: true,
-      });
-      setInfoWindow(infoWindowInstance);
-    };
-    return () => script.remove();
-  }, []);
-
-  useEffect(() => {
-    if (map && restaurantData) {
-      const tmX = parseFloat(restaurantData[5]);
-      const tmY = parseFloat(restaurantData[6]);
-      updateMapCenter(tmX, tmY);
-      const [lon, lat] = proj4(tmProjection, wgs84Projection, [
-        tmX + 80,
-        tmY + 100280,
-      ]);
-      if (map) {
-        const newCenter = new window.naver.maps.LatLng(lat, lon);
-        map.setCenter(newCenter);
-        if (!marker) {
-          const newMarker = new window.naver.maps.Marker({
-            position: newCenter,
-            map: map,
-          });
-          setMarker(newMarker);
-        } else {
-          marker.setPosition(newCenter);
+        if (totalDistance < distances[neighbor]) {
+          distances[neighbor] = totalDistance;
+          pq.push([neighbor, totalDistance]);
         }
       }
-    }
-  }, [restaurantData, map]);
-
-  useEffect(() => {
-    if (restaurantName) {
-      fetch(`/api/restaurant/${restaurantName}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch restaurant data');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setRestaurantData(data);
-        })
-        .catch((error) => {
-          console.error('Error fetching restaurant data:', error);
-          const restaurant = jsonData.rows.find(
-            (row) => row[3] === restaurantName,
-          );
-          if (restaurant) {
-            setRestaurantData(restaurant);
-          } else {
-            console.error('Restaurant not found in data.');
-          }
-        });
-    }
-  }, [restaurantName]);
-
-  const renderReviews = (data, startIndex, prefix) => {
-    if (!data || data.length <= startIndex) {
-      return <p className="review-item">No reviews available.</p>;
+      pq.sort((a, b) => a[1] - b[1]);
     }
 
-    for (let index = 0; index < 5; index++) {
-      if (data[startIndex + index] === null) {
-        return (
-          <p key={prefix + index} className="review-item">
-            No review available
-          </p>
-        );
-      }
-    }
-
-    return Array.from({ length: 5 }, (_, index) => {
-      return (
-        <p key={prefix + (index + 1)} className="review-item">{`${prefix}${
-          index + 1
-        }: ${data[startIndex + index]}`}</p>
-      );
-    });
+    return distances;
   };
 
   const handleSearchChange = (e) => {
@@ -545,10 +734,69 @@ const NaverMapAndRestaurantInfo = () => {
     setRestaurantData(previousState.restaurantData);
   };
 
+  const clearMarkers = () => {
+    markers.forEach((marker) => marker.setMap(null)); // Clear all markers
+    setMarkers([]);
+    if (currentLocationMarker) {
+      currentLocationMarker.setMap(null); // Clear current location marker
+      setCurrentLocationMarker(null);
+    }
+  };
+
   const clearRestaurants = () => {
     setSelectedRestaurants([]);
     setClosestRestaurants([]);
   };
+
+  const renderReviews = (data, startIndex, prefix) => {
+    if (!data || data.length <= startIndex) {
+      return <p className="review-item">No reviews available.</p>;
+    }
+
+    for (let index = 0; index < 5; index++) {
+      if (data[startIndex + index] === null) {
+        return (
+          <p key={prefix + index} className="review-item">
+            No review available
+          </p>
+        );
+      }
+    }
+
+    return Array.from({ length: 5 }, (_, index) => {
+      return (
+        <p key={prefix + (index + 1)} className="review-item">{`${prefix}${
+          index + 1
+        }: ${data[startIndex + index]}`}</p>
+      );
+    });
+  };
+
+  useEffect(() => {
+    if (restaurantName) {
+      fetch(`/api/restaurant/${restaurantName}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch restaurant data');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setRestaurantData(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching restaurant data:', error);
+          const restaurant = jsonData.rows.find(
+            (row) => row[3] === restaurantName,
+          );
+          if (restaurant) {
+            setRestaurantData(restaurant);
+          } else {
+            console.error('Restaurant not found in data.');
+          }
+        });
+    }
+  }, [restaurantName]);
 
   return (
     <div className="container">
@@ -619,6 +867,14 @@ const NaverMapAndRestaurantInfo = () => {
           >
             전시회
           </button>
+          <button
+            onClick={() => filterByCategory('술집')}
+            className={`category-button ${
+              selectedCategories.includes('술집') ? 'active' : ''
+            }`}
+          >
+            술집
+          </button>
         </div>
         {filteredResults.length > 0 ? (
           <div>
@@ -648,7 +904,24 @@ const NaverMapAndRestaurantInfo = () => {
         ) : restaurantData ? (
           <div className="restaurant-card">
             <div className="restaurant-header">
-              <div className="restaurant-title">{restaurantData[3]}</div>
+              <div className="restaurant-title">{restaurantData[3]}
+              <button className="add-button" onClick={(e) => {
+                    e.stopPropagation();
+                    let tmX = restaurantData[5] + 80;
+                    let tmY = restaurantData[6] + 100280;
+                    const [lon, lat] = proj4(tmProjection, wgs84Projection, [tmX, tmY]);
+
+                    addRestaurantToList({
+                      name: restaurantData[3],
+                      types: restaurantData[4],
+                      phone: restaurantData[0],
+                      x_coordi: lon,
+                      y_coordi: lat,
+                      details: restaurantData,
+                    });
+                    setRestaurantData(null);
+                  }}>+</button>
+              </div>
               <span className="back-button" onClick={handleGoBack}></span>
             </div>
             <div className="restaurant-subtitle">{restaurantData[4]}</div>
@@ -687,22 +960,27 @@ const NaverMapAndRestaurantInfo = () => {
         ))}
         <div>
           <button onClick={handleReorderRestaurants}>
-            Reorder by Priority
+            동선 재배열
           </button>
-          <button onClick={handleReorderByDistance}>Reorder by Distance</button>
-          <button onClick={clearRestaurants}>reset</button>
+          <button onClick={handleReorderByDistance}>5개 선택지</button>
+          <button onClick={handleFindPath}>길찾기</button>
+          <button onClick={handleReset}>초기화</button>
         </div>
-        <div className="closest-restaurants">
-          <h3>Closest Restaurants:</h3>
-          <ul>
+          <div className="section-b"></div>
+          <div className="section-c">
+            <ul>
             {closestRestaurants.map((restaurant, index) => (
               <li key={index}>
                 {restaurant.name} - {restaurant.types}
               </li>
             ))}
           </ul>
+          </div>
+          <div id="trip-summary" className="mb-8">
+          </div>
+          <div id="paths-container">
+          </div>
         </div>
-      </div>
 
       <div className="right" style={{ position: 'relative' }}>
         <div ref={mapRef} className="navermap"></div>
