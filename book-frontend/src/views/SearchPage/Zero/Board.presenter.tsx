@@ -31,7 +31,7 @@ const BoardPresenter: React.FC<IPropsBoardPresenter> = (props) => {
   const renderItems = () => {
     const items = props.isSearch ? props.search : props.data;
     if (items.length === 0) {
-      return <div>{props.error || 'No results found.'}</div>; // 에러 메시지 표시
+      return <div>{props.error || ''}</div>; // 에러 메시지 표시
     }
     return items.map((item: any) => (
       <div
