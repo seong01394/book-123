@@ -10,10 +10,8 @@ import {
   BOARD_UPDATE_PATH,
   BOARD_WRITE_PATH,
   MAIN_PATH,
-  SEARCHPAGE_ONEPATH,
   SEARCHPAGE_PATH,
   SEARCHPAGE_THREEPATH,
-  SEARCHPAGE_TWOPATH,
   SEARCH_PATH,
   USER_PATH,
 } from 'constant';
@@ -31,9 +29,9 @@ import Update from 'views/Board/Update';
 import Write from 'views/Board/Write';
 import Main from 'views/Main';
 import Search from 'views/Search';
-import OneS from 'views/SearchPage/OneS';
+
 import ThreeS from 'views/SearchPage/ThreeS';
-import TwoS from 'views/SearchPage/TwoS';
+
 import UserP from 'views/User';
 import './App.css';
 
@@ -80,8 +78,6 @@ function App() {
         <Route path={AUTH_PATH()} element={<Authentication />} />
         <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />
         <Route path={SEARCHPAGE_PATH()}>
-          <Route path={SEARCHPAGE_ONEPATH(':id')} element={<OneS />} />
-          <Route path={SEARCHPAGE_TWOPATH()} element={<TwoS />} />
           <Route path={SEARCHPAGE_THREEPATH()} element={<ThreeS />}></Route>
         </Route>
         <Route path={USER_PATH(':userEmail')} element={<UserP />} />

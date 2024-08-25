@@ -1,4 +1,11 @@
-## React-Springboot Book 프로젝트
+## FOR_JP 인공지능, GPT 기반 여행 플래너 프로젝트
+
+
+
+## 실행 방법
+터미널 실행하여 npm i react-script 입력, ENTER 눌러 설치
+터미널 실행하여 npm run start 입력 후 ENTER
+
 
 ### 스프링부트
 
@@ -7,6 +14,7 @@
 -MySQL ^8.0
 -Gradle
 -Lombok
+-Json
 
 ### React
 
@@ -29,5 +37,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 }
 '''
 
+## 참고 자료
 git 주소
 git clone https://github.com/codingspecialist/docker-test-sever.git
+
